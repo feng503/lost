@@ -16,21 +16,21 @@ Page({
      TopIndex:index
    })
  },
-// 以上为登录与注册切换格式
-// onLaunch:function(){
-//   const userInfo = wx.getStorageSync('userInfo')
-//   if (userInfo!=''){
-//     console.log(userInfo)
-//     console.log('进行验证')
-//     wx.switchTab({
-//       url: '/pages/shiwuzhanshi/shiwuzhanshi',
-//     })
-//   }else{
-//     // 没有信息，再次登录
-//     console.log('再次登录')
-//     this.login()
-//   }
-// },
+//以上为登录与注册切换格式
+onLaunch:function(){
+  const userInfo = wx.getStorageSync('userInfo')
+  if (userInfo!=''){
+    console.log(userInfo)
+    console.log('进行验证')
+    wx.switchTab({
+      url: '/pages/shiwuzhanshi/shiwuzhanshi',
+    })
+  }else{
+    // 没有信息，再次登录
+    console.log('再次登录')
+    this.login()
+  }
+},
   login:(e) =>{
     let that = this;
     console.log(e);
@@ -41,9 +41,7 @@ Page({
         password:e.detail.value.password
       },
       success:(e)=>{
-        // console.log(e);
         app.globalData.user = e.data;
-        // console.log(app.globalData.user); 
         if(e.statusCode === 200){
           wx.setStorageSync('userInfo', e.data)
           // wx.setStorage({
