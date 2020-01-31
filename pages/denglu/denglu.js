@@ -18,6 +18,7 @@ Page({
  },
 //以上为登录与注册切换格式
 onLoad:function(){
+  console.log('0000')
   const userInfo = wx.getStorageSync('userInfo')
   console.log(userInfo)
   if (userInfo!=''){
