@@ -43,6 +43,7 @@
                 <image src="/images/denglu/shoujihao.png" style="width:28px;height:25px;"></image>
                 <input placeholder='手机号' bindblur="setPhone" name="phone" 
                 value='{{phoneNum}}'
+                maxlength="11"
                 ></input>
               </view>
             </view>

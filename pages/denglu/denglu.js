@@ -1,4 +1,4 @@
-
+let app = getApp();
 var interval = null //倒计时函数
 Page({
   data: {
@@ -7,44 +7,58 @@ Page({
     phoneNum: "",
     time: '获取验证码', //倒计时 
     currentTime: 60 ,
-    btn:false
-  },
- 
+    btn:false,
+    userInfo:[]
+  }, 
   changstyle:function(e){
-
    let index=e.currentTarget.dataset.index;
    this.setData({
      TopIndex:index
    })
  },
-
-  login: function (e) {
+// 以上为登录与注册切换格式
+// onLaunch:function(){
+//   const userInfo = wx.getStorageSync('userInfo')
+//   if (userInfo!=''){
+//     console.log(userInfo)
+//     console.log('进行验证')
+//     wx.switchTab({
+//       url: '/pages/shiwuzhanshi/shiwuzhanshi',
+//     })
+//   }else{
+//     // 没有信息，再次登录
+//     console.log('再次登录')
+//     this.login()
+//   }
+// },
+  login:(e) =>{
     let that = this;
-    // console.log(e);
+    console.log(e);
     wx.request({
       url: 'https://www.vergessen.top/lostobj/login',
       data:{
         studentId:e.detail.value.studentId,
         password:e.detail.value.password
       },
-      success: function(e){
-        console.log(e); 
+      success:(e)=>{
+        // console.log(e);
+        app.globalData.user = e.data;
+        // console.log(app.globalData.user); 
         if(e.statusCode === 200){
-          wx.setStorage({
-            key: "userInfo",
-            data: e.data
-          })
+          wx.setStorageSync('userInfo', e.data)
+          // wx.setStorage({
+          //   key: "userInfo",
+          //   data: e.data
+          // })
           wx.switchTab({
             url: '/pages/shiwuzhanshi/shiwuzhanshi',
           })
         }
         if (e.statusCode === 500) {
           wx.showToast({
-            // title:e.data.message,
-            title:'学号或密码错误',
+            title:e.data.message,
             duration:3000,
-            icon:'success',
-            image:'/images/denglu/error.png'
+            icon:'none',
           })
         }
       }
@@ -71,28 +85,30 @@ Page({
         passwordSecond: userInfo.pwd2,
         testCode: userInfo.code
       },
-      success: function (e) {
+      success:  (e)=> {
         console.log(e);
-        if (e.statusCode === 200) {
-          wx.setStorage({
-            key: "userInfo",
-            data: e.data
-          })
-          wx.switchTab({
-            url: '/pages/shiwuzhanshi/shiwuzhanshi',
-          })
-        }
-        if (e.statusCode === 500) {
-          wx.showToast({
-            title:e.data.message,
-            // title: '学号或密码错误',
-            // duration: 3000,
-            // icon: 'success',
-            // image: '/images/denglu/error.png'
-          })
+          if (e.statusCode === 201) {
+            // console.log('我被执行了');
+            wx.showToast({
+              title: '注册成功',
+              duration: 3000,
+              icon: 'success',
+            })
+            wx.setStorage({
+              key: "userInfo",
+              data: e.data
+            })
+          } 
+          if (e.statusCode === 500) {
+            wx.showToast({
+              title:e.data.message,
+              duration: 3000,
+              icon: 'none',
+            })
         }
       }
     })
+    
   },
 
   //保存手机号

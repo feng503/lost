@@ -10,7 +10,7 @@ Page({
     ],
     majorIndex: 1,
     typeIndex: 0,
-    detail: "",
+    detail: '',
     information:'',
     addr:'',
     tempFilePaths:null,
@@ -49,7 +49,7 @@ Page({
     var type = this.data.majorIndex;
     // console.log(type)      
     var detail = this.data.detail;    
-  //  console.log(detail)    
+    //  console.log(detail)    
     var information = this.data.information;    
     // console.log(information)    
     var addr = this.data.addr;    
@@ -63,35 +63,43 @@ Page({
     },
     header: {"Context-Type": "multipart/form-data"},
     name: 'image',
-    success:function(){
-      console.log(that.data.userInfo.studentId);
-      
-      wx.request({
-        url: 'https://www.vergessen.top/lostobj/submit',
-        //  method: "POST",
-        //  header:{"Content-Type": "json"},
-        data: {
-          //  image:imagePath,
-          type: type,
-          service: 0,
-          detail: detail,
-          information: information,
-          addr: addr,
-          studentId: that.data.userInfo.studentId
+      success: ()=>{
+        console.log(that.data.userInfo.studentId);
+        if(detail&&information&&message!='')
+        {
+        wx.request({
+          url: 'https://www.vergessen.top/lostobj/submit',
+          //  method: "POST",
+          //  header:{"Content-Type": "json"},
+          data: {
+            //  image:imagePath,
+            type: type,
+            service: 0,
+            detail: detail,
+            information: information,
+            addr: addr,
+            studentId: that.data.userInfo.studentId
+          }
+        })
+        wx.showToast({
+          title: '上传成功',
+          duration: 3000,
+          icon: 'success',
+        })
+        wx.switchTab({
+          url: '/pages/gerenzhongxin/gerenzhongxin',
+        })
         }
-      })
-      console.log("------");
-      wx.switchTab({
-        url: '/pages/shiwuzhanshi/shiwuzhanshi',
-      })
-    },
-    fail:function(){
-      console.log("++++++")
-    }
+        else (detail || information || message == '')
+        {
+          wx.showToast({
+            title: '上传失败，请检查后重试',
+            duration: 3000,
+            icon: 'none',
+          })
+        }
+      },
   })
-  // console.log("--------------");
-
-  
   },
   getLocalImage: function (e) {
     var that = this;
@@ -115,14 +123,6 @@ Page({
     })
      
   },
-
-  
-  
-
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     var that = this;
     wx.getStorage({
@@ -136,55 +136,9 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
     wx.reLaunch({
-      url: '/pages/shiwuzhanshi/shiwuzhanshi',
+      url: '/pages/gerenzhongxin/gerenzhongxin',
     })
-
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

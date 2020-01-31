@@ -1,2 +1,1 @@
-<!--pages/gerenzhongxin/kaixinyike/kaixinyike.wxml-->
-<text>pages/gerenzhongxin/kaixinyike/kaixinyike.wxml</text>
+<view wx:for="{{joke}}">{{item.content}}</view>

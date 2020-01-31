@@ -62,7 +62,7 @@
   <view class="name">捡到位置</view>
   <textarea class="content" maxlength="100" value="{{addr}}" bindblur='addrInput' name="content"  placeholder="描述您捡到位置" ></textarea>
   </view>
-  <button type="primary" bindtap="primary" form-type='submit' bindtap='orderMeeting'> 提交 </button>
+  <button type="primary" form-type='submit' bindtap='orderMeeting'> 提交 </button>
 
  
 <!-- 此处提交，要后续加上实现跳转，上传成功/上传失败bindtap -->

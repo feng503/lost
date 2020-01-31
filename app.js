@@ -3,7 +3,8 @@ App({
 
   globalData:{
     newlist:[],
-    id:[]
+    id:[],
+    user:[]
   },
 
   onLaunch: function () {

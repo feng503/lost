@@ -1,6 +1,4 @@
-
 let app = getApp();
-
 Page({
   data: {
     newsdata:[],
