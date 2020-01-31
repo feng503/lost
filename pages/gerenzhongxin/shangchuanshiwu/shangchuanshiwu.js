@@ -65,7 +65,7 @@ Page({
     name: 'image',
       success: ()=>{
         console.log(that.data.userInfo.studentId);
-        if(detail&&information&&message!='')
+        if(information.length!=0)
         {
         wx.request({
           url: 'https://www.vergessen.top/lostobj/submit',
@@ -90,7 +90,7 @@ Page({
           url: '/pages/gerenzhongxin/gerenzhongxin',
         })
         }
-        else (detail || information || message == '')
+        else 
         {
           wx.showToast({
             title: '上传失败，请检查后重试',
