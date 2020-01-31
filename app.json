@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/denglu/denglu",
+    "pages/shiwuzhanshi/shiwuzhanshi",
+    "pages/gerenzhongxin/shangchuanshiwu/shangchuanshiwu",
+    "pages/gerenzhongxin/gerenzhongxin",
+    "pages/hegongdayutang/hegongdayutang",
+    "pages/gerenzhongxin/kaixinyike/kaixinyike",
+    "pages/gerenzhongxin/zhifeiji/zhifeiji",
+    "pages/gerenzhongxin/shezhi/shezhi",
+    "pages/gerenzhongxin/kefu/kefu",
+    "pages/gerenzhongxin/jinritianqi/jinritianqi",
+    "pages/shiwuzhanshi/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#C81623",
+    "navigationBarTitleText": "河工大失物招领平台",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "color":"#dbdbdb",
+    "list": [
+      {
+        "pagePath": "pages/shiwuzhanshi/shiwuzhanshi",
+        "text": "失物展示",
+        "iconPath": "images/bar/shiwuzhanshi-0.png",
+        "selectedIconPath": "images/bar/shiwuzhanshi-1.png"
+      },
+      {
+        "pagePath": "pages/hegongdayutang/hegongdayutang",
+        "text": "河工大鱼塘",
+        "iconPath": "images/bar/hegongdayutang-0.png",
+        "selectedIconPath": "images/bar/hegongdayutang-1.png"
+      },
+      {
+        "pagePath": "pages/gerenzhongxin/gerenzhongxin",
+        "text": "个人中心",
+        "iconPath": "images/bar/gerenzhongxin-0.png",
+        "selectedIconPath": "images/bar/gerenzhongxin-1.png"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap73.json"
+}

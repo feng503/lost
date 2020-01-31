@@ -1,0 +1,75 @@
+<view class="content">
+  <view class="bg">
+  <view class="head">
+  <view class="headlcon">
+  <image src="/images/geren/touxiang.png" style="width:99px;height:99px;"></image>
+  </view>
+  <view class="login">
+  <view>{{userlnfo.nickName}}</view>
+  <view class="account">账号：185379</view>
+  <!-- 这里要做成动态的获取，获取头像和昵称 -->
+  </view>
+  </view>
+  </view>
+  <view class="hr"></view>
+  <view class="item"  bindtap='go'>
+  <view class="img">
+  <image src="/images/geren/shangchuanshiwu.png" style="width:24px;height:24px;"></image>
+  </view>
+  <view class="name" >上传失物</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item" bindtap='to'>
+  <view class="img">
+  <image src="/images/geren/kaixinyike.png" style="width:24px;height:24px;"></image>
+  </view>
+  <view class="name">开心一刻</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item" bindtap='liujiayu'>
+  <view class="img">
+  <image src="/images/geren/zhifeiji.png" style="width:24px;height:24px;"></image>
+  </view>
+  <view class="name">纸飞机</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item" bindtap='and'>
+  <view class="img">
+  <image src="/images/geren/tianqi.png" style="width:20px;height:20px;"></image>
+  </view>
+  <view class="name">今日天气</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item" bindtap='lu'>
+  <view class="img">
+  <image src="/images/geren/shezhi.png" style="width:24px;height:24px;"></image>
+  </view>
+  <view class="name">设置</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item" bindtap='yu'>
+  <view class="img">
+  <image src="/images/geren/kefu.png" style="width:24px;height:24px;"></image>
+  </view>
+  <view class="name">客服</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+</view>
+

@@ -1,0 +1,46 @@
+.wenzi{ 
+ width: 760rpx; 
+ height: 200rpx; 
+ display: flex; 
+ flex-direction: column;
+
+}
+.tupian{
+  border: 15rpx black solid; 
+  padding-left:10rpx;
+  border-radius: 0px;
+  border-color:#C81623;
+  padding-top:10rpx;
+}
+.line{
+  border:0.5px solid #c7c3c3cc;
+  opacity:1;
+}
+.daxie{
+ padding-left:100rpx;
+ margin-top:-45rpx;
+}
+.dizhi{
+ padding-left:100rpx;
+ margin-top:-45rpx;
+}
+.lianxi{
+ padding-left:170rpx;
+ margin-top:-45rpx;
+}
+.input{
+  margin-top: 60rpx;
+  border: 5rpx rgb(158, 157, 157) solid;
+  width:500rpx;
+}
+.anniu{
+  margin-top: -120rpx;
+  margin-left:570rpx;
+  margin-right: 30rpx;
+  background-color: #0aee4ecc;
+  border-radius: 2px;
+  height:-120rpx;
+}
+button {
+  margin: 15px;
+  }

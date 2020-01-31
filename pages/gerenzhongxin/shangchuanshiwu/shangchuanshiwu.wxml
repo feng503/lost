@@ -1,0 +1,70 @@
+<!--pages/gerenzhongxin/shangchuanshiwu/shangchuanshiwu.wxml-->
+  <view class="bg">
+  <view class="head">
+  <view class="headlcon">
+  <image src="/images/geren/shijinbumei.png" style="width:750rpx;height:550rpx;"></image>
+  <view class="line"></view>
+  <view class="item">
+  <view class="img">
+  <image src="/images/geren/shangchuan.png" style="width:24px;height:24px;"></image>
+  </view>
+  <view class="name">失物图片</view>
+  <view class="img"  bindtap='getLocalImage'  value="{{imagePath}}" >
+    <image src="/images/geren/tupianshangchuan.png" style="width:24px;height:24px" class="tubiao"></image>
+    <!-- 照片还未给加路径 -->
+    <view></view>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item">
+  <view class="img">
+  <image src="/images/geren/xuanzeleibie.png" style="width:24px;height:24px;"></image>
+  </view>
+  <view class="name">选择类别</view>
+  <view class="all">
+  <view>
+
+  <form  bindsubmit='backIndex'>
+    <!-- 选择框 -->
+    <picker  bindchange="bindMajorChange" value="{{majorIndex}}" name="major" range="{{majorArray}}">
+      <view class="picker">
+     {{majorArray[majorIndex]}}
+      </view>
+    </picker>
+    </form>
+  </view>
+  </view>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item">
+  <view class="img">
+  <image src="/images/geren/miaoshu.png" style="width:22px;height:22px;margin-left:0px;padding-top:10px;"></image>
+  </view>
+  <view class="name">详细描述</view>
+  <textarea class="content" maxlength="100" value="{{detail}}" bindblur='detailInput' name="content"    placeholder="请添加您的描述" ></textarea>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item">
+  <view class="img">
+  <image src="/images/geren/lianxidianhua.png" style="width:30px;height:30px;margin-left:-8px;padding-top:10px;"></image>
+  </view>
+  <view class="name">联系方式</view>
+  <textarea class="content" maxlength="11" value="{{information}}" bindblur='informationInput'name="content" placeholder="您的电话或qq" ></textarea>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item">
+  <view class="img">
+  <image src="/images/geren/weizhi.png" style="width:17px;height:17px;margin-left:3px;"></image>
+  </view>
+  <view class="name">捡到位置</view>
+  <textarea class="content" maxlength="100" value="{{addr}}" bindblur='addrInput' name="content"  placeholder="描述您捡到位置" ></textarea>
+  </view>
+  <button type="primary" bindtap="primary" form-type='submit' bindtap='orderMeeting'> 提交 </button>
+
+ 
+<!-- 此处提交，要后续加上实现跳转，上传成功/上传失败bindtap -->
+
+ 

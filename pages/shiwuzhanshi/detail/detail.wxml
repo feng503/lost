@@ -1,0 +1,24 @@
+<view class="all">
+  <view class="tupian">
+ <image src="{{shuju.imagePath }}" style="width:700rpx;height:600rpx;"></image>
+  </view>
+  <view class="wenzi">
+  <view class="line"></view>
+  <view>详情：</view>
+  <view class="daxie" >{{shuju.detail}}</view>
+   <view class="line"></view>
+     <view>联系方式：</view>
+     <view class="lianxi">{{shuju.information}}</view>
+        <view class="line"></view>
+         <view>地址：</view>
+         <view class="dizhi">{{shuju.addr}}</view>
+      </view>
+</view> 
+ <view class="liuyan">
+ <!--留言-->
+ <view class="fasong">
+ <input bindinput="" class="input" type="text" value="" placeholder="与您相关请留言"            
+ laceholder-class="place-input"/>
+<button class="anniu" size="mini"  type='primary'  bindtap="">send</button>
+</view>
+</view>

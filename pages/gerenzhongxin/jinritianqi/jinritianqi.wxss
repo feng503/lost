@@ -1,0 +1,31 @@
+/* pages/gerenzhongxin/jinritianqi/jinritianqi.wxss */
+.container{
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: -180rpx;
+}
+.detail{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bar{
+  display: flex;
+  flex-direction: row;
+  margin:20rpx 0;
+}
+.box{
+  width: 33.3%;
+  text-align: center;
+}
+text{
+  font-size: 80rpx;
+  color: #3C5F81;
+}
+image{
+  width: 250rpx;
+  height:250rpx;
+}

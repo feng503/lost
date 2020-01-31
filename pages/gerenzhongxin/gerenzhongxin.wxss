@@ -1,0 +1,67 @@
+.content{
+  background: #ffffff;
+  height: 600px;      
+}
+/**总面板**/
+.bg{
+  width:100%;
+  height: 140px;
+  background-color: #C81623;/**上半部分面板**/
+}
+.head{
+  display: flex;
+  flex-direction: row;
+}
+.headlcon{
+  margin:10px;
+}
+.login{
+  color:#f8f4f4;
+  font-size:15px;
+  font-weight:bold;
+  position:absolute;
+  left:120px;
+  margin-top:30px;/**账号形式**/
+}
+.account{
+  color:#f8f6f6;
+  font-size:13px;
+  margin-top:10px;/**字体**/
+}
+.item{
+  display:flex;
+  flex-direction:row;
+  background-color: #ffffff;/**下半部分面板**/
+}
+.hr{
+  width:100%;
+  height:10px;/**下半部分面板与上面距离**/
+}
+.img{
+  margin-left:15px;
+  line-height:60px;/**小图标**/
+}
+.name{
+  padding-top:15px;
+  padding-left:10px;
+  padding-bottom:15px;
+  font-size:15px;/**图标后字体**/
+}
+.detail{
+  font-size:15px;
+  position:absolute;
+  right:10px;
+  height:50px;
+  line-height:50px;
+  color:#888888;
+}
+.line{
+  border:1px solid #cccccccc;
+  opacity:0.2;
+}/**栏目间间距**/
+.count{
+  font-size:13px;
+  color:#ff0000;
+}
+
+

@@ -1,0 +1,79 @@
+<view class="content">
+<view class="bg">
+<view class="logo">
+<view class="first">HEBUTER带我回家</view>
+<view class="search" bindtap="search">
+<input type="text" placeholder='搜索失物' confirm-type='search' placeholder-style='font-size:13px'></input>
+<image  class="sousuo"   src="/images/diyiye/search.png" style="width:30px;height:27px;"></image>
+</view>
+</view>
+</view>
+</view>
+<!--导航栏-->
+<view class="nav" style="margin-top:20px;">
+<view class="item" bindtap="findLostByType">
+  <view >
+  <image src="/images/fenlei/gezhongkapian.png" style="width:30px;height:27px;"></image>
+  </view>
+  <view>
+  卡片</view>
+</view>
+<view class="item" bindtap="yiwubaobao">
+<view>
+<image src="/images/fenlei/yiwubaobao.png" style="width:30px;height:27px;"></image>
+</view>
+<view>
+衣物包包</view>
+</view>
+<view class="item" bindtap="shuji">
+<view>
+<image src="/images/fenlei/shu.png" style="width:30px;height:27px;"></image>
+</view>
+<view>
+书籍</view>
+</view>
+<view class="item" bindtap="yaoshi">
+<view>
+<image src="/images/fenlei/key.png" style="width:30px;height:27px;"></image>
+</view>
+<view>
+钥匙</view>
+</view>
+<view class="item" bindtap="qita">
+<view>
+<image src="/images/fenlei/qita.png" style="width:30px;height:27px;"></image>
+</view>
+<view>
+其他</view>
+</view>
+</view>
+ <!-- 列表的浏览页面 -->
+<view class="list">
+<view class="good">
+<view clss="pic">
+<view class="all"  wx:for="{{newsdata}}" wx:for-index="index" wx:key="{{index}}">
+  <view data-id="{{index}}" bindtap="Biu">
+    <!-- 做到详情业了 -->
+    <image src="{{item.imagePath }}" style="width:300rpx;height:300rpx;"></image>
+    <view class="wenzi">
+    <!-- 文字总页面 -->
+    <view class="xiangqing">
+    <view class="time">详情：{{item.detail}}</view>
+    <view class="time">{{item.createTime}}</view>
+    </view>
+    </view>
+  </view>
+</view>
+</view>
+</view>
+</view>
+
+
+<!-- <view  wx:for="{{newsdata}}">
+<image src="{{item.imagePath }}" style="width:300rpx;height:300rpx;"></image>
+{{item.detail}}
+{{item.information}}
+{{item.addr}}
+{{item.createTime}}
+</view> -->
+

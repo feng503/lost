@@ -1,0 +1,11 @@
+{
+  
+  "window": {
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#D53E37",
+  "navigationBarTitleText": "卢春雨",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#ffffff",
+  "enablePullDownRefresh": true
+  }
+}
