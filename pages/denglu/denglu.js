@@ -17,11 +17,13 @@ Page({
    })
  },
 //以上为登录与注册切换格式
-onLaunch:function(){
+onLoad:function(){
   const userInfo = wx.getStorageSync('userInfo')
+  console.log(userInfo)
   if (userInfo!=''){
-    console.log(userInfo)
-    console.log('进行验证')
+    // console.log(userInfo)
+    // console.log('进行验证')
+    app.globalData.user = userInfo;
     wx.switchTab({
       url: '/pages/shiwuzhanshi/shiwuzhanshi',
     })
@@ -33,7 +35,6 @@ onLaunch:function(){
 },
   login:(e) =>{
     let that = this;
-    console.log(e);
     wx.request({
       url: 'https://www.vergessen.top/lostobj/login',
       data:{
