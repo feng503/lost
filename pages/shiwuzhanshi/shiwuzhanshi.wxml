@@ -48,16 +48,16 @@
 </view>
 </view>
  <!-- 列表的浏览页面 -->
-<view class="list">
+<!-- <view class="list">
 <view class="good">
 <view clss="pic">
 <view class="all"  wx:for="{{newsdata}}" wx:for-index="index" wx:key="{{index}}">
   <view data-id="{{index}}" bindtap="Biu">
     <!-- 做到详情业了 -->
-    <image src="{{item.imagePath }}" style="width:300rpx;height:300rpx;"></image>
-    <view class="wenzi">
+    <!-- <image src="{{item.imagePath }}" style="width:300rpx;height:300rpx;"></image>
+    <view class="wenzi"> -->
     <!-- 文字总页面 -->
-    <view class="xiangqing">
+    <!-- <view class="xiangqing">
     <view class="time">详情：{{item.detail}}</view>
     <view class="time">{{item.createTime}}</view>
     </view>
@@ -66,7 +66,18 @@
 </view>
 </view>
 </view>
-</view>
+</view>  -->
+ <view class="list">
+  <view class='list-half'>
+    <image  mode='widthFix' wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 == 0}}" class='card'  src='{{item.imagePath}}'>
+    </image> 
+  </view>
+  <view class='list-half'>
+    <image  mode='widthFix' wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 !== 0}}" class='card'  src='{{item.imagePath}}'></image> 
+  </view>
+  
+ </view>
+
 
 
 <!-- <view  wx:for="{{newsdata}}">
