@@ -1,16 +1,18 @@
-.wenzi{ 
+/* .wenzi{ 
  width: 760rpx; 
  height: 200rpx; 
  display: flex; 
  flex-direction: column;
 
-}
+} */
 .tupian{
-  border: 15rpx black solid; 
-  padding-left:10rpx;
-  border-radius: 0px;
-  border-color:#C81623;
-  padding-top:10rpx;
+  display: flex;
+  justify-content: center;
+  border: 0px solid rgb(249, 252, 249);
+  border-radius: 15px; 
+  /* padding-left:30rpx; 
+  padding-right:30rpx; */
+  padding-top:20rpx;
 }
 .line{
   border:0.5px solid #c7c3c3cc;

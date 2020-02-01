@@ -1,7 +1,7 @@
 <view class="all">
-  <view class="tupian">
- <image src="{{shuju.imagePath }}" style="width:700rpx;height:600rpx;"></image>
-  </view>
+
+ <image class="tupian" mode='widthFix'  src="{{shuju.imagePath }}" ></image>
+
   <view class="wenzi">
   <view class="line"></view>
   <view>详情：</view>

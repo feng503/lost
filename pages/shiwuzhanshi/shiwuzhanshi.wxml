@@ -1,3 +1,4 @@
+<view class="alll">
 <view class="content">
 <view class="bg">
 <view class="logo">
@@ -67,17 +68,23 @@
 </view>
 </view>
 </view>  -->
- <view class="list">
+<view class="list">
   <view class='list-half'>
-    <image  mode='widthFix' wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 == 0}}" class='card'  src='{{item.imagePath}}'>
-    </image> 
+    <view  bindtap="Biu" view data-id="{{index}}" wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 == 0}}" class='card'>
+    <image class='img' mode='widthFix' src="{{item.imagePath }}"> </image>
+    <text class="time"> 详情：{{item.detail}}</text>
+    <text class="time1">{{item.createTime}}</text>
+    </view>
   </view>
-  <view class='list-half'>
-    <image  mode='widthFix' wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 !== 0}}" class='card'  src='{{item.imagePath}}'></image> 
+  <view class='list-half' > 
+    <view bindtap="Biu"  view data-id="{{index}}" wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 != 0}}" class='card'>
+    <image class='img' mode='widthFix' src="{{item.imagePath }}"> </image>
+    <text class="time"> 详情：{{item.detail}}</text>
+    <text class="time1">{{item.createTime}}</text>
+    </view>
   </view>
-  
- </view>
-
+</view>
+</view>
 
 
 <!-- <view  wx:for="{{newsdata}}">
