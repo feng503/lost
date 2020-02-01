@@ -1,2 +1,2 @@
-<view class="whole">
-</view>     
+<button open-type='contact' class='container1'>联系客服</button>
+

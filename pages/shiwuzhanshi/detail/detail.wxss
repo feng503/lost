@@ -9,9 +9,9 @@
   display: flex;
   justify-content: center;
   border: 0px solid rgb(249, 252, 249);
-  border-radius: 15px; 
-  /* padding-left:30rpx; 
-  padding-right:30rpx; */
+  border-radius: 10px; 
+  margin-left:30rpx; 
+  margin-right:30rpx;
   padding-top:20rpx;
 }
 .line{

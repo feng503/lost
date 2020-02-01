@@ -63,6 +63,13 @@
 				},
 				{
 					"id": 1,
+					"name": "pages/gerenzhongxin/kefu/kefu",
+					"pathName": "pages/gerenzhongxin/kefu/kefu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "pages/shiwuzhanshi/shiwuzhanshi",
 					"pathName": "pages/shiwuzhanshi/shiwuzhanshi",
 					"query": "",

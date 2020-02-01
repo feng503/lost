@@ -1,12 +1,14 @@
-/* pages/gerenzhongxin/kefu/kefu.wxss */
-.whole{
-width:100%;
-height:100%;
-background: url('http://a3.qpic.cn/psb?/V10JXMix0CQf9J/IJ0jgsfZMZY6AHHkANRT2za.SWm0L.Vts*8ig*Ur85k!/c/dCYAAAAAAAAA&ek=1&kp=1&pt=0&bo=6QHkAukB5AIRECc!&t=5&tl=3&vuin=644960080&tm=1574856000&sce=60-2-2&rf=0-0');
-background-size: cover;
-}
-page{
-width:100%;
-height:100%;
-overflow: hidden;
-}
+.container1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 2;
+  margin-left: 90rpx;
+  margin-right: 90rpx;
+  margin-top: 30rpx;
+  font-size: 40rpx;
+  box-sizing: border-box;
+  font-weight: 700
+} 
