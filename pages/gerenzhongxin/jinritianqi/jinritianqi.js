@@ -1,11 +1,7 @@
-// pages/gerenzhongxin/jinritianqi/jinritianqi.js
+// pages/index/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    region: ['天津市', '天津市', '红桥区'],
+    region: ['北京市', '北京市', '东城区'],
     now: ''
   },
   changeRegion: function (e) {
@@ -60,9 +56,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.reLaunch({
-      url: '/pages/gerenzhongxin/gerenzhongxin',
-    })
 
   },
 
