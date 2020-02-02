@@ -12,3 +12,10 @@
   box-sizing: border-box;
   font-weight: 700
 } 
+.image{
+  display:flex;
+  justify-content: center;
+  /* align-items: flex-start;
+  margin-left: 55rpx;
+  margin-right: 55rpx; */
+}

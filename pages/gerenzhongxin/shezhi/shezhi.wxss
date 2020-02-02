@@ -1,1 +1,27 @@
-/* pages/gerenzhongxin/shezhi/shezhi.wxss */
+.item{
+  display:flex;
+  flex-direction:row;
+  background-color: #ffffff;/**下半部分面板**/
+}
+.hr{
+  width:100%;
+  height:10px;/**下半部分面板与上面距离**/
+}
+.img{
+  margin-left:15px;
+  line-height:60px;/**小图标**/
+}
+.name{
+  padding-top:15px;
+  padding-left:10px;
+  padding-bottom:15px;
+  font-size:15px;/**图标后字体**/
+}
+.detail{
+  font-size:15px;
+  position:absolute;
+  right:10px;
+  height:50px;
+  line-height:50px;
+  color:#888888;
+}

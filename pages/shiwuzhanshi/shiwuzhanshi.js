@@ -10,6 +10,11 @@ Page({
 
     that.newsdata = [];
     app.globalData.newlist = [];
+    wx.showToast({
+      title: '加载中',
+      duration: 13000,
+      icon: 'loading',
+    })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
@@ -18,9 +23,13 @@ Page({
       },
       success: function (res) {
         // console.log(res.data);
-
         // app.globalData.newsliet = res.data;
         // console.log(app.globalData.newslist);
+        wx.showToast({
+          title: '加载成功',
+          duration: 500,
+          icon: 'success',
+        })
         that.setData({
           newsdata: res.data
         });
@@ -35,17 +44,27 @@ Page({
 
     that.newsdata = [];
     app.globalData.newlist = [];
+     wx.showToast({
+       title: '加载中',
+       duration: 13000,
+       icon: 'loading',
+     })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type: 1,
         service: 0
       },
-      success: function (res) {
+      success: function (res) {     
         // console.log(res.data);
 
         // app.globalData.newsliet = res.data;
         // console.log(app.globalData.newslist);
+        wx.showToast({
+          title: '加载成功',
+          duration: 500,
+          icon: 'success',
+        })
         that.setData({
           newsdata: res.data
         });
@@ -60,6 +79,11 @@ Page({
 
     that.newsdata = [];
     app.globalData.newlist = [];
+    wx.showToast({
+      title: '加载中',
+      duration: 13000,
+      icon: 'loading',
+    })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
@@ -71,6 +95,11 @@ Page({
 
         // app.globalData.newsliet = res.data;
         // console.log(app.globalData.newslist);
+        wx.showToast({
+          title: '加载成功',
+          duration: 500,
+          icon: 'success',
+        })
         that.setData({
           newsdata: res.data
         });
@@ -85,6 +114,11 @@ Page({
 
     that.newsdata = [];
     app.globalData.newlist = [];
+    wx.showToast({
+      title: '加载中',
+      duration: 13000,
+      icon: 'loading',
+    })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
@@ -96,6 +130,11 @@ Page({
 
         // app.globalData.newsliet = res.data;
         // console.log(app.globalData.newslist);
+        wx.showToast({
+          title: '加载成功',
+          duration: 500,
+          icon: 'success',
+        })
         that.setData({
           newsdata: res.data
         });
@@ -110,6 +149,11 @@ Page({
 
     that.newsdata = [];
     app.globalData.newlist = [];
+     wx.showToast({
+       title: '加载中',
+       duration: 13000,
+       icon: 'loading',
+     })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
@@ -121,6 +165,11 @@ Page({
 
         // app.globalData.newsliet = res.data;
         // console.log(app.globalData.newslist);
+        wx.showToast({
+          title: '加载成功',
+          duration: 500,
+          icon: 'success',
+        })
         that.setData({
           newsdata: res.data
         });
@@ -175,10 +224,4 @@ Page({
     })
   }
 })
-// detail: function () {
-//     wx.redirectTo({
-//       url: '/pages/shiwuzhanshi/detail/detail',
-//     })
-//   },
-// })
 
