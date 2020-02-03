@@ -54,5 +54,9 @@ button{
   display:flex;
   flex-direction:row;
   margin-top: 0rpx;
-  
+}
+.lostpasswd{
+  margin-top: 40rpx;
+  margin-left: 600rpx;
+  font-size: 22rpx;
 }

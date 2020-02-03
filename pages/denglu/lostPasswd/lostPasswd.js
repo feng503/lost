@@ -22,20 +22,26 @@ Component({
       name: 'idcard',
       rules: { required: true, message: 'idcard必填' },
     }],
-    passwd1:'',
+    passwd1: '',
     passwd2: '',
-    phoneNum:'',
-    testCode:'',
+    phoneNum: '',
+    testCode: '',
+    studentId:'',
     currentTime: 60,
     time: '获取验证码',
   },
   methods: {
-    formInputChange1(e) {
+    formInputChange(e) {
       this.setData({
-        passwd1:e.detail.value
+        studentId: e.detail.value
       })
     },
-    formInputChange2(e) {     
+    formInputChange1(e) {
+      this.setData({
+        passwd1: e.detail.value
+      })
+    },
+    formInputChange2(e) {
       this.setData({
         passwd2: e.detail.value
       })
@@ -50,12 +56,12 @@ Component({
         testCode: e.detail.value
       })
     },
-    getCode:function(){
+    getCode: function () {
       var data = this.data
 
-      if (data.currentTime === 60 && data.phoneNum != ""){
+      if (data.currentTime === 60 && data.phoneNum != "") {
         this.daojishi();
-        
+
         if (data.phoneNum != "") {
           wx.request({
             url: 'https://www.vergessen.top/lostobj/code?phoneNum=' + data.phoneNum,
@@ -64,7 +70,7 @@ Component({
       }
     },
     daojishi: function (options) {
-      if (this.data.currentTime === 60){
+      if (this.data.currentTime === 60) {
         var that = this;
         var currentTime = that.data.currentTime
         interval = setInterval(function () {
@@ -85,19 +91,20 @@ Component({
       }
     },
     submitForm() {
+      
+      //   url: 'pages/denglu/denglu',
       let data = this.data
-      if (data.passwd1 === '' || data.passwd2 === '' || data.phoneNum === '' || data.testCode === '')
+      if (data.studentId ==='' ||data.passwd1 === '' || data.passwd2 === '' || data.phoneNum === '' || data.testCode === '')
         return
-      const userInfo = wx.getStorageSync('userInfo')
-      if(data.passwd1 === data.passwd2){
+      if (data.passwd1 === data.passwd2) {
         wx.request({
           url: 'https://www.vergessen.top/lostobj/reSetPassword',
           data: {
-            studentId: userInfo.studentId,
+            studentId: data.studentId,
             phoneNumber: data.phoneNum,
-            newPasswordFirst:data.passwd1,
-            newPasswordSecond:data.passwd2,
-            testCode:data.testCode
+            newPasswordFirst: data.passwd1,
+            newPasswordSecond: data.passwd2,
+            testCode: data.testCode
           },
           success: (e) => {
             console.log(e);
@@ -108,8 +115,8 @@ Component({
                 duration: 3000,
                 icon: 'success',
               })
-              wx.setStorageSync('userInfo', e.data)
-              app.globalData.user = e.data;
+              // wx.setStorageSync('userInfo', e.data)
+              // app.globalData.user = e.data;
               wx.navigateBack({
 
               })

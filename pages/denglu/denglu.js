@@ -149,4 +149,11 @@ onLoad:function(){
       }
     }, 1000)
   },
+  lostPasswd:function(){
+    wx.navigateTo({
+      url: '/pages/denglu/lostPasswd/lostPasswd',
+    })
+      // url: '/pages/denglu/lostPasswd/lostPasswd',
+    
+  }
 })
