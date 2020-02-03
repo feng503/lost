@@ -3,13 +3,10 @@ let app = getApp();
 Page({
   data: {
     faceImage:[],
-    nickname:[]
+    nickname:''
   },
   onLoad: function (options) {
-    this.setData({
-      nickname:app.globalData.user.nickname,
-      faceImage: app.globalData.user.faceImage
-    })
+    
   },
   onShareAppMessage: function (res) {
     return {
@@ -53,4 +50,10 @@ Page({
       url: '/pages/gerenzhongxin/kefu/kefu',
     })
   },
+  onShow:function(options){
+    this.setData({
+      nickname: app.globalData.user.nickname,
+      faceImage: app.globalData.user.faceImage
+    })
+  }
 })

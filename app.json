@@ -10,7 +10,9 @@
     "pages/gerenzhongxin/shezhi/shezhi",
     "pages/gerenzhongxin/kefu/kefu",
     "pages/gerenzhongxin/jinritianqi/jinritianqi",
-    "pages/shiwuzhanshi/detail/detail"
+    "pages/shiwuzhanshi/detail/detail",
+    "pages/gerenzhongxin/shezhi/changeName/changeName",
+    "pages/gerenzhongxin/shezhi/changePasswd/changePasswd"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -1,0 +1,26 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells title="修改密码" footer="">
+                <mp-cell prop="新密码" title="新密码" ext-class="">
+                    <input bindinput="formInputChange1" password='true' data-field="新密码" class="weui-input" placeholder="请输入新密码"/>
+                </mp-cell>
+                <mp-cell prop="确认新密码" title="确认新密码" ext-class="">
+                    <input bindinput="formInputChange2" password='true' data-field="确认新密码" class="weui-input" placeholder="确认新密码"/>
+                </mp-cell>
+                <mp-cell prop="mobile" title="手机号" ext-class=" weui-cell_vcode">
+                    <input bindinput="formInputChange3" data-field="mobile" class="weui-input" placeholder="请输入手机号"/>
+                    <view slot="footer" bindtap="getCode" class="weui-vcode-btn">获取验证码</view>
+                </mp-cell>
+                <mp-cell prop="vcode" title="验证码" ext-class=" weui-cell_vcode">
+                    <input bindinput="formInputChange4" data-field="vcode" class="weui-input" placeholder="请输入验证码"/>
+                    <image slot="footer" class="weui-vcode-img" src="../images/vcode.jpg" style="width: 108px"></image>
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </view>
+</view>
