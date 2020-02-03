@@ -1,4 +1,5 @@
 let app = getApp();
+var interval = null //倒计时函数
 
 Component({
   data: {
@@ -24,7 +25,9 @@ Component({
     passwd1:'',
     passwd2: '',
     phoneNum:'',
-    testCode:''
+    testCode:'',
+    currentTime: 60,
+    time: '获取验证码',
   },
   methods: {
     formInputChange1(e) {
@@ -50,10 +53,36 @@ Component({
     },
     getCode:function(){
       var data = this.data
-      if (data.phoneNum != "") {
-        wx.request({
-          url: 'https://www.vergessen.top/lostobj/code?phoneNum=' + data.phoneNum,
-        })
+
+      if (data.currentTime === 60 && data.phoneNum != ""){
+        this.daojishi();
+        
+        if (data.phoneNum != "") {
+          wx.request({
+            url: 'https://www.vergessen.top/lostobj/code?phoneNum=' + data.phoneNum,
+          })
+        }
+      }
+    },
+    daojishi: function (options) {
+      if (this.data.currentTime === 60){
+        var that = this;
+        var currentTime = that.data.currentTime
+        interval = setInterval(function () {
+          currentTime--;
+          that.setData({
+            time: currentTime + '秒',
+            currentTime: currentTime
+          })
+          if (currentTime <= 0) {
+            clearInterval(interval)
+            that.setData({
+              time: '重新发送',
+              currentTime: 60,
+              disabled: false
+            })
+          }
+        }, 1000)
       }
     },
     submitForm() {
