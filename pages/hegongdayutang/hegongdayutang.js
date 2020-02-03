@@ -1,67 +1,71 @@
-// images/course/course.js
+var detail = '../detail/detail'
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    list: [],
+    maxtime: '',
+    loadingHidden: false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    // 页面初始化 options为页面跳转所带来的参数
+    this.requestData('newlist');
   },
-
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 滚动到底部时加载下一页
    */
-  onReady: function () {
-
+  bindscrolltolower: function () {
+    console.log('到底部')
+    this.requestData('list');
   },
-
   /**
-   * 生命周期函数--监听页面显示
+   * 加载数据
    */
-  onShow: function () {
+  requestData: function (a) {
+    var that = this;
+    wx.request({
+      url: 'http://api.budejie.com/api/api_open.php',
+      data: {
+        a: a,
+        c: 'data',
+        // 上一页的maxtime作为加载下一页的条件，
+        maxtime: this.data.maxtime,
+        type: '10',
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res)
+        console.log('上一页', that.datalist)
+        that.setData({
+          // 拼接数组
+          list: that.data.list.concat(res.data.list),
+          loadingHidden: true,
+          maxtime: res.data.info.maxtime
+        })
 
+      }
+    })
   },
-
   /**
-   * 生命周期函数--监听页面隐藏
+   * 查看大图
    */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  lookBigPicture: function (e) {
+    console.log(e);
+    console.log(e.currentTarget.id)
+    //图片url 对应wxml中data-url="{{item.url}}"
+    var url = e.currentTarget.dataset.url;
+    //获取图片高度 对应wxml中data-height="{{item.height}}"
+    var height = e.currentTarget.dataset.height;
+    //获取图片高度 对应wxml中data-width="{{item.width}}"
+    var width = e.currentTarget.dataset.width;
+    // 传参方式向GET请求
+    wx.navigateTo({
+      url: detail + '?' + 'url=' + url + "&height=" + height + "&width=" + width,
+      success: function (res) {
+        console.log(res)
+      },
+      fail: function (err) {
+        console.log(err)
+      },
+    })
   },
   onShareAppMessage: function (res) {
     return {

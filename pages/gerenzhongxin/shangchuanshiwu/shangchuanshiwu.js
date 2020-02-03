@@ -1,8 +1,4 @@
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data:{ 
     majorArray: ['卡片', '衣物包包', '书籍', '钥匙','其他'],
     magorObjectArray: [
@@ -14,7 +10,7 @@ Page({
     information:'',
     addr:'',
     tempFilePaths:null,
-    userInfo: null
+    userInfo: null,
   },
   getLocalImage:function(e){
     this.setData({
@@ -44,8 +40,9 @@ Page({
   },
   orderMeeting: function () {  
     var that = this;
+    console.log(this.data) 
     var imagePath = this.data.tempFilePaths;
-    console.log(imagePath)
+    // console.log(imagePath)
     var type = this.data.majorIndex;
     // console.log(type)      
     var detail = this.data.detail;    
@@ -81,21 +78,21 @@ Page({
             studentId: that.data.userInfo.studentId
           }
         })
+        console.log(this.data)
         wx.showToast({
           title: '上传成功',
-          duration: 3000,
+          duration: 1000,
           icon: 'success',
+          mask: true,
         })
-        // wx.switchTab({
-        //   url: '/pages/gerenzhongxin/gerenzhongxin',
-        // })
         }
         else 
         {
           wx.showToast({
             title: '上传失败，请检查后重试',
-            duration: 3000,
+            duration: 1000,
             icon: 'none',
+            mask: true,
           })
         }
       },
@@ -135,10 +132,4 @@ Page({
       },
     })
   },
-
-//   onUnload: function () {
-//     wx.reLaunch({
-//       url: '/pages/gerenzhongxin/gerenzhongxin',
-//     })
-//   },
  })

@@ -2,7 +2,8 @@ let app = getApp();
 Page({
   data: {
     newsdata:[],
-    userInfo: null
+    userInfo: null,
+    tp:0
   },
 
   findLostByType: function(){
@@ -14,12 +15,13 @@ Page({
       title: '加载中',
       duration: 13000,
       icon: 'loading',
+      mask: true,
     })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type:0,
-        service: 0
+        service: this.data.tp
       },
       success: function (res) {
         // console.log(res.data);
@@ -29,6 +31,7 @@ Page({
           title: '加载成功',
           duration: 500,
           icon: 'success',
+          mask: true,
         })
         that.setData({
           newsdata: res.data
@@ -48,12 +51,13 @@ Page({
        title: '加载中',
        duration: 13000,
        icon: 'loading',
+       mask: true,
      })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type: 1,
-        service: 0
+        service: this.data.tp
       },
       success: function (res) {     
         // console.log(res.data);
@@ -64,6 +68,7 @@ Page({
           title: '加载成功',
           duration: 500,
           icon: 'success',
+          mask: true,
         })
         that.setData({
           newsdata: res.data
@@ -83,12 +88,13 @@ Page({
       title: '加载中',
       duration: 13000,
       icon: 'loading',
+      mask: true,
     })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type: 2,
-        service: 0
+        service: this.data.tp
       },
       success: function (res) {
         // console.log(res.data);
@@ -99,6 +105,7 @@ Page({
           title: '加载成功',
           duration: 500,
           icon: 'success',
+          mask: true,
         })
         that.setData({
           newsdata: res.data
@@ -118,12 +125,13 @@ Page({
       title: '加载中',
       duration: 13000,
       icon: 'loading',
+      mask: true,
     })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type: 3,
-        service: 0
+        service: this.data.tp
       },
       success: function (res) {
         // console.log(res.data);
@@ -134,6 +142,7 @@ Page({
           title: '加载成功',
           duration: 500,
           icon: 'success',
+          mask: true,
         })
         that.setData({
           newsdata: res.data
@@ -153,12 +162,13 @@ Page({
        title: '加载中',
        duration: 13000,
        icon: 'loading',
+       mask: true,
      })
     wx.request({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type: 4,
-        service: 0
+        service: this.data.tp
       },
       success: function (res) {
         // console.log(res.data);
@@ -169,6 +179,7 @@ Page({
           title: '加载成功',
           duration: 500,
           icon: 'success',
+          mask: true,
         })
         that.setData({
           newsdata: res.data
@@ -179,31 +190,41 @@ Page({
 
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  
-  onLoad: function (options) {
-    
-    var that = this;
+    onLoad: function(options){
+      var that = this;
       wx.request({
-        url:'https://www.vergessen.top/lostobj/findlostsall',
-        data:{
-            service:0
+        url: 'https://www.vergessen.top/lostobj/findlostsall',
+        data: {
+          service: this.data.tp
         },
-        success:function(res){
-            that.setData({
-            newsdata:res.data
-           });
+        success: function (res) {
+          that.setData({
+            newsdata: res.data
+          });
           app.globalData.newlist = that.data.newsdata;
         },
-   })
-  },
-
-
-  /**
-   * 用户点击右上角分享
-   */
+      })
+    },
+    fresh:function(){
+      if (this.data.tp==0){
+      this.data.tp =1;}
+      else{
+      this.data.tp =0;
+      }
+      wx.showToast({
+        title: '加载中',
+        duration: 3500,
+        icon: 'loading',
+        mask: true,
+      })
+      this.onLoad()
+      wx.showToast({
+        title: '加载成功',
+        duration: 500,
+        icon: 'success',
+        mask:true,
+      })
+    },
   onShareAppMessage: function (res) {
   return{
     title:'河工大失物招领平台',

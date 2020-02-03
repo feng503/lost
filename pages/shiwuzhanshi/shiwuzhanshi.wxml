@@ -48,26 +48,6 @@
 其他</view>
 </view>
 </view>
- <!-- 列表的浏览页面 -->
-<!-- <view class="list">
-<view class="good">
-<view clss="pic">
-<view class="all"  wx:for="{{newsdata}}" wx:for-index="index" wx:key="{{index}}">
-  <view data-id="{{index}}" bindtap="Biu">
-    <!-- 做到详情业了 -->
-    <!-- <image src="{{item.imagePath }}" style="width:300rpx;height:300rpx;"></image>
-    <view class="wenzi"> -->
-    <!-- 文字总页面 -->
-    <!-- <view class="xiangqing">
-    <view class="time">详情：{{item.detail}}</view>
-    <view class="time">{{item.createTime}}</view>
-    </view>
-    </view>
-  </view>
-</view>
-</view>
-</view>
-</view>  -->
 <view class="list">
   <view class='list-half'>
     <view  bindtap="Biu" view data-id="{{index}}" wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 == 0}}" class='card'>
@@ -85,6 +65,17 @@
   </view>
 </view>
 </view>
+<image  class="imag" src="/images/diyiye/qiehuan.png"></image>
+<view class="com-widget-goTop" bindtap="goTop" bindtap="fresh">
+  <view class="icon-gotop">
+      领--找
+  </view>
+</view>
+
+
+
+
+
 
 
 <!-- <view  wx:for="{{newsdata}}">

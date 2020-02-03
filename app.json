@@ -18,13 +18,12 @@
     "navigationBarTitleText": "河工大失物招领平台",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#ffffff"
- 
   },
   "tabBar": {
     "selectedColor": "#333333",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
-    "color":"#dbdbdb",
+    "color": "#dbdbdb",
     "list": [
       {
         "pagePath": "pages/shiwuzhanshi/shiwuzhanshi",
