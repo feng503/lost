@@ -4,4 +4,13 @@ Page({
   data: {
 
   },
+  changeUserImg:function(){
+
+  },
+  changeUserName:function(){
+
+  },
+  quit:function(){
+    
+  }
 })
