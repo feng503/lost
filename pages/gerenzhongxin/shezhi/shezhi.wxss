@@ -25,3 +25,7 @@
   line-height:50px;
   color:#888888;
 }
+.line{
+  border:1px solid #cccccccc;
+  opacity:0.2;
+}

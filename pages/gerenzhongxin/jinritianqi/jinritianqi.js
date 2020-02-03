@@ -1,7 +1,7 @@
 // pages/index/index.js
 Page({
   data: {
-    region: ['北京市', '北京市', '东城区'],
+    region: ['天津市', '天津市', '红桥区'],
     now: ''
   },
   changeRegion: function (e) {

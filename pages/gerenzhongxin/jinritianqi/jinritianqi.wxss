@@ -5,7 +5,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  /* margin-top: -180rpx; */
+  /* margin-top: -rpx; */
+}
+.text1{
+  font-size: 50rpx;
+  font-weight: 700;
+  color: #3C5F81;
 }
 .detail{
   width: 100%;

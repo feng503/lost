@@ -1,5 +1,5 @@
   <view class="hr"></view>
-  <view class="item"  bindtap='go'>
+  <view class="item"  bindtap='genghuan'>
   <view class="img">
   <image src="/images/geren/genghuan.png" style="width:24px;height:24px;"></image>
   </view>
@@ -9,11 +9,21 @@
   </view>
   </view>
   <view class="line"></view>
-  <view class="item" bindtap='to'>
+  <view class="item" bindtap='change'>
   <view class="img">
   <image src="/images/geren/change.png" style="width:24px;height:24px;"></image>
   </view>
   <view class="name">修改昵称</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item" bindtap='quit'>
+  <view class="img">
+  <image src="/images/geren/tuichu.png" style="width:24px;height:24px;"></image>
+  </view>
+  <view class="name">退出登录</view>
   <view class="detail">
   <text>></text>
   </view>

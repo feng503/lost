@@ -24,32 +24,32 @@ Page({
     }
   },
   go: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/gerenzhongxin/shangchuanshiwu/shangchuanshiwu',
     })
   },
   to: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/gerenzhongxin/kaixinyike/kaixinyike',
     })
   },
   liujiayu: function () {
-    wx.redirectTo({
-      url: '/pages/gerenzhongxin/zhifeiji/zhifeiji',
+    wx.navigateTo({
+      url: '/pages/gerenzhongxin/chazhao/chazhao',
     })
   },
   and: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/gerenzhongxin/jinritianqi/jinritianqi',
     })
   },
   lu: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/gerenzhongxin/shezhi/shezhi',
     })
   },
   yu: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/gerenzhongxin/kefu/kefu',
     })
   },

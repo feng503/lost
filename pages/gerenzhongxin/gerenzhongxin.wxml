@@ -15,7 +15,17 @@
   <view class="img">
   <image src="/images/geren/shangchuanshiwu.png" style="width:24px;height:24px;"></image>
   </view>
-  <view class="name" >上传失物</view>
+  <view class="name" >捡到失物</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+  <view class="line"></view>
+  <view class="item" bindtap='liujiayu'>
+  <view class="img">
+  <image src="/images/geren/chazhao.png" style="width:24px;height:24px;"></image>
+  </view>
+  <view class="name">寻找失物</view>
   <view class="detail">
   <text>></text>
   </view>
@@ -26,16 +36,6 @@
   <image src="/images/geren/kaixinyike.png" style="width:24px;height:24px;"></image>
   </view>
   <view class="name">开心一刻</view>
-  <view class="detail">
-  <text>></text>
-  </view>
-  </view>
-  <view class="line"></view>
-  <view class="item" bindtap='liujiayu'>
-  <view class="img">
-  <image src="/images/geren/zhifeiji.png" style="width:24px;height:24px;"></image>
-  </view>
-  <view class="name">纸飞机</view>
   <view class="detail">
   <text>></text>
   </view>

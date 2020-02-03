@@ -86,9 +86,9 @@ Page({
           duration: 3000,
           icon: 'success',
         })
-        wx.switchTab({
-          url: '/pages/gerenzhongxin/gerenzhongxin',
-        })
+        // wx.switchTab({
+        //   url: '/pages/gerenzhongxin/gerenzhongxin',
+        // })
         }
         else 
         {
@@ -136,9 +136,9 @@ Page({
     })
   },
 
-  onUnload: function () {
-    wx.reLaunch({
-      url: '/pages/gerenzhongxin/gerenzhongxin',
-    })
-  },
-})
+//   onUnload: function () {
+//     wx.reLaunch({
+//       url: '/pages/gerenzhongxin/gerenzhongxin',
+//     })
+//   },
+ })

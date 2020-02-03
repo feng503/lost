@@ -4,9 +4,4 @@ Page({
   data: {
 
   },
-  onUnload:()=>{
-  wx.switchTab({
-    url: '/pages/gerenzhongxin/gerenzhongxin',
-  })
-  }
 })

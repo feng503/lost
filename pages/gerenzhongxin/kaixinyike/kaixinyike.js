@@ -17,9 +17,9 @@ Page({
 
     })
   },
-  onUnload: function () {
-    wx.reLaunch({
-      url: '/pages/gerenzhongxin/gerenzhongxin',
-    })
-  },
+  // onUnload: function () {
+  //   wx.reLaunch({
+  //     url: '/pages/gerenzhongxin/gerenzhongxin',
+  //   })
+  // },
 })
