@@ -8,6 +8,7 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     this.requestData('newlist');
+
   },
   /**
    * 滚动到底部时加载下一页
@@ -15,7 +16,9 @@ Page({
   bindscrolltolower: function () {
     console.log('到底部')
     this.requestData('list');
+
   },
+
   /**
    * 加载数据
    */
@@ -66,6 +69,18 @@ Page({
         console.log(err)
       },
     })
+  },
+  onReady: function () {
+    // 页面渲染完成
+  },
+  onShow: function () {
+    // 页面显示
+  },
+  onHide: function () {
+    // 页面隐藏
+  },
+  onUnload: function () {
+    // 页面关闭
   },
   onShareAppMessage: function (res) {
     return {

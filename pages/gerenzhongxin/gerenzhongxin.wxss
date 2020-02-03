@@ -63,5 +63,7 @@
   font-size:13px;
   color:#ff0000;
 }
-
+.ig{
+  border-radius: 60%;
+}
 
