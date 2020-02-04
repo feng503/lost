@@ -22,8 +22,11 @@
                 <input  bindinput="mima" placeholder='密码' password='true' name="password"></input>
               </view>
             </view>
+
             <button class="denglu"  form-type="submit"  type='primary' >登陆</button>
           </form>
+           <!-- 忘记密码 -->
+            <view class="lostpasswd" bindtap="lostPasswd">忘记密码?</view>
           </view>       
         </view> 
        
@@ -73,7 +76,7 @@
                     bindtap="getCode"
                     disabled="{{btn}}">{{time}}</button>
                </view>
-            </view>  
+            </view>
             <button form-type="submit" type='primary' >注册</button>
           </form>
         </view>

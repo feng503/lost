@@ -12,7 +12,8 @@
     "pages/gerenzhongxin/jinritianqi/jinritianqi",
     "pages/shiwuzhanshi/detail/detail",
     "pages/gerenzhongxin/shezhi/changeName/changeName",
-    "pages/gerenzhongxin/shezhi/changePasswd/changePasswd"
+    "pages/gerenzhongxin/shezhi/changePasswd/changePasswd",
+    "pages/denglu/lostPasswd/lostPasswd"
   ],
   "window": {
     "backgroundTextStyle": "dark",
