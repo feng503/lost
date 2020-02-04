@@ -108,23 +108,21 @@ Component({
           },
           success: (e) => {
             console.log(e);
-            if (e.statusCode === 201 || e.statusCode === 200) {
-              // console.log('我被执行了');
+            if (e.statusCode == 201 || e.statusCode == 200) {
+              console.log('我被执行了');
               wx.showToast({
                 title: '密码修改成功',
-                duration: 3000,
+                duration: 1000,
                 icon: 'success',
               })
-              // wx.setStorageSync('userInfo', e.data)
-              // app.globalData.user = e.data;
               wx.navigateBack({
 
               })
             }
-            if (e.statusCode === 500) {
+            if (e.statusCode == 500) {
               wx.showToast({
                 title: e.data.message,
-                duration: 3000,
+                duration: 1000,
                 icon: 'none',
               })
             }
