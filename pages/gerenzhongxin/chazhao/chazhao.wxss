@@ -28,14 +28,18 @@
   padding-top:30rpx;
 }
 .content{
+
   text-indent:18rpx;
   margin: 20rpx;
   width: 40%;
+
   height: 50rpx;
   border: 3rpx solid #414141;
   border-radius: 20rpx;
   font-size: 33rpx;
+
   margin-left:150rpx;
+
 }
 button{
   font-size:26rpx;

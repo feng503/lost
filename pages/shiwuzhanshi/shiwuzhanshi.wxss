@@ -16,8 +16,10 @@
   font-weight:bolder;
 }
 .search{
+
   height:66rpx;
   position: relative;
+
   width:80%;
   background-color:#f8f6f6;
   margin: 0 auto;

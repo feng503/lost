@@ -52,6 +52,8 @@ button{
 .lostpasswd{
   margin-top: 40rpx;
   margin-left: 600rpx;
+
   font-size: 25rpx;
   color:blue
+
 }
