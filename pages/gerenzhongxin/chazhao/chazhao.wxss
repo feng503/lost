@@ -29,14 +29,13 @@
 }
 .content{
   text-indent:18rpx;
-  margin: 34rpx;
-  width: 56%;
+  margin: 20rpx;
+  width: 40%;
   height: 50rpx;
   border: 3rpx solid #414141;
   border-radius: 20rpx;
   font-size: 33rpx;
-  margin-left:168rpx;
-  padding-left: 10rpx;
+  margin-left:150rpx;
 }
 button{
   font-size:26rpx;
