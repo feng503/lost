@@ -1,14 +1,13 @@
-/* pages/gerenzhongxin/shangchuanshiwu/shangchuanshiwu.wxss */
 .img{
-  margin-left:15px;
-  line-height:60px;/**小图标**/
+  margin-left:30rpx;
+  line-height:120rpx;/**小图标**/
 }
 .name{
-  padding-top:15px;
-  padding-left:10px;
-  padding-bottom:15px;
-  font-size:15px;/**图标后字体**/
-  height: 8px;
+  padding-top:30rpx;
+  padding-left:20rpx;
+  padding-bottom:30rpx;
+  font-size:30rpx;/**图标后字体**/
+  height: 16rpx;
   
 }
 .line{
@@ -22,11 +21,11 @@
   background-color: #ffffff;/**下半部分面板**/
 }
 .tubiao{
-  margin-left:120px;
+  margin-left:240rpx;
 }
 .picker{
-  margin-left:128px;
-  padding-top:15px;
+  margin-left:256rpx;
+  padding-top:30rpx;
 }
 .content{
   margin: 20rpx;
@@ -35,13 +34,14 @@
   border: 3rpx solid #414141;
   border-radius: 10px;
   font-size: 33rpx;
-  margin-left:75px;
+  margin-left:150rpx;
+  padding-left: 63rpx
 }
 button{
-  font-size:13px;
+  font-size:26rpx;
   margin-left:130rpx;
   margin-right:130rpx;
-  padding-left:14px;
-  padding-right:14px;
-  margin-top:50px;
+  padding-left:28rpx;
+  padding-right:28rpx;
+  margin-top:100rpx;
 }

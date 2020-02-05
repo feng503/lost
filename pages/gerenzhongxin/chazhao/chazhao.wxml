@@ -6,11 +6,11 @@
   <view class="line"></view>
   <view class="item">
   <view class="img">
-  <image src="/images/geren/shangchuan.png" style="width:24px;height:24px;"></image>
+  <image src="/images/geren/shangchuan.png" style="width:48rpx;height:48rpx;"></image>
   </view>
   <view class="name">失物图片</view>
   <view class="img"  bindtap='getLocalImage'  value="{{imagePath}}" >
-    <image src="/images/geren/tupianshangchuan.png" style="width:24px;height:24px" class="tubiao"></image>
+    <image src="/images/geren/tupianshangchuan.png" style="width:48rpx;height:48rpx" class="tubiao"></image>
     <!-- 照片还未给加路径 -->
     <view></view>
   </view>
@@ -18,7 +18,7 @@
   <view class="line"></view>
   <view class="item">
   <view class="img">
-  <image src="/images/geren/xuanzeleibie.png" style="width:24px;height:24px;"></image>
+  <image src="/images/geren/xuanzeleibie.png" style="width:48rpx;height:48rpx;"></image>
   </view>
   <view class="name">选择类别</view>
   <view class="all">
@@ -39,7 +39,7 @@
   <view class="line"></view>
   <view class="item">
   <view class="img">
-  <image src="/images/geren/miaoshu.png" style="width:22px;height:22px;margin-left:0px;padding-top:10px;"></image>
+  <image src="/images/geren/miaoshu.png" style="width:44rpx;height:44rpx;margin-left:0px;padding-top:20rpx;"></image>
   </view>
   <view class="name">详细描述</view>
   <textarea class="content" maxlength="100" value="{{detail}}" bindblur='detailInput' name="content"    placeholder="请添加您的描述" ></textarea>
@@ -48,7 +48,7 @@
   <view class="line"></view>
   <view class="item">
   <view class="img">
-  <image src="/images/geren/lianxidianhua.png" style="width:30px;height:30px;margin-left:-8px;padding-top:10px;"></image>
+  <image src="/images/geren/lianxidianhua.png" style="width:60rpx;height:60rpx;margin-left:-16rpx;padding-top:20rpx;"></image>
   </view>
   <view class="name">联系方式</view>
   <textarea class="content" maxlength="11" value="{{information}}" bindblur='informationInput'name="content" placeholder="您的电话或qq" ></textarea>
@@ -57,7 +57,7 @@
   <view class="line"></view>
   <view class="item">
   <view class="img">
-  <image src="/images/geren/weizhi.png" style="width:17px;height:17px;margin-left:3px;"></image>
+  <image src="/images/geren/weizhi.png" style="width:34rpx;height:34rpx;margin-left:6rpx;"></image>
   </view>
   <view class="name">丢失位置</view>
   <textarea class="content" maxlength="100" value="{{addr}}" bindblur='addrInput' name="content"  placeholder="描述您丢失位置" ></textarea>

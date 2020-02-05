@@ -1,8 +1,11 @@
+.topcontainer{
+  display: flex;
+  justify-content: space-between
+}
 .centerContent{
   margin-top: 20rpx;
   width: 100%;
   height: 600rpx;
-
 }
 /*中间浮动文字样式*/
 .flexView{
@@ -13,10 +16,9 @@ width: 100%;
 height: 80rpx;
 position: absolute;
 z-index: 2;
-top: 540rpx;
+top: 700rpx;
 background: #000000;
 opacity: 0.6
-
 }
 /*浮动文字*/
 .flexText{
@@ -100,4 +102,7 @@ opacity: 0.6
   background: #f3f3f3;
   width: 100%;
   height: 15rpx;
+}
+.fish{
+  font-size: 23.6rpx
 }

@@ -7,7 +7,7 @@ overflow: hidden;
   display: flex;  
   flex-flow: row;} 
 .top-line-button {  
-  font-size: 12px;     
+  font-size: 24rpx;     
   color: #777;  
   margin: 150rpx; 
   margin-top:40rpx; 
@@ -17,14 +17,14 @@ overflow: hidden;
    transform: all 2s;  
    border-bottom-style: solid;  
    border-bottom-color: #744646;  
-   border-bottom-width: 2.5px;  
+   border-bottom-width: 5rpx;  
    color: #000;
    }
 button{
   margin-top: 150rpx;
   margin-left: 50rpx;
   margin-right: 50rpx;
-  border-radius:10px;
+  border-radius:20rpx;
 } 
 .body{
   margin-top: -20rpx;

@@ -5,27 +5,27 @@
 }
 .hr{
   width:100%;
-  height:10px;/**下半部分面板与上面距离**/
+  height:20rpx;/**下半部分面板与上面距离**/
 }
 .img{
-  margin-left:15px;
-  line-height:60px;/**小图标**/
+  margin-left:30rpx;
+  line-height:120rpx;/**小图标**/
 }
 .name{
-  padding-top:15px;
-  padding-left:10px;
-  padding-bottom:15px;
-  font-size:15px;/**图标后字体**/
+  padding-top:30rpx;
+  padding-left:20rpx;
+  padding-bottom:30rpx;
+  font-size:30rpx;/**图标后字体**/
 }
 .detail{
-  font-size:15px;
+  font-size:30rpx;
   position:absolute;
-  right:10px;
-  height:50px;
-  line-height:50px;
+  right:20rpx;
+  height:100rpx;
+  line-height:100rpx;
   color:#888888;
 }
 .line{
-  border:1px solid #cccccccc;
+  border:2rpx solid #cccccccc;
   opacity:0.2;
 }

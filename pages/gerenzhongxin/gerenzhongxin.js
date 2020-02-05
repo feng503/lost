@@ -3,7 +3,8 @@ let app = getApp();
 Page({
   data: {
     faceImage:[],
-    nickname:''
+    nickname:'',
+    studentId:''
   },
   onLoad: function (options) {
     
@@ -53,7 +54,8 @@ Page({
   onShow:function(options){
     this.setData({
       nickname: app.globalData.user.nickname,
-      faceImage: app.globalData.user.faceImage
+      faceImage: app.globalData.user.faceImage,
+      studentId: app.globalData.user.studentId,
     })
   }
 })

@@ -244,5 +244,12 @@ Page({
       url: '/pages/shiwuzhanshi/detail/detail?id=' + e.currentTarget.dataset.id
     })
   }
+
+
+
+
+
+  //插入框架
+  
 })
 

@@ -11,14 +11,14 @@
           <form bindsubmit="login"> 
             <view class='username'>
               <view class="img">
-                <image src="/images/denglu/user.png" style="width:28px;height:25px;"></image>
-                <input    style="width:700rpx;height:25px;" value='' name="studentId"  
+                <image src="/images/denglu/user.png" style="width:56rpx;height:50rpx;"></image>
+                <input    style="width:700rpx;height:50rpx;" value='' name="studentId"  
                 placeholder='学号'></input>
               </view>
             </view>
             <view class='password'>
               <view class="img">
-                <image src="/images/denglu/mima.png" style="width:28px;height:25px;"></image>
+                <image src="/images/denglu/mima.png" style="width:56rpx;height:50rpx;"></image>
                 <input  bindinput="mima" placeholder='密码' password='true' name="password"></input>
               </view>
             </view>
@@ -36,14 +36,14 @@
           <form bindsubmit="GoRegister">
             <view class='username'>
               <view class="img">
-                <image src="/images/denglu/user.png" style="width:28px;height:25px;"></image>
+                <image src="/images/denglu/user.png" style="width:56rpx;height:50rpx;"></image>
                 <input placeholder='学号' name="username" value=''
                 ></input>
               </view>
             </view>
             <view class='password'>
               <view class="img">
-                <image src="/images/denglu/shoujihao.png" style="width:28px;height:25px;"></image>
+                <image src="/images/denglu/shoujihao.png" style="width:56rpx;height:50rpx;"></image>
                 <input placeholder='手机号' bindblur="setPhone" name="phone" 
                 value='{{phoneNum}}'
                 maxlength="11"
@@ -52,22 +52,20 @@
             </view>
             <view class='password'>
                <view class="img">
-                <image src="/images/denglu/mima.png" style="width:28px;height:25px;"></image>
+                <image src="/images/denglu/mima.png" style="width:56rpx;height:50rpx;"></image>
                 <input password='true' name="pwd1" placeholder='密码' value=''
                 ></input>
                </view>
             </view>
             <view class='password'>
                <view class="img">
-                <image src="/images/denglu/mima.png" style="width:28px;height:25px;"></image>
-                <input password='true' name="pwd2" placeholder='请再次输入密码' 
-                value='' 
-                ></input>
+                <image src="/images/denglu/mima.png" style="width:56rpx;height:50rpx;"></image>
+                <input password='true' name="pwd2" placeholder='请再次输入密码'  ></input>
                </view>
             </view>
              <view class='yanzheng'>
                <view class="img">
-                  <image src="/images/denglu/yanzhengma.png" style="width:28px;height:25px;"></image>
+                  <image src="/images/denglu/yanzhengma.png" style="width:56rpx;height:50rpx;"></image>
                   <input name="code" placeholder='请输入验证码' value=''
                   ></input>
                     <button class="anniu" 

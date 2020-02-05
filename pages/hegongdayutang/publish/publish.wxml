@@ -1,0 +1,11 @@
+ <view class="divLine"></view>
+    <view class="topContainsView">
+      <image class="profileImage" src="{{faceImage}}" />
+          <view class="topRightView">
+          <!-- 用户姓名 -->
+            <text class="topRightName">{{nickname}}</text>
+          </view>
+          <button class='releaseBtn' size="mini">发布</button>
+    </view>
+    <textarea class='wishcontent' maxlength='-1' placeholder="今天的你比昨天又好看了呢"></textarea>
+

@@ -2,7 +2,7 @@
 
 <view class="item"  bindtap='changeUserImg'>
   <view class="img">
-    <image src="/images/geren/genghuan.png" style="width:24px;height:24px;"></image>
+    <image src="/images/geren/genghuan.png" style="width:48rpx;height:48rpx;"></image>
   </view>
   <view class="name" >更换头像</view>
   <view class="detail">
@@ -14,17 +14,17 @@
 
 <view class="item" bindtap='changeUserName'>
 <view class="img">
-  <image src="/images/geren/change.png" style="width:24px;height:24px;"></image>
+  <image src="/images/geren/change.png" style="width:48rpx;height:48rpx;"></image>
 </view>
 <view class="name">修改昵称</view>
   <view class="detail">
     <text>></text>
   </view>
 </view>
-
+<view class="line"></view>
 <view class="item" bindtap='changePasswd'>
 <view class="img">
-  <image src="/images/geren/change.png" style="width:24px;height:24px;"></image>
+  <image src="/images/geren/change.png" style="width:48rpx;height:48rpx;"></image>
 </view>
 <view class="name">修改密码</view>
   <view class="detail">
@@ -36,7 +36,7 @@
 
 <view class="item" bindtap='quit'>
 <view class="img">
-  <image src="/images/geren/tuichu.png" style="width:24px;height:24px;"></image>
+  <image src="/images/geren/tuichu.png" style="width:48rpx;height:48rpx;"></image>
 </view>
 <view class="name">退出登录</view>
   <view class="detail">

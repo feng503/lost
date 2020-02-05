@@ -104,6 +104,12 @@ Page({
     wx.chooseImage({
       success: function (e) {
         console.log(e);
+        wx.showToast({
+          title: '图片选择成功，目前仅可选择一张图片，请勿重复选择',
+          duration: 2000,
+          icon: 'none',
+          mask: true,
+        })
         that.setData({
           tempFilePaths:e.tempFilePaths[0]
         })
