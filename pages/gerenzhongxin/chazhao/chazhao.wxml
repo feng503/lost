@@ -42,7 +42,7 @@
   <image src="/images/geren/miaoshu.png" style="width:22px;height:22px;margin-left:0px;padding-top:10px;"></image>
   </view>
   <view class="name">详细描述</view>
-  <textarea class="content" maxlength="100" value="{{detail}}" bindblur='detailInput' name="content"    placeholder="请添加您的描述" ></textarea>
+  <textarea class="content" maxlength="150" auto-height="true" value="{{detail}}" bindblur='detailInput' name="content"    placeholder="请添加您的描述" ></textarea>
   </view>
   </view>
   <view class="line"></view>
@@ -51,7 +51,7 @@
   <image src="/images/geren/lianxidianhua.png" style="width:30px;height:30px;margin-left:-8px;padding-top:10px;"></image>
   </view>
   <view class="name">联系方式</view>
-  <textarea class="content" maxlength="11" value="{{information}}" bindblur='informationInput'name="content" placeholder="您的电话或qq" ></textarea>
+  <textarea class="content" maxlength="11" auto-height="true" value="{{information}}" bindblur='informationInput'name="content" placeholder="您的电话或qq" ></textarea>
   </view>
   </view>
   <view class="line"></view>
@@ -60,7 +60,7 @@
   <image src="/images/geren/weizhi.png" style="width:17px;height:17px;margin-left:3px;"></image>
   </view>
   <view class="name">丢失位置</view>
-  <textarea class="content" maxlength="100" value="{{addr}}" bindblur='addrInput' name="content"  placeholder="描述您丢失位置" ></textarea>
+  <textarea class="content" maxlength="100" auto-height="true" value="{{addr}}" bindblur='addrInput' name="content"  placeholder="描述您丢失位置" ></textarea>
   </view>
   <button type="primary" form-type='submit' bindtap='orderMeeting'> 提交 </button>
 

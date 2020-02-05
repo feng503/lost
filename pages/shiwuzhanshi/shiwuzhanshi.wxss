@@ -16,6 +16,7 @@
   font-weight:bolder;
 }
 .search{
+  position: relative;
   height:33px;
   width:80%;
   background-color:#ffffff;
@@ -24,6 +25,13 @@
   border-radius: 60px;
   line-height:40px;
   margin-left: 5rpx;
+}
+.searchfont{
+  position: absolute;
+  /* left: 160rpx; */
+  width: 100%;
+  top: 10rpx;
+  /* border: 1px solid lightgray; */
 }
 .search view{
   text-align:center;

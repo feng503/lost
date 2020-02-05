@@ -29,13 +29,14 @@
   padding-top:15px;
 }
 .content{
-  margin: 20rpx;
-  width: 40%;
+  text-indent:9px;
+  margin: 34rpx;
+  width: 56%;
   height: 50rpx;
   border: 3rpx solid #414141;
   border-radius: 10px;
   font-size: 33rpx;
-  margin-left:75px;
+  margin-left:50px;
 }
 button{
   font-size:13px;
