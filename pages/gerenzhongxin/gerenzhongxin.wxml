@@ -2,7 +2,11 @@
   <view class="bg">
   <view class="head">
   <view class="headlcon">
+<<<<<<< HEAD
   <image src="{{faceImage}}" style="width:170rpx;height:170rpx;" class="ig"></image>
+=======
+  <image class="faceImg" src="{{faceImage}}" style="width:99px;height:99px;"></image>
+>>>>>>> lost
   </view>
   <view class="login">
   <view>{{nickname}}</view>

@@ -13,8 +13,10 @@
     "pages/shiwuzhanshi/detail/detail",
     "pages/gerenzhongxin/shezhi/changeName/changeName",
     "pages/gerenzhongxin/shezhi/changePasswd/changePasswd",
+
     "pages/denglu/lostPasswd/lostPasswd",
     "pages/hegongdayutang/publish/publish"
+
   ],
   "window": {
     "backgroundTextStyle": "dark",
