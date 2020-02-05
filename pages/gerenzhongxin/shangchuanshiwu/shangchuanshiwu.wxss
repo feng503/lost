@@ -4,7 +4,7 @@
   line-height:120rpx;/**小图标**/
 }
 .name{
-<<<<<<< HEAD
+
 
   padding-top:30rpx;
   padding-left:20rpx;
@@ -13,15 +13,6 @@
   height: 16rpx;
   position: relative;
 
-=======
-  position: relative;
-  padding-top:15px;
-  padding-left:10px;
-  padding-bottom:15px;
-  font-size:15px;/**图标后字体**/
-  height: 8px;
-  
->>>>>>> lost
 }
 .line{
   padding-top:0px;
@@ -47,16 +38,13 @@
   height: 50rpx;
   border: 3rpx solid #414141;
   border-radius: 10px;
-<<<<<<< HEAD
+
 
   font-size: 33rpx; 
   padding-left: 63rpx;
   margin-left:77rpx;
 
-=======
-  font-size: 33rpx;
-  margin-left:50px;
->>>>>>> lost
+
 }
 button{
   font-size:26rpx;

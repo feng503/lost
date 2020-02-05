@@ -4,13 +4,11 @@
         <mp-form id="form" rules="{{rules}}" models="{{formData}}">
             <mp-cells title="重置密码" footer="">
                 <mp-cell prop="学号" title="学号" ext-class="">
-<<<<<<< HEAD
+
                     <input bindinput="formInputChange" data-field="学号" class="weui-input" placeholder="请输入学号"/>
 
 
-=======
-                    <input bindinput="formInputChange" data-field="学号" class="weui-input" placeholder="请输入新密码"/>
->>>>>>> lost
+
                 </mp-cell>
                 <mp-cell prop="新密码" title="新密码" ext-class="">
                     <input bindinput="formInputChange1" password='true' data-field="新密码" class="weui-input" placeholder="请输入新密码"/>

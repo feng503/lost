@@ -16,15 +16,12 @@
   font-weight:bolder;
 }
 .search{
-<<<<<<< HEAD
+
 
   height:66rpx;
   position: relative;
 
-=======
-  position: relative;
-  height:33px;
->>>>>>> lost
+
   width:80%;
   background-color:#f8f6f6;
   margin: 0 auto;

@@ -28,28 +28,21 @@
   padding-top:30rpx;
 }
 .content{
-<<<<<<< HEAD
+
 
   text-indent:18rpx;
   margin: 20rpx;
   width: 40%;
 
-=======
-  text-indent:9px;
-  margin: 34rpx;
-  width: 56%;
->>>>>>> lost
+
   height: 50rpx;
   border: 3rpx solid #414141;
   border-radius: 20rpx;
   font-size: 33rpx;
-<<<<<<< HEAD
 
   margin-left:150rpx;
 
-=======
-  margin-left:50px;
->>>>>>> lost
+
 }
 button{
   font-size:26rpx;
