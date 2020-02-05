@@ -17,13 +17,21 @@
 }
 .search{
   height:66rpx;
+  position: relative;
   width:80%;
   background-color:#f8f6f6;
   margin: 0 auto;
-  margin-top:56rpx;
+  margin-top:90rpx;
   border-radius: 120rpx;
   line-height:20rpx;
   margin-left: 5rpx;
+}
+.searchfont{
+  position: absolute;
+  /* left: 160rpx; */
+  width: 100%;
+  top: 10rpx;
+  /* border: 1px solid lightgray; */
 }
 .search view{
   text-align:center;

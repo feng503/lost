@@ -9,7 +9,7 @@
   padding-bottom:30rpx;
   font-size:30rpx;/**图标后字体**/
   height: 16rpx;
-  
+  position: relative;
 }
 .line{
   padding-top:0px;
@@ -29,14 +29,15 @@
   padding-top:30rpx;
 }
 .content{
-  margin: 20rpx;
-  width: 40%;
+  text-indent:9px;
+  margin: 34rpx;
+  width: 56%;
   height: 50rpx;
   border: 3rpx solid #414141;
   border-radius: 10px;
-  font-size: 33rpx;
-  margin-left:150rpx;
-  padding-left: 63rpx
+  font-size: 33rpx; 
+  padding-left: 63rpx;
+  margin-left:77rpx;
 }
 button{
   font-size:26rpx;

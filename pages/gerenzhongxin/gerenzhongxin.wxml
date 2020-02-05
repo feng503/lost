@@ -2,6 +2,7 @@
   <view class="bg">
   <view class="head">
   <view class="headlcon">
+
   <image src="{{faceImage}}" style="width:170rpx;height:170rpx;" class="ig"></image>
   </view>
   <view class="login">

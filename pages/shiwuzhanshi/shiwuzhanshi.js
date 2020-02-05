@@ -3,6 +3,7 @@ Page({
   data: {
     newsdata:[],
     userInfo: null,
+    detail:'',
     tp:0
   },
 
@@ -42,6 +43,33 @@ Page({
 
     })
   },
+  getInput:function(e){
+    this.setData({
+      detail:e.detail.value
+    })
+  },
+  queryLosts:function(){
+    var that = this;
+    wx.request({
+      url: 'https://www.vergessen.top/lostobj/findlostsbydetail',
+      data: {
+        detail: that.data.detail,
+        service: that.data.tp
+      },
+      success: function (res) {
+        wx.showToast({
+          title: '加载成功',
+          duration: 500,
+          icon: 'success',
+          mask: true,
+        })
+        that.setData({
+          newsdata: res.data
+        });
+        app.globalData.newlist = that.data.newsdata;
+      },
+    })
+  },
    yiwubaobao: function () {
     var that = this;
 
@@ -57,7 +85,7 @@ Page({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type: 1,
-        service: this.data.tp
+        service: that.data.tp
       },
       success: function (res) {     
         // console.log(res.data);
@@ -94,7 +122,7 @@ Page({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type: 2,
-        service: this.data.tp
+        service: that.data.tp
       },
       success: function (res) {
         // console.log(res.data);
@@ -131,7 +159,7 @@ Page({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type: 3,
-        service: this.data.tp
+        service: that.data.tp
       },
       success: function (res) {
         // console.log(res.data);
@@ -168,7 +196,7 @@ Page({
       url: 'https://www.vergessen.top/lostobj/findlostsbytype',
       data: {
         type: 4,
-        service: this.data.tp
+        service: that.data.tp
       },
       success: function (res) {
         // console.log(res.data);
@@ -195,7 +223,7 @@ Page({
       wx.request({
         url: 'https://www.vergessen.top/lostobj/findlostsall',
         data: {
-          service: this.data.tp
+          service: that.data.tp
         },
         success: function (res) {
           that.setData({
