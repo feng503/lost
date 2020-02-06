@@ -32,19 +32,14 @@
   padding-top:30rpx;
 }
 .content{
-  text-indent:9px;
-  margin: 34rpx;
-  width: 56%;
+  text-indent:18rpx;
+  margin: 20rpx;
+  width: 40%;
   height: 50rpx;
   border: 3rpx solid #414141;
-  border-radius: 10px;
-
-
-  font-size: 33rpx; 
-  padding-left: 63rpx;
-  margin-left:77rpx;
-
-
+  border-radius: 20rpx;
+  font-size: 33rpx;
+  margin-left:150rpx;
 }
 button{
   font-size:26rpx;

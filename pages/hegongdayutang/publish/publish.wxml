@@ -5,7 +5,17 @@
           <!-- 用户姓名 -->
             <text class="topRightName">{{nickname}}</text>
           </view>
-          <button class='releaseBtn' size="mini">发布</button>
+          <button class='releaseBtn' bindtap="send" size="mini" type="primary">发布</button>
     </view>
-    <textarea class='wishcontent' maxlength='-1' placeholder="今天的你比昨天又好看了呢"></textarea>
+    <textarea class='wishcontent' bindinput="input" maxlength='-1' placeholder="今天的你比昨天又好看了呢"></textarea>
+    <view class="image_content">
+    <view class='image' wx:for="{{img_url}}">
+      <image class="moment_img" src="{{item}}"></image>
+    </view>
+    <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+      <image bindtap="chooseimage" class="moment_img" src='../../../images/yutang/tianjiatupian.png'></image>
+    </view>
+  </view>
+
+ 
 
