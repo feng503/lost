@@ -5,12 +5,14 @@ Page({
     nickname:'',
     img_url: [],
     talk: '',
+    id:'',
     ig:0
   },
   onShow: function (options) {
     this.setData({
       nickname: app.globalData.user.nickname,
-      faceImage: app.globalData.user.faceImage
+      faceImage: app.globalData.user.faceImage,
+      id: app.globalData.user.studentId
     })
     console.log(app.globalData.user)
   },
@@ -69,7 +71,7 @@ Page({
   //发布按钮事件
   send: function () {
     var that = this;
-    var user_id = app.globalData.user.nickname
+    var user_id = that.data.id
     wx.showLoading({
       title: '正在上传',
     })
@@ -81,28 +83,30 @@ Page({
     let img_url = that.data.img_url;
     let img_url_ok = [];
     //由于图片只能一张一张地上传，所以用循环
+    console.log(img_url.length);
     for (let i = 0; i < img_url.length; i++) {
       wx.uploadFile({
-        //路径填你上传图片方法的地址
         url: 'https://www.vergessen.top/lostobj/addFishImg',
         filePath: img_url[i],
-        name: 'file',
+        method: "GET",
+        name: 'image',
         formData: {
-          'user': 'test'
+          studentId:that.data.id
         },
         success: function (res) {
           console.log('上传成功');
-          console.log(res.data);
+          console.log(res);
           //把上传成功的图片的地址放入数组中
           img_url_ok.push(res.data)
           //如果全部传完，则可以将图片路径保存到数据库
           if (img_url_ok.length == img_url.length) {
-            var userid = wx.getStorageSync('userid');
-            var content = that.data.content;
+            var studentId = app.globalData.user.studentId;
+            var talk = that.data.talk;
             wx.request({
               url: 'https://www.vergessen.top/lostobj/addFish',
+              method: "GET",
               data: {
-                studentId: userid,
+                studentId: studentId,
                 image: img_url_ok,
                 talk: talk,
               },
