@@ -16,7 +16,8 @@
     "pages/denglu/lostPasswd/lostPasswd",
     "pages/hegongdayutang/publish/publish",
     "pages/gerenzhongxin/game/gameone/gameone",
-    "pages/gerenzhongxin/game/gametwo/gametwo"
+    "pages/gerenzhongxin/game/gametwo/gametwo",
+    "pages/gerenzhongxin/mypublish/mypublish"
   ],
   "window": {
     "backgroundTextStyle": "dark",

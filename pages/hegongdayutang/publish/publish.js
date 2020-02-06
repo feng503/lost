@@ -17,11 +17,6 @@ Page({
     })
     console.log(app.globalData.user)
   },
-
-
-
-
-
   onLoad: function (options) {
 
   },
@@ -95,8 +90,8 @@ Page({
           studentId:that.data.id
         },
         success: function (res) {
-          console.log('上传成功');
-          console.log(res);
+          // console.log('上传成功');
+          // console.log(res);
           //把上传成功的图片的地址放入数组中
           // img_url_ok.push(res.data)
           that.setData({
@@ -119,15 +114,14 @@ Page({
               },
               success: function (res) {
                 console.log(res)
-                if (res.statusCode === 201) {
+                if (res.statusCode == 201) {
                   wx.hideLoading()
                   wx.showModal({
                     title: '提交成功',
                     showCancel: false,
                     success: function (res) {
                       if (res.confirm) {
-                        wx.navigateBack({
-                          
+                        wx.navigateBack({   
                         })
                       }
                     }

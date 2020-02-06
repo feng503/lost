@@ -34,6 +34,16 @@
   </view>
   </view>
   <view class="line"></view>
+  <view class="item" bindtap='mypublish'>
+  <view class="img">
+  <image src="/images/geren/fabujilu.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name">我的发布</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+  <view class="line"></view>
   <view class="item" bindtap='to'>
   <view class="img">
   <image src="/images/geren/kaixinyike.png" style="width:48rpx;height:48rpx;"></image>

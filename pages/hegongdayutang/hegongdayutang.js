@@ -6,6 +6,7 @@ Page({
     loadingHidden: false,
     faceImage: [],
     nickname: '',
+    newsdata: []
   },
   onShareAppMessage: function (res) {
     return {
@@ -18,6 +19,20 @@ Page({
         //转发失败
       }
     }
+  },
+  onLoad: function (options) {
+    var that = this;
+    wx.request({
+      url: 'https://www.vergessen.top/lostobj/queryAllFishes',
+      data: {
+      },
+      success: function (res) {
+        that.setData({
+          newsdata: res.data
+        });
+        console.log(that.data.newsdata)
+      },
+    })
   },
   onShow: function (options) {
     this.setData({

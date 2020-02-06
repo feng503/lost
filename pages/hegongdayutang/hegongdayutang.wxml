@@ -3,6 +3,7 @@
     <image src="/images/yutang/jiahao.png"  style="width:40rpx;height:40rpx;" bindtap="liujiayu"></image>
     </view>
     <!-- 分割线 -->
+    <view wx:for="{{newsdata}}">
       <view class="divLine"></view>   
         <!-- 整体item样式 -->
         <view class="containsView">
@@ -13,17 +14,19 @@
             <!-- 用户姓名 -->
               <text class="topRightName">{{nickname}}</text>
               <!-- 上传日期 -->
-              <text class="topRightTime">2020.02.03</text>
+              <text class="topRightTime">{{item.createTime}}</text>
             </view>
           </view>
           <!-- 动态文字 -->
-          <text style="font-size: 30rpx">这是我的第一条动态，测试用</text>
+          <text style="font-size: 30rpx">{{item.talk}}</text>
             <!-- 图片资源 -->
-            <image class="centerContent" src="http://phototj.photo.store.qq.com/psc?/V10JXMix0CQf9J/UAKsoihnbkr0XNkArJGSuofzkhXBar5PFrVVFM.jAiwLJZ24bpmK8iCouKb2ODD4G2zcR7qKMfJRYiVCnO1nvw!!/b&bo=2AXQAtgF0AIRECc!&rf=mood_app" mode="aspectFill" />
-            <view class="flexView">
-              <image src="../../images/yutang/seeBigPicture.png" style="width: 45rpx; height: 45rpx;" />
-              <text class="flexText">点击查看全图</text>
-            </view>
+            <image class="centerContent"  src="{{item.imagePath}}"  />
+            <!-- <view class="flexView">
+              <!-- <image src="../../images/yutang/seeBigPicture.png" style="width: 45rpx; height: 45rpx;" />
+              <text class="flexText">点击查看全图</text> 
+            </view> -->
           </view>
+         </view>
+          
 
 

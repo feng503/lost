@@ -56,6 +56,11 @@ Page({
       url: '/pages/gerenzhongxin/game/gameone/gameone',
     })
   },
+  mypublish: function () {
+    wx.navigateTo({
+      url: '/pages/gerenzhongxin/mypublish/mypublish',
+    })
+  },
   onShow:function(options){
     this.setData({
       nickname: app.globalData.user.nickname,

@@ -4,8 +4,8 @@
 <view class="logo">
 <view class="first">HEBUTER带我回家</view>
 <view class="search" bindtap="search">
-  <input type="text" class="searchfont" placeholder='搜索失物' bindinput="getInput" confirm-type='search'  placeholder-style='font-size:13px'></input>
-  <image  class="sousuo" bindtap="queryLosts" src="/images/diyiye/search.png" style="width:30px;height:27px;"></image>
+  <input type="text" class="searchfont" placeholder='搜索失物' bindinput="getInput" confirm-type='search'  placeholder-style='font-size:26rpx'></input>
+  <image  class="sousuo" bindtap="queryLosts" src="/images/diyiye/search.png" style="width:60rpx;height:54rpx;"></image>
 </view>
 </view>
 </view>

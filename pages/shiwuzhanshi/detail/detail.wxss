@@ -30,19 +30,3 @@
  padding-left:170rpx;
  margin-top:-45rpx;
 }
-.input{
-  margin-top: 60rpx;
-  border: 5rpx rgb(158, 157, 157) solid;
-  width:500rpx;
-}
-.anniu{
-  margin-top: -120rpx;
-  margin-left:570rpx;
-  margin-right: 30rpx;
-  background-color: #0aee4ecc;
-  border-radius: 2px;
-  height:-120rpx;
-}
-button {
-  margin: 15px;
-  }

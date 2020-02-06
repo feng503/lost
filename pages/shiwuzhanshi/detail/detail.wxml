@@ -1,7 +1,5 @@
 <view class="all">
-
- <image class="tupian" mode='widthFix'  src="{{shuju.imagePath }}" ></image>
-
+ <image class="tupian" mode='widthFix'  src="{{shuju.imagePath }}"  bindtap="bigimage"></image>
   <view class="wenzi">
   <view class="line"></view>
   <view>详情：</view>
@@ -14,11 +12,4 @@
          <view class="dizhi">{{shuju.addr}}</view>
       </view>
 </view> 
- <view class="liuyan">
- <!--留言-->
- <view class="fasong">
- <input bindinput="" class="input" type="text" value="" placeholder="与您相关请留言"            
- laceholder-class="place-input"/>
-<button class="anniu" size="mini"  type='primary'  bindtap="">send</button>
-</view>
-</view>
+ 

@@ -4,28 +4,10 @@ let app = getApp();
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+
   data: {
    shuju: []
   },
-
-  // function(options) {
-  //   var that = this;
-  //   wx.request({
-  //     url: 'https://www.vergessen.top/lostobj/findlostsall',
-  //     data: {
-  //       service: 0
-  //     },
-  //     success: function (res) {
-  //       console.log(res.data);
-  //       var newsdata = [];
-      
-  //     },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad:
       function(opetios) {
         console.log(opetios)
@@ -35,4 +17,10 @@ Page({
         });
         console.log(this.data.shuju)
       },
+  bigimage:function(){
+    wx.previewImage({
+      current: '{{shuju.imagePath }}', // 当前显示图片的http链接
+      urls: [  ] // 需要预览的图片http链接列表
+    })
+  }
 })
