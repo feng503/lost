@@ -51,6 +51,11 @@ Page({
       url: '/pages/gerenzhongxin/kefu/kefu',
     })
   },
+  game: function () {
+    wx.navigateTo({
+      url: '/pages/gerenzhongxin/game/gameone/gameone',
+    })
+  },
   onShow:function(options){
     this.setData({
       nickname: app.globalData.user.nickname,

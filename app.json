@@ -4,7 +4,7 @@
     "pages/shiwuzhanshi/shiwuzhanshi",
     "pages/gerenzhongxin/shangchuanshiwu/shangchuanshiwu",
     "pages/gerenzhongxin/gerenzhongxin",
-     "pages/hegongdayutang/hegongdayutang",
+    "pages/hegongdayutang/hegongdayutang",
     "pages/gerenzhongxin/kaixinyike/kaixinyike",
     "pages/gerenzhongxin/chazhao/chazhao",
     "pages/gerenzhongxin/shezhi/shezhi",
@@ -14,7 +14,9 @@
     "pages/gerenzhongxin/shezhi/changeName/changeName",
     "pages/gerenzhongxin/shezhi/changePasswd/changePasswd",
     "pages/denglu/lostPasswd/lostPasswd",
-    "pages/hegongdayutang/publish/publish"
+    "pages/hegongdayutang/publish/publish",
+    "pages/gerenzhongxin/game/gameone/gameone",
+    "pages/gerenzhongxin/game/gametwo/gametwo"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -54,6 +54,16 @@
   </view>
   </view>
   <view class="line"></view>
+  <view class="item" bindtap='game'>
+  <view class="img">
+  <image src="/images/geren/youxi.png" style="width:48rpx;height:48rpx;"></image>
+  </view>
+  <view class="name">石头剪刀布</view>
+  <view class="detail">
+  <text>></text>
+  </view>
+  </view>
+  <view class="line"></view>
   <view class="item" bindtap='lu'>
   <view class="img">
   <image src="/images/geren/shezhi.png" style="width:48rpx;height:48rpx;"></image>
