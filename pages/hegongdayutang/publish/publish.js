@@ -6,7 +6,8 @@ Page({
     img_url: [],
     talk: '',
     id:'',
-    ig:0
+    ig:0,
+    sucimgNum:0
   },
   onShow: function (options) {
     this.setData({
@@ -88,7 +89,7 @@ Page({
       wx.uploadFile({
         url: 'https://www.vergessen.top/lostobj/addFishImg',
         filePath: img_url[i],
-        method: "GET",
+        method: "POST",
         name: 'image',
         formData: {
           studentId:that.data.id
@@ -97,9 +98,15 @@ Page({
           console.log('上传成功');
           console.log(res);
           //把上传成功的图片的地址放入数组中
-          img_url_ok.push(res.data)
+          // img_url_ok.push(res.data)
+          that.setData({
+            sucimgNum:that.data.sucimgNum + 1
+          })
           //如果全部传完，则可以将图片路径保存到数据库
-          if (img_url_ok.length == img_url.length) {
+          if (that.data.sucimgNum == img_url.length) {
+            that.setData({
+              sucimgNum: 0
+            })
             var studentId = app.globalData.user.studentId;
             var talk = that.data.talk;
             wx.request({
@@ -107,19 +114,20 @@ Page({
               method: "GET",
               data: {
                 studentId: studentId,
-                image: img_url_ok,
+                // image: img_url_ok,
                 talk: talk,
               },
               success: function (res) {
-                if (res.data.status == 1) {
+                console.log(res)
+                if (res.statusCode === 201) {
                   wx.hideLoading()
                   wx.showModal({
                     title: '提交成功',
                     showCancel: false,
                     success: function (res) {
                       if (res.confirm) {
-                        wx.navigateTo({
-                          url: '/pages/my_moments/my_moments',
+                        wx.navigateBack({
+                          
                         })
                       }
                     }
