@@ -6,7 +6,8 @@ Page({
     loadingHidden: false,
     faceImage: [],
     nickname: '',
-    newsdata: []
+    newsdata: [],
+    images:[],
   },
   onShareAppMessage: function (res) {
     return {
@@ -30,7 +31,15 @@ Page({
         that.setData({
           newsdata: res.data
         });
+        console.log(that.data.newsdata.length)
+        for (let i = 0; i < that.data.newsdata.length; i++){
+        var str = that.data.newsdata[i].imagePath
+        that.data.images = str.split(",")
+        console.log(that.data.images)
+        that.data.newsdata[i].imagePath = that.data.images
+        }
         console.log(that.data.newsdata)
+        
       },
     })
   },

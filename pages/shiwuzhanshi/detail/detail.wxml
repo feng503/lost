@@ -1,3 +1,32 @@
+<view class="container">
+  <text>图片详情</text>
+     <image class="tupian" mode='widthFix' style="width:90rpx" src="{{shuju.imagePath }}"  bindtap="bigimage"></image>
+     <view>
+      <text>详细描述</text>
+      <textarea>{{shuju.detail}}</textarea>
+      </view>
+      <view class="line"></view>
+      <text>联系方式：{{shuju.information}}</text>
+      <view class="line"></view>
+      <text>地址:{{shuju.addr}}</text>
+ 
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <view class="all">
  <image class="tupian" mode='widthFix'  src="{{shuju.imagePath }}"  bindtap="bigimage"></image>
   <view class="wenzi">
