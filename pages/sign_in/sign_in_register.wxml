@@ -1,0 +1,74 @@
+<view class="test-bg">
+  <image src="https://phototj.photo.store.qq.com/psc?/V10JXMix0CQf9J/UAKsoihnbkr0XNkArJGSumj6vB5DxM24rwUu3JHt2LwF5pfbBmAWpwOA1A3Y7C8sKrmf7yTUEvWYDaKD93*GwA!!/b&bo=ZQT6BmUE.gYDUHU!&rf=mood_app" class="bg-image" mode="scaleToFill"></image>
+<!-- 页面背景 -->
+  <view class="one">
+    <view class="top-line">    
+      <view class="top-line-button {{TopIndex == 0 ? 'active':''}} " data-index="0" bindtap='changstyle'>登陆
+      </view>    
+      <view class="top-line-button {{TopIndex == 1 ? 'active':''}} " data-index="1" bindtap='changstyle'>注册
+      </view>       
+    </view> 
+<!-- 注册与登录的转折框 -->
+     <view class="top_height" wx:if="{{TopIndex == 0}}"> 
+       <form bindsubmit="login"> 
+          <view>
+            <view class="img">
+              <image src="/images/denglu/user.png" style="width:60rpx;height:60rpx;"></image>
+              <input name="studentId" placeholder='学号'  style="height:60rpx;"></input>
+            </view>
+          </view>
+          <!-- 学号处 -->
+          <view class='password'>
+            <view class="img">
+              <image src="/images/denglu/mima.png" style="width:60rpx;height:60rpx;"></image>
+              <input  bindinput="mima"  style="height:60rpx;"  placeholder='密码' password='true' name="password"></input>
+            </view>
+          </view>
+          <!-- 密码处 -->
+          <button class="denglu"  style="font-size:29rpx" form-type="submit">登陆</button>
+          <!-- 提交按钮处 -->
+       </form>
+         <view class="lostpasswd" bindtap="lostPasswd">忘记密码?</view> 
+         <!-- 忘记密码 -->
+     </view>
+     <view  class="top_height" wx:if="{{TopIndex == 1}}"> 
+          <form bindsubmit="GoRegister">
+            <view class='ig'>
+              <view class="img">
+                <image src="/images/denglu/user.png" style="width:60rpx;height:60rpx;"></image>
+                <input placeholder='学号' name="username"  style="height:60rpx;"></input>
+              </view>
+            </view>
+            <view class='ig'>
+              <view class="img">
+                <image src="/images/denglu/shoujihao.png" style="width:60rpx;height:60rpx"></image>
+                <input placeholder='手机号' bindblur="setPhone" name="phone" style="height:60rpx;"  value='{{phoneNum}}' maxlength="11" ></input>
+              </view>
+            </view>
+            <view class='ig'>
+               <view class="img">
+                <image src="/images/denglu/mima.png"style="width:60rpx;height:60rpx;"></image>
+                <input password='true' name="pwd1" placeholder='密码'  style="height:60rpx;" ></input>
+               </view>
+            </view>
+            <view class='ig'>
+               <view class="img">
+                <image src="/images/denglu/mima.png" style="width:60rpx;height:60rpx;"></image>
+                <input password='true' name="pwd2" placeholder='请再次输入密码'  style="height:60rpx;" ></input>
+               </view>
+            </view>
+             <view class='ig'>
+               <view class="img">
+                  <image src="/images/denglu/yanzhengma.png" style="width:62rpx;height:60rpx;"></image>
+                  <input name="code" placeholder='请输入验证码' style="height:60rpx;" 
+></input>
+                  <button class="anniu" size='mini' bindtap="getCode" disabled="{{btn}}" style="font-size:23rpx">{{time}}</button>
+                  <!-- 获取验证码小按钮 -->
+               </view>
+            </view>
+            <button  class="btn"  form-type="submit"  style="font-size:29rpx">注册</button>
+            <!-- 注册样式 -->
+          </form>
+     </view>
+  </view>
+</view>

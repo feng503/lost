@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/sign_in/sign_in_register",
+    "pages/sign_in/lost_password",
+    "pages/lost_to_show/lost_to_show"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

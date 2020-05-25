@@ -1,0 +1,107 @@
+.test-bg{
+  width: 100%;
+  height: 100%;
+  background: #70c7da;
+}
+.bg-image{
+  display: block;
+  width: 100%;
+  height: 1206.4rpx;
+  background: rgba(0,0,0,.2);
+}
+/* 背景图样式 */
+.top-line {  
+  display: flex;  
+  flex-flow: row;
+} 
+.top-line-button {  
+  font-size: 24rpx;     
+  color: #777;  
+  margin: 150rpx; 
+  margin-top:40rpx; 
+  padding-top:0rpx;
+} 
+.one{
+  position: absolute;
+  top:10rpx;
+}
+.active {                        
+   transform: scale(1.45);  
+   transform: all 2s;  
+   border-bottom-style: solid;  
+   border-bottom-color: #744646;  
+   border-bottom-width: 5rpx;  
+   color: white;
+}
+/* 顶部登录与注册样式 */
+.top_height{
+  margin-top: -90rpx;
+}
+.img{
+  display:flex;
+  flex-direction:row;
+  color: #787a78;
+  background-color:white;
+  margin-left: 70rpx;
+  margin-right: 40rpx;
+  height: 70rpx;
+  border: 0px solid rgb(249, 252, 249);
+  border-radius: 10rpx;
+}
+.password{
+   margin-top: 40rpx;
+}
+.denglu{
+  margin-top: 120rpx;
+  margin-left: 69rpx;
+  margin-right: 50rpx;
+  border-radius:20rpx;
+  background-color: rgb(170, 34, 34);
+  color:white;
+} 
+/* 登陆处样式 */
+.ig{
+   margin-top: 20rpx;
+}
+.btn{
+  margin-top: 40rpx;
+  margin-left: 68rpx;
+  margin-right: 50rpx;
+  border-radius:20rpx;
+  background-color: rgb(170, 34, 34);
+  color:white;
+}
+/* 注册处样式 */
+.lostpasswd{
+  margin-top: 40rpx;
+  margin-left: 600rpx;
+  font-size: 25rpx;
+  color:yellow
+}
+/* 忘记密码 */
+input{
+  font-size: 22rpx;
+}
+button{
+  font-size: 22rpx;
+}
+/* 按钮和input通用样式 */
+.anniu{
+  width:230rpx;
+  display:flex;
+  flex-direction:row;
+  margin-top: 0rpx;
+  margin-right: 0rpx;
+  background-color: rgb(170, 34, 34);
+  color:white;
+}
+/* 验证码 */
+.btn{
+  margin-top: 40rpx;
+  margin-left: 68rpx;
+  margin-right: 50rpx;
+  border-radius:20rpx;
+  background-color: rgb(170, 34, 34);
+  color:white;
+}
+/* 注册 */
