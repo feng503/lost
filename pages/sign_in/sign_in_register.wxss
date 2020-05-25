@@ -1,7 +1,7 @@
 .test-bg{
   width: 100%;
   height: 100%;
-  background: #70c7da;
+  background: #C81623
 }
 .bg-image{
   display: block;

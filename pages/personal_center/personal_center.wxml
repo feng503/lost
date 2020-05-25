@@ -1,0 +1,13 @@
+<view class="bg-red">
+  <view class="head">
+    <view class="headlcon">
+      <image src="{{faceImage}}" style="width:170rpx;height:170rpx;border-radius: 60%;"></image>
+    </view>
+    <view class="login">
+      <view>{{student_name}}</view>
+      <view>学号:{{student_id}}</view>
+    <!-- 这里要做成动态的获取，获取头像和昵称 -->
+    </view>
+  </view>
+</view>
+<!-- 顶部头像样式 -->

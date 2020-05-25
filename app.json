@@ -2,13 +2,41 @@
   "pages": [
     "pages/sign_in/sign_in_register",
     "pages/sign_in/lost_password",
-    "pages/lost_to_show/lost_to_show"
+    "pages/lost_to_show/lost_to_show",
+    "pages/fishpond/fishpond",
+    "pages/personal_center/personal_center"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "color": "#dbdbdb",
+    "list": [
+      {
+        "pagePath": "pages/lost_to_show/lost_to_show",
+        "text": "失物展示",
+        "iconPath": "images/bar/shiwuzhanshi-0.png",
+        "selectedIconPath": "images/bar/shiwuzhanshi-1.png"
+      },
+      {
+        "pagePath": "pages/fishpond/fishpond",
+        "text": "河工大鱼塘",
+        "iconPath": "images/bar/hegongdayutang-0.png",
+        "selectedIconPath": "images/bar/hegongdayutang-1.png"
+      },
+      {
+        "pagePath": "pages/personal_center/personal_center",
+        "text": "个人中心",
+        "iconPath": "images/bar/gerenzhongxin-0.png",
+        "selectedIconPath": "images/bar/gerenzhongxin-1.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -1,0 +1,17 @@
+.head{
+  display: flex;
+  flex-direction: row;
+  height:266rpx
+}
+.headlcon{
+  margin:20rpx;
+}
+.login{
+  color:#0808088c;
+  font-size:28rpx;
+  font-weight:600;
+  position:absolute;
+  left:240rpx;
+  margin-top:60rpx;/**账号形式**/
+}
+/* 最上部的个人信息 */
