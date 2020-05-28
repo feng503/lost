@@ -4,7 +4,16 @@
     "pages/sign_in/lost_password",
     "pages/lost_to_show/lost_to_show",
     "pages/fishpond/fishpond",
-    "pages/personal_center/personal_center"
+    "pages/personal_center/personal_center",
+    "pages/personal_center/pick_up_lost/pick_up_lost",
+    "pages/personal_center/look_for_lost/look_for_lost",
+    "pages/personal_center/my_publish/my_publish",
+    "pages/personal_center/add_function/weather",
+    "pages/personal_center/add_function/game",
+    "pages/personal_center/add_function/joke",
+    "pages/personal_center/add_function/service",
+    "pages/personal_center/add_function/about",
+    "pages/personal_center/set/set"
   ],
   "window": {
     "backgroundTextStyle": "light",

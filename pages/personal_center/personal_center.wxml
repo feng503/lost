@@ -23,7 +23,7 @@
 <!-- 学期 -->
 <view class="line"></view>
 <!-- 分割线 -->
-<view class="item" bindtap='add_students'>
+<view class="item" bindtap='pick_up_lost'>
   <view class="img">
     <image src="/images/geren/shangchuanshiwu.png" style="width:40rpx;height:40rpx;"></image>
   </view>
@@ -35,7 +35,7 @@
 <!-- 上传失物 -->
 <view class="line"></view>
 <!-- 分割线 -->
-<view class="item" bindtap='add_students'>
+<view class="item" bindtap='look_for_lost'>
   <view class="img">
     <image src="/images/geren/chazhao.png" style="width:40rpx;height:40rpx;"></image>
   </view>
@@ -47,7 +47,7 @@
 <!--寻找失物-->
 <view class="line"></view>
 <!-- 分割线 -->
-<view class="item" bindtap='add_students'>
+<view class="item" bindtap='my_publish'>
   <view class="img">
     <image src="/images/geren/fabujilu.png" style="width:35rpx;height:35rpx;"></image>
   </view>
@@ -59,7 +59,7 @@
 <!--我的发布 -->
 <view class="line"></view>
 <!-- 分割线 -->
-<view class="item" bindtap='add_students'>
+<view class="item" bindtap='joke'>
   <view class="img">
     <image src="/images/geren/kaixinyike.png" style="width:40rpx;height:40rpx;"></image>
   </view>
@@ -71,7 +71,7 @@
 <!-- 开心一刻 -->
 <view class="line"></view>
 <!-- 分割线 -->
-<view class="item" bindtap='add_students'>
+<view class="item" bindtap='weather'>
   <view class="img">
     <image src="/images/geren/tianqi.png" style="width:35rpx;height:35rpx;"></image>
   </view>
@@ -83,7 +83,7 @@
 <!-- 今日天气 -->
 <view class="line"></view>
 <!-- 分割线 -->
-<view class="item" bindtap='add_students'>
+<view class="item" bindtap='game'>
   <view class="img">
     <image src="/images/geren/youxi.png" style="width:40rpx;height:40rpx;"></image>
   </view>
@@ -95,7 +95,7 @@
 <!-- 石头剪子布 -->
 <view class="line"></view>
 <!-- 分割线 -->
-<view class="item" bindtap='add_students'>
+<view class="item" bindtap='seet'>
   <view class="img">
     <image src="/images/geren/shezhi.png" style="width:40rpx;height:40rpx;"></image>
   </view>
@@ -107,7 +107,7 @@
 <!-- 设置 -->
 <view class="line"></view>
 <!-- 分割线 -->
-<view class="item" bindtap='add_students'>
+<view class="item" bindtap='service'>
   <view class="img">
     <image src="/images/geren/kefu.png" style="width:40rpx;height:40rpx;"></image>
   </view>
@@ -119,7 +119,7 @@
 <!-- 客服 -->
 <view class="line"></view>
 <!-- 分割线 -->
-<view class="item" bindtap='add_students'>
+<view class="item" bindtap='about'>
   <view class="img">
     <image src="/images/geren/guanyu.png" style="width:40rpx;height:40rpx;"></image>
   </view>

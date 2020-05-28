@@ -31,6 +31,51 @@ Page({
       })
     }
     // 对学期动态说明
-  }
-  // 获得用户数据
+  },
+  pick_up_lost:function(){
+    wx.navigateTo({
+      url: '/pages/personal_center/pick_up_lost/pick_up_lost',
+    })
+  },
+  look_for_lost:function(){
+    wx.navigateTo({
+      url: '/pages/personal_center/look_for_lost/look_for_lost',
+    })
+  },
+  my_publish:function(){
+    wx.navigateTo({
+      url: '/pages/personal_center/my_publish/my_publish',
+    })
+  },
+  joke:function(){
+    wx.navigateTo({
+      url: '/pages/personal_center/add_function/joke',
+    })
+  },
+  weather: function () {
+    wx.navigateTo({
+      url: '/pages/personal_center/add_function/weather',
+    })
+  },
+  game: function () {
+    wx.navigateTo({
+      url: '/pages/personal_center/add_function/game',
+    })
+  },
+  service: function () {
+    wx.navigateTo({
+      url: '/pages/personal_center/add_function/service',
+    })
+  },
+  seet: function () {
+    wx.navigateTo({
+      url: '/pages/personal_center/set/set',
+    })
+  },
+  about: function () {
+    wx.navigateTo({
+      url: '/pages/personal_center/add_function/about',
+    })
+  },
+  // 跳转页的设置
 })

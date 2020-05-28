@@ -57,6 +57,13 @@
 					"id": -1,
 					"name": "pages/personal_center/personal_center",
 					"pathName": "pages/personal_center/personal_center",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/personal_center/pick_up_lost/pick_up_lost",
+					"pathName": "pages/personal_center/pick_up_lost/pick_up_lost",
 					"scene": null
 				}
 			]
