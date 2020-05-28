@@ -15,3 +15,34 @@
   margin-top:60rpx;/**账号形式**/
 }
 /* 最上部的个人信息 */
+.img{
+  margin-left:30rpx;
+  line-height:120rpx;/**小图标**/
+}
+.name{
+  padding-top:30rpx;
+  padding-left:20rpx;
+  padding-bottom:30rpx;
+  font-size:30rpx;/**图标后字体**/
+}
+.detail{
+  font-size:30rpx;
+  position:absolute;
+  right:20rpx;
+  height:100rpx;
+  line-height:100rpx;
+  color:#888888;
+}
+.item{
+  height:100rpx;
+  display:flex;
+  flex-direction:row;
+  background-color: #ffffff;
+}
+/**下半部分面板**/
+.line{
+  padding-top:0px;
+  border:1px solid rgba(29, 28, 28, 0.8);
+  opacity:0.1;
+}
+/* 分割线 */

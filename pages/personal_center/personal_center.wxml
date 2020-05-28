@@ -11,3 +11,121 @@
   </view>
 </view>
 <!-- 顶部头像样式 -->
+<view class="item" bindtap=''>
+  <view class="img">
+    <image src="/images/geren/time.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name">学期</view>
+  <view class="detail">
+    <text>{{year}}-{{year+1}}{{season}}季学期</text>
+  </view>
+</view>
+<!-- 学期 -->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='add_students'>
+  <view class="img">
+    <image src="/images/geren/shangchuanshiwu.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >捡到失物</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!-- 上传失物 -->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='add_students'>
+  <view class="img">
+    <image src="/images/geren/chazhao.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >寻找失物</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!--寻找失物-->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='add_students'>
+  <view class="img">
+    <image src="/images/geren/fabujilu.png" style="width:35rpx;height:35rpx;"></image>
+  </view>
+  <view class="name" >我的发布</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!--我的发布 -->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='add_students'>
+  <view class="img">
+    <image src="/images/geren/kaixinyike.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >开心一刻</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!-- 开心一刻 -->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='add_students'>
+  <view class="img">
+    <image src="/images/geren/tianqi.png" style="width:35rpx;height:35rpx;"></image>
+  </view>
+  <view class="name" >今日天气</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!-- 今日天气 -->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='add_students'>
+  <view class="img">
+    <image src="/images/geren/youxi.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >石头剪子布</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!-- 石头剪子布 -->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='add_students'>
+  <view class="img">
+    <image src="/images/geren/shezhi.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >设置</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!-- 设置 -->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='add_students'>
+  <view class="img">
+    <image src="/images/geren/kefu.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >客服</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!-- 客服 -->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='add_students'>
+  <view class="img">
+    <image src="/images/geren/guanyu.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >关于</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!-- 关于 -->

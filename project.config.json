@@ -50,6 +50,13 @@
 					"id": -1,
 					"name": "pages/personal_center/personal_center",
 					"pathName": "pages/personal_center/personal_center",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/personal_center/personal_center",
+					"pathName": "pages/personal_center/personal_center",
 					"scene": null
 				}
 			]
