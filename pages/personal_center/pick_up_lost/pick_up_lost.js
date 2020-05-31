@@ -15,6 +15,7 @@ Page({
     },],
     num: 0,
     scroll: 0,
+    userInfo:null,
     index: null,
     picker: ['卡片', '衣物包包', '书籍', '钥匙', '其他'],
     imgList: [],
@@ -37,7 +38,10 @@ Page({
     }],
     banners: [],
     cardCur: 0,//轮播图模块化需要
-  },
+    describe:'',
+    location:'',
+    phone:''
+   },
   numSteps() {
     this.setData({
       num: this.data.num == this.data.numList.length - 1 ? 1 : this.data.num + 1,
@@ -103,14 +107,48 @@ Page({
     })
   },
   //删除图片
-  submit: function () {
+  submit: function (e) {
+    var that = this;
+    var imagePath = this.data.imgList[0];
+    var type = this.data.index;  
+    var detail = this.data.describe;   
+    var information = this.data.phone;  
+    var addr = this.data.location;
     wx.showToast({
-      title: '等待中',
+      title: '上传中',
+      duration: 9000,
       image: '/images/geren/trundle.png',
-      duration: 2000
+      mask: true,
     })
-    wx.navigateTo({
-      url: '',
+    wx.uploadFile({
+      url: app.serverUrl+'submit',
+      filePath: imagePath,
+      formData: {
+        studentId: that.data.userInfo.studentId,
+        type: type,
+        service: 0,
+        detail: detail,
+        information: information,
+        addr: addr,
+      },
+      header: { "Context-Type": "multipart/form-data" },
+      name: 'image',
+      success: () => {
+        wx.showToast({
+          title: '上传成功',
+          duration: 1000,
+          icon: 'success',
+          mask: true,
+        })
+      },
+      fail: () => {
+        wx.showToast({
+          title: '上传失败',
+          duration: 1000,
+          icon: 'none',
+          mask: true,
+        })
+      }
     })
   },
   // 提交弹窗等待
@@ -125,7 +163,7 @@ Page({
       },
     })
     request({
-      url: 'https://www.vergessen.top/lostobj/getimages'
+      url: app.serverUrl+'getimages'
     }).then(res => {
       // 取出结果
       const banners = res.data;
@@ -168,4 +206,20 @@ Page({
     })
   },
   // 轮播图
+  get_des_value(e){
+    this.setData({
+      describe: e.detail.value
+    })
+  },
+  get_loc_value(e) {
+    this.setData({
+      location: e.detail.value
+    })
+  },
+  get_pho_value(e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  }
+  // 将数值赋值给变量，联系、描述、捡到位置等
 })

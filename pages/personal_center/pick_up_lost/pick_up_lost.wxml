@@ -49,18 +49,18 @@
 </view>
 <!-- 选择失物类别 -->
 <view  wx:if="{{TabCur == 1}}">
- <view class="cu-form-group margin-top">
-		<view class="title">详细描述</view>
-		<input placeholder=""></input>
-	</view>
+<view class="cu-form-group margin-top">
+    <view class="title">详细描述</view>
+    <input placeholder="" bindinput='get_des_value'></input>
+  </view>
   <view class="cu-form-group">
-		<view class="title">联系方式</view>
-		<input placeholder=""></input>
-	</view>
+    <view class="title">联系方式</view>
+    <input placeholder="" bindinput='get_pho_value'></input>
+  </view>
   <view class="cu-form-group">
-		<view class="title">捡到位置</view>
-		<input placeholder=""></input>
-	</view>
+    <view class="title">捡到位置</view>
+    <input placeholder="" bindinput='get_loc_value'></input>
+  </view>
 </view>
 <!-- 完善信息 -->
 <view  wx:if="{{TabCur == 2}}">

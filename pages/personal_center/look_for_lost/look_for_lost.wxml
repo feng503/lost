@@ -1,2 +1,97 @@
-<!--pages/personal_center/look_for_lost/look_for_lost.wxml-->
-<text>pages/personal_center/look_for_lost/look_for_lost.wxml</text>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    </view>
+  </swiper-item>
+</swiper>
+<!-- 轮播图 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange"></text> 寻找失物
+  </view>
+  <view class="action">
+    <button  wx:if="{{num == 1}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps_front">上一步</button>
+    <button  wx:if="{{num == 2}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps_front">上一步</button>
+    <button  wx:if="{{num == 3}}" class="cu-btn teacher_btns bg-green shadow" bindtap="numSteps_front">上一步</button>
+<!-- 上一步操作 -->
+    <button  wx:if="{{num == 0}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 1}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 2}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 3}}" class="cu-btn teacher_btn bg-green shadow" bindtap="submit">提交</button>
+  </view>
+</view>
+<view class="bg-white padding">
+  <view class="cu-steps">
+    <view class="cu-item {{index>num?'':'text-blue'}}" wx:for="{{numList}}" wx:key>
+      <text class="num {{index==4?'err':''}}" data-index="{{index + 1}}"></text> {{item.name}}
+    </view>
+  </view>
+</view>
+<!-- 顶部步骤展示 -->
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{4}}" wx:key  data-id="{{num}}">
+      Step{{index+1}}
+    </view>
+  </view>
+</scroll-view>
+<!-- 页面切换 -->
+<view wx:if="{{TabCur == 0}}"> 
+  <view class="cu-form-group margin-top">
+    <view class="title">请选择失物类别</view>
+      <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+        {{index?picker[index]:'失物类别'}}
+        </view>
+      </picker>
+  </view>
+</view>
+<!-- 选择失物类别 -->
+<view  wx:if="{{TabCur == 1}}">
+<view class="cu-form-group margin-top">
+    <view class="title">详细描述</view>
+    <input placeholder="" bindinput='get_des_value'></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">联系方式</view>
+    <input placeholder="" bindinput='get_pho_value'></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">丢失位置</view>
+    <input placeholder="" bindinput='get_loc_value'></input>
+  </view>
+</view>
+<!-- 完善信息 -->
+<view  wx:if="{{TabCur == 2}}">
+  <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			 <text class="hello">失物图片上传</text>
+		</view>
+		<view class="action">
+			{{imgList.length}}/1
+		</view>
+	</view>
+  	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 上传失物图片 -->
+<view  wx:if="{{TabCur == 3}}">
+ <view class="flex-sub text-center">
+   <view class="solid-bottom text-xl padding">
+      <text class="text-black text-bold">点击提交，让失物尽快回家吧！</text>
+   </view>
+  </view>
+</view>
+
