@@ -1,2 +1,61 @@
-<!--pages/personal_center/set/set.wxml-->
-<text>pages/personal_center/set/set.wxml</text>
+<view class="item" bindtap='changeFaceImg'>
+  <view class="img">
+    <image src="/images/geren/genghuan.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >更换头像</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!--寻找失物-->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='changeUserName' data-target="RadioModal">
+  <view class="img">
+    <image src="/images/geren/change.png" style="width:35rpx;height:35rpx;"></image>
+  </view>
+  <view class="name">修改昵称</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<view class="cu-modal {{modalName=='RadioModal'?'show':''}}">
+  <view class="cu-dialog" catchtap>
+    <radio-group class="block">
+      <view class="cu-list menu text-left">
+       <view class="drawer_box" >
+        <view class="drawer_title">请输入新昵称</view>
+        <view class="drawer_content">
+          <view class="top grid">
+            <input class="input_base input_h30 col-1"  bindinput='getInputValue' ></input>
+          </view>
+        </view>
+        <view class="btn_ok" bindtap="hideModal">确定</view>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+</view>
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='changePasswd'>
+  <view class="img">
+    <image src="/images/geren/change.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >修改密码</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!--寻找失物-->
+<view class="line"></view>
+<!-- 分割线 -->
+<view class="item" bindtap='quit'>
+  <view class="img">
+    <image src="/images/geren/tuichu.png" style="width:35rpx;height:35rpx;"></image>
+  </view>
+  <view class="name" >退出登录</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>

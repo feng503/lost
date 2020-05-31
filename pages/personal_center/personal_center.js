@@ -8,6 +8,9 @@ Page({
     year:'',
     num:''
   },
+  onShow:function(){
+    this.onLoad()
+  },
   onLoad: function (options) {
     this.setData({
       student_name: app.globalData.user.nickname,

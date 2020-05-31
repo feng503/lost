@@ -1,2 +1,5 @@
-<!--pages/personal_center/add_function/joke.wxml-->
-<text>pages/personal_center/add_function/joke.wxml</text>
+<view class="all" wx:for="{{joke}}">
+  <view  class="line"></view>
+  <text class="detail" style="font-size:30rpx" >{{item.content}}</text>
+</view>
+

@@ -13,7 +13,10 @@
     "pages/personal_center/add_function/joke",
     "pages/personal_center/add_function/service",
     "pages/personal_center/add_function/about",
-    "pages/personal_center/set/set"
+    "pages/personal_center/set/set",
+    "pages/personal_center/add_function/game_one",
+    "pages/personal_center/set/changeFaceImg/changeFaceImg",
+    "pages/personal_center/set/change_password/change_password"
   ],
   "window": {
     "backgroundTextStyle": "light",

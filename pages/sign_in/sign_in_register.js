@@ -32,7 +32,6 @@ Page({
   // 忘记密码转页面
   onLoad: function () {
     const userInfo = wx.getStorageSync('userInfo')
-    console.log(userInfo)
     if (userInfo != '') {
       app.globalData.user = userInfo;
       wx.switchTab({

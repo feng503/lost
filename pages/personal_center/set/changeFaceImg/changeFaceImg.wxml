@@ -1,0 +1,19 @@
+ <!-- 引入裁剪组件 -->
+<import src="../../../we-cropper/we-cropper.wxml"/>
+
+<view class='cut-img-page'>
+  <view class='cropper-wrapper-bg'>
+    
+    <view style='height: 1rpx;'></view>
+      <!-- // 因需要ios和安卓上下露出的黑色区域一样需要个兼容（ps: 有可能是我的自定义头部的影响，可以不加，没有影响） -->
+    <view class="cropper-wrapper" style='margin-top: {{ios ? "75px;": "90px"}}'>  
+      <template is="we-cropper" data="{{...cropperOpt}}"/>
+    </view>
+    <view class="getCropperImage">
+      <!-- // 取消裁剪、选择图片、裁剪事件 -->
+      <view catchtap='cancleCropper'>取消</view>
+      <view catchtap='chooseImg'>选择图片</view>
+      <view catchtap="getCropperImage">确定</view>
+    </view>
+  </view>
+</view>

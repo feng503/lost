@@ -1,66 +1,68 @@
-// pages/personal_center/set/set.js
+const app = getApp();
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    student_new_name:''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  changeFaceImg: function () {
+    wx.navigateTo({
+      url: '/pages/personal_center/set/changeFaceImg/changeFaceImg',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  changeUserName: function (e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  hideModal(e) {
+    var that = this
+    this.setData({
+      modalName: null
+    })
+    let userInfo = wx.getStorageSync('userInfo')
+    if (that.data.student_new_name !==''){
+      wx.request({
+        url: app.serverUrl+'reSetNickname',
+        data: {
+          studentId: userInfo.studentId,
+          newNickname: that.data.student_new_name
+        },
+        success: (e) => {
+          if (e.statusCode === 201 || e.statusCode === 200) {
+            wx.showToast({
+              title: '昵称修改成功',
+              duration: 3000,
+              icon: 'success',
+            })
+            wx.setStorageSync('userInfo', e.data)
+            app.globalData.user = e.data;
+          }
+          if (e.statusCode === 500) {
+            wx.showToast({
+              title: e.data.message,
+              duration: 3000,
+              icon: 'none',
+            })
+          }
+        }
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  getInputValue(e) {
+    this.setData({
+      student_new_name: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  // 修改用户名
+  changePasswd: function () {
+    wx.navigateTo({
+      url: '/pages/personal_center/set/change_password/change_password',
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  quit: function () {
+    wx.clearStorage('userInfo')
+    wx.reLaunch({
+      url: '/pages/sign_in/sign_in_register',
+    })
   }
 })

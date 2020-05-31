@@ -1,1 +1,9 @@
-/* pages/personal_center/add_function/joke.wxss */
+.all{
+  margin: 0 23rpx 0;
+}
+.line{
+  padding-top:0px;
+  border:1px solid rgba(2, 2, 2, 0.8);
+  opacity:0.1;
+  margin-bottom: 18rpx;
+}

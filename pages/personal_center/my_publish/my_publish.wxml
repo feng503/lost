@@ -1,2 +1,41 @@
-<!--pages/personal_center/my_publish/my_publish.wxml-->
-<text>pages/personal_center/my_publish/my_publish.wxml</text>
+<view class="whole">
+  <view>     
+    <view class="top-line">    
+      <view class="top-line-button {{TopIndex == 0 ? 'active':''}} " data-index="0" bindtap='changstyle'>失物/寻物</view>    
+      <view class="top-line-button {{TopIndex == 1 ? 'active':''}} " data-index="1" bindtap='changstyle'>鱼塘</view>       
+    </view> 
+    <view wx:if="{{TopIndex == 0}}"> 
+      <view class="submitall">
+        <view wx:for="{{mySubmit}}" wx:key="index">
+          <view class="losts">
+            <image class='lostImg'  src="{{item.imagePathSmall}}"></image>
+            <view class="text">
+              <text class="title">{{item.detail}}</text>
+              <text class="time">{{item.createTime}}</text>
+            </view>
+            <button class="lostButton"  style="font-size:30rpx" style="width:38rpx"  data-id="{{item.id}}" bindtap="deleteLost">删除</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view  wx:if="{{TopIndex == 1}}"> 
+      <view class="submitall">
+        <view wx:for="{{queryAllFishes}}" wx:key="index">
+          <view class="losts">
+           <view wx:for="{{item.thumbImg}}" wx:for-item="news" wx:if = "{{item.thumbImg.length == 1}}" >
+             <image class='lostImg' src="{{news}}"></image>
+            </view>
+            <view   wx:if = "{{item.thumbImg.length !== 1}}" >
+             <image class='lostImg' src="{{item.thumbImg[0]}}"></image>
+            </view>
+            <view class="text">
+              <text class="title">{{item.talk}}</text>
+              <text class="time">{{item.createTime}}</text>
+            </view>
+            <button class="lostButton"  style="font-size:30rpx" style="width:38rpx"  data-id="{{item.fishId}}" bindtap="deleteFish">删除</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>   

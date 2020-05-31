@@ -64,6 +64,20 @@
 					"id": -1,
 					"name": "pages/personal_center/pick_up_lost/pick_up_lost",
 					"pathName": "pages/personal_center/pick_up_lost/pick_up_lost",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/personal_center/my_publish/my_publish",
+					"pathName": "pages/personal_center/my_publish/my_publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/personal_center/set/set",
+					"pathName": "pages/personal_center/set/set",
 					"scene": null
 				}
 			]
