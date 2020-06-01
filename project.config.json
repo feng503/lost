@@ -78,6 +78,13 @@
 					"id": -1,
 					"name": "pages/personal_center/set/set",
 					"pathName": "pages/personal_center/set/set",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/fishpond/fishpond_publish",
+					"pathName": "pages/fishpond/fishpond_publish",
 					"scene": null
 				}
 			]

@@ -1,2 +1,33 @@
-<!--pages/fishpond/fishpond_publish.wxml-->
-<text>pages/fishpond/fishpond_publish.wxml</text>
+    <view class=" bg-white topContainsView">
+      <image class="profileImage" src="{{faceImage}}" />
+          <view class="topRightView">
+          <!-- 用户姓名 -->
+            <text class="topRightName">{{nickname}}</text>
+          </view>
+          <button class='releaseBtn' bindtap="send" size="mini" type="primary">发布</button>
+    </view>
+    <textarea  style="font-size:30rpx"  class='bg-white wishcontent' bindinput="input" maxlength='-1' placeholder="今天的你比昨天又好看了呢"></textarea>
+  <view class="cu-bar bg-white">
+  <view class="action">
+      图片上传
+  </view>
+  <view class="action">
+    {{imgList.length}}/3
+  </view>
+</view>
+  <view class="cu-form-group">
+  <view class="grid col-4 grid-square flex-sub">
+    <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+      <image src='{{imgList[index]}}' mode='aspectFill'></image>
+      <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+        <text class="cuIcon-close"></text>
+      </view>
+    </view>
+    <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<3}}">
+      <text class="cuIcon-cameraadd"></text>
+    </view>
+  </view>
+</view>
+<!-- 图片 -->
+ <view class="tet">>>>二手交易不要忘记写联系信息奥</view>
+

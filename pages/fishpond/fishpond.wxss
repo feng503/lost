@@ -27,9 +27,7 @@ opacity: 0.6
 }
 .containsView{
   padding: 15rpx 15rpx 15rpx 15rpx;
-  margin-top: 15rpx;
-  margin-bottom: 15rpx;
-  background-color: white;
+  background-color:white;
 }
 /*头部整体样式*/
 .topContainsView{
@@ -99,7 +97,7 @@ opacity: 0.6
 
 /*分割线样式*/
 .divLine{
-  background: #f3f3f3;
+  background: rgba(221, 218, 218, 0.658);
   width: 100%;
   height: 15rpx;
 }

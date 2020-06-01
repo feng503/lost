@@ -1,1 +1,54 @@
-/* pages/fishpond/fishpond_publish.wxss */
+.profileImage{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 30rpx;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+}
+.topRightView{
+  margin-left: 25rpx;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+/*用户名称样式*/
+.topRightName{
+  font-size: 20rpx;
+}
+.topContainsView{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0rpx;
+  justify-content: space-between;
+}
+.releaseBtn{
+  margin-right: 5rpx;
+}
+.wishcontent{
+  width: 100%;
+  padding-top: 20rpx;
+  padding-left: 17rpx;
+}
+.image{
+  width:31%;
+  height: 100px;
+  padding: 2px
+}
+ 
+.moment_img{
+  width: 98px;
+  height: 98px;
+}
+ 
+.image_content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px
+}
+.tet{
+  padding-left:340rpx;
+  font-size: 25rpx;
+  margin-top: 25rpx;
+}

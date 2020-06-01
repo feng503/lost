@@ -11,8 +11,7 @@ Page({
     id: '',
     index: '',
     imgs: [],
-    page: 0,
-    str:''
+    page: 0
   },
   onShareAppMessage: function (res) {
     return {
@@ -49,7 +48,6 @@ Page({
     this.onLoad();
   },
   onReachBottom: function () {
-    console.log("用户拉到底部");
     var that = this;
     wx.showLoading({
       title: '拼命加载中',
@@ -91,12 +89,9 @@ Page({
     })
   },
   previewImg: function (e) {
-    this.setData({
-      str: e.currentTarget.dataset.id.slice(0, -12)
-    })
     wx.previewImage({
-      current: e.currentTarget.dataset.id,
-      urls: this.data.str.concat('.png').split()
+      current: e.currentTarget.dataset.id.slice(0, -12).concat('.png'),
+      urls: e.currentTarget.dataset.idd
     })
   },
 })

@@ -74,7 +74,7 @@ Page({
   ChooseImage() {
     wx.chooseImage({
       count: 1, //默认9
-      sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+      sizeType: ['compressed'], //可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], //从相册选择
       success: (res) => {
         if (this.data.imgList.length != 0) {
@@ -116,7 +116,7 @@ Page({
     var addr = this.data.location;
     wx.showToast({
       title: '上传中',
-      duration: 9000,
+      duration: 53000,
       image: '/images/geren/trundle.png',
       mask: true,
     })
@@ -134,6 +134,7 @@ Page({
       header: { "Context-Type": "multipart/form-data" },
       name: 'image',
       success: () => {
+        wx.hideToast();
         wx.showToast({
           title: '上传成功',
           duration: 1000,
@@ -142,6 +143,7 @@ Page({
         })
       },
       fail: () => {
+        wx.hideToast();
         wx.showToast({
           title: '上传失败',
           duration: 1000,

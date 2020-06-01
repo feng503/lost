@@ -231,7 +231,6 @@ Page({
   },
   // 下拉刷新
   onReachBottom: function () {
-    // console.log("用户拉到底部");
     var that = this;
     wx.showLoading({
       title: '拼命加载中',

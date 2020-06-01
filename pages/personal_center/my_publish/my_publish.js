@@ -41,6 +41,7 @@ Page({
   },
   // 删除失物
   deleteFish: function (e) {
+    // console.log(e)
     let id = e.currentTarget.dataset.id;
     let studentId = app.globalData.user.studentId;
     let that = this;
@@ -50,7 +51,7 @@ Page({
       success(res) {
         if (res.confirm) {
           wx.request({
-            url: app.serverUrl+'lostobj/deleteFish?studentId=' + studentId + '&fishId=' + id,
+            url: app.serverUrl+'deleteFish?studentId=' + studentId + '&fishId=' + id,
             success: (res) => {
               that.onShow();
               wx.showToast({
