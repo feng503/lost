@@ -1,0 +1,54 @@
+.topContainsView{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 18rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+/* 上部分整体 */
+.profileImage{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+}
+/* 头像 */
+.topRightView{
+  margin-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+}
+/*头部显示名字和时间整体样式*/
+.topRightName{
+  font-size: 25rpx;
+}
+/*用户名称样式*/
+.topRightTime{
+  font-size: 20rpx;
+  color: #b8b2b2;
+  margin-top: 10rpx;
+}
+/*时间样式*/
+.in-title{
+  font-size: 32rpx;
+  font-family: "微软雅黑";
+  color:#606060;
+  line-height: 60rpx;
+  padding-left:20rpx;
+  border-left: 10rpx solid #4ec4c8;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.clear{
+  display: flex;
+  flex-direction: column;
+  height:16rpx;
+  background: #eeeeee;
+}
+.tupian{
+  margin-top: 36rpx;
+  justify-content: center;
+  width: 100%;
+  border-radius: 20rpx;
+  box-shadow: 1px 1px 4px 4px rgba(85, 85, 85, 0.4);
+}
+/* 图片样式 */

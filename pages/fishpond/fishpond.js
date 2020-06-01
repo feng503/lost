@@ -1,66 +1,102 @@
-// pages/fishpond/fishpond.js
+let app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    list: [],
+    maxtime: '',
+    loadingHidden: false,
+    faceImage: [],
+    nickname: '',
+    newsdata: [],
+    images: [],
+    id: '',
+    index: '',
+    imgs: [],
+    page: 0,
+    str:''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  onShareAppMessage: function (res) {
+    return {
+      title: '河工大失物招领平台',
+      path: '/pages/shiwuzhanshi',
+      success: function (res) {
+        //转发成功
+      },
+      fail: function (res) {
+        //转发失败
+      }
+    }
+  },
   onLoad: function (options) {
-
+    wx.stopPullDownRefresh();
+    this.setData({
+      nickname: app.globalData.user.nickname,
+      faceImage: app.globalData.user.faceImage,
+      page: 0
+    })
+    var that = this;
+    wx.request({
+      url: app.serverUrl+'queryFishes',
+      data: {
+      },
+      success: function (res) {
+        that.setData({
+          newsdata: res.data
+        });
+      },
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
-
+    this.onLoad();
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
-
+    console.log("用户拉到底部");
+    var that = this;
+    wx.showLoading({
+      title: '拼命加载中',
+    })
+    let page = this.data.page + 1;
+    wx.request({
+      url: app.serverUrl+'queryFishes', //此处要加page页 
+      data: {
+        page: page
+      },
+      success: function (res) {
+        if (res.data.length === 0) {
+          wx.showToast({
+            title: '-- 我是有底线的 --',
+            duration: 1000,
+            icon: 'none',
+            mask: true,
+          })
+          return;
+        }
+        let newsdata = that.data.newsdata.concat(res.data);
+        that.setData({
+          newsdata: newsdata,
+          page: page
+        });
+      },
+      fail: function (res) {
+        that.setData({
+          bottomTitle: true,
+          title: '-- 我是有底线的 --'
+        })
+      }
+    })
+    wx.hideLoading();
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  liujiayu: function () {
+    wx.navigateTo({
+      url: '/pages/fishpond/fishpond_publish',
+    })
+  },
+  previewImg: function (e) {
+    this.setData({
+      str: e.currentTarget.dataset.id.slice(0, -12)
+    })
+    wx.previewImage({
+      current: e.currentTarget.dataset.id,
+      urls: this.data.str.concat('.png').split()
+    })
+  },
 })

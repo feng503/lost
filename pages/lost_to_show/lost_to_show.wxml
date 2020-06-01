@@ -1,69 +1,70 @@
 <view class="alll">
-<view class="content">
-<view class="bg">
-<view class="logo">
-<view class="first">HEBUTER带我回家</view>
-<view class="search" bindtap="search">
-  <input type="text" class="searchfont" placeholder='搜索失物' bindinput="getInput" confirm-type='search'  placeholder-style='font-size:26rpx'></input>
-  <image  class="sousuo" bindtap="queryLosts" src="/images/diyiye/search.png" style="width:60rpx;height:54rpx;"></image>
-</view>
-</view>
-</view>
-</view>
+  <view class="content">
+    <view class="bg">
+      <view class="logo">
+        <view class="first">HEBUTER带我回家</view>
+        <view class="search" bindtap="search">
+          <input type="text" class="searchfont" placeholder='搜索失物' bindinput="getInput" confirm-type='search'  placeholder-style='font-size:26rpx'></input>
+          <image  class="sousuo" bindtap="queryLosts" src="/images/diyiye/search.png" style="width:60rpx;height:54rpx;"></image>
+        </view>
+      </view>
+    </view>
+  </view>
 <!--导航栏-->
-<view class="nav" style="margin-top:40rpx;">
-<view class="item" bindtap="findLostByType">
-  <view >
-  <image src="/images/fenlei/gezhongkapian.png" style="width:60rpx;height:54rpx;"></image>
-  </view>
-  <view>
-  卡片</view>
-</view>
-<view class="item" bindtap="yiwubaobao">
-<view>
-<image src="/images/fenlei/yiwubaobao.png" style="width:60rpx;height:54rpx;"></image>
-</view>
-<view>
-衣物包包</view>
-</view>
-<view class="item" bindtap="shuji">
-<view>
-<image src="/images/fenlei/shu.png" style="width:60rpx;height:54rpx;"></image>
-</view>
-<view>
-书籍</view>
-</view>
-<view class="item" bindtap="yaoshi">
-<view>
-<image src="/images/fenlei/key.png" style="width:60rpx;height:54rpx;"></image>
-</view>
-<view>
-钥匙</view>
-</view>
-<view class="item" bindtap="qita">
-<view>
-<image src="/images/fenlei/qita.png" style="width:60rpx;height:54rpx;"></image>
-</view>
-<view>
-其他</view>
-</view>
-</view>
-<view class="list">
-  <view class='list-half'>
-    <view  bindtap="Biu" view data-id="{{index}}" wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 == 0}}" class='card'>
-    <image class='img' mode='widthFix' src="{{item.imagePathSmall}}"> </image>
-    <text class="time"> 详情：{{item.detail}}</text>
-    <text class="time1">{{item.createTime}}</text>
+  <view class="nav" style="margin-top:40rpx;">
+    <view class="item" bindtap="findLostByType">
+      <view>
+        <image src="/images/fenlei/gezhongkapian.png" style="width:60rpx;height:54rpx;"></image>
+      </view>
+        <view>卡片</view>
     </view>
-  </view>
-  <view class='list-half' > 
-    <view bindtap="Biu"  view data-id="{{index}}" wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 != 0}}" class='card'>
-    <image class='img' mode='widthFix' src="{{item.imagePathSmall}}"> </image>
-    <text class="time"> 详情：{{item.detail}}</text>
-    <text class="time1">{{item.createTime}}</text>
+<!-- 卡片 -->
+    <view class="item" bindtap="yiwubaobao">
+      <view>
+        <image src="/images/fenlei/yiwubaobao.png" style="width:60rpx;height:54rpx;"></image>
     </view>
+        <view>衣物包包</view>
+    </view>
+<!-- 衣物包包 -->
+    <view class="item" bindtap="shuji">
+      <view>
+        <image src="/images/fenlei/shu.png" style="width:60rpx;height:54rpx;"></image>
+      </view>
+        <view>书籍</view>
+    </view>
+<!-- 书籍 -->
+    <view class="item" bindtap="yaoshi">
+      <view>
+        <image src="/images/fenlei/key.png" style="width:60rpx;height:54rpx;"></image>
+      </view>
+        <view>钥匙</view>
+    </view>
+<!-- 钥匙 -->
+    <view class="item" bindtap="qita">
+      <view>
+        <image src="/images/fenlei/qita.png" style="width:60rpx;height:54rpx;"></image>
+      </view>
+        <view>其他</view>
+      </view>
+    </view>
+<!-- 其他 -->
+    <view class="list">
+      <view class='list-half'>
+        <view  bindtap="Biu" view data-id="{{index}}" wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 == 0}}" class='card'>
+          <image class='img' mode='widthFix' src="{{item.imagePathSmall}}"> </image>
+          <text class="time"> 详情：{{item.detail}}</text>
+          <text class="time1">{{item.createTime}}</text>
+        </view>
+      </view>
+    <view class='list-half'> 
+      <view bindtap="Biu"  view data-id="{{index}}" wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 != 0}}" class='card'>
+        <image class='img' mode='widthFix' src="{{item.imagePathSmall}}"> </image>
+        <text class="time"> 详情：{{item.detail}}</text>
+        <text class="time1">{{item.createTime}}</text>
+      </view>
+    </view>
+<!-- 瀑布流布局 -->
   </view>
-</view>
 </view>
 <image class="imag" src="/images/diyiye/qiehuan.png"></image>
 <view class="com-widget-goTop" bindtap="fresh">

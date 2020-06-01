@@ -1,0 +1,26 @@
+<view class="content">
+    <view class="topContainsView">
+    <!-- 用户头像 -->
+      <image class="profileImage" src="{{tx.faceImage}}" />
+      <view class="topRightView">
+      <!-- 用户姓名 -->
+        <text class="topRightName">{{tx.nickname}}</text>
+        <!-- 上传日期 -->
+        <text class="topRightTime">{{shuju.createTime}}</text>
+      </view>
+    </view>
+	  <view class="clear"></view>
+	  <view class="info">
+	    <view class="in-title">详细描述：{{shuju.detail}}</view>
+	  </view>
+	  <view class="clear"></view>
+	  <view class="info">
+	    <view class="in-title">联系方式：{{shuju.information}}</view>
+	  </view>
+	  <view class="clear"></view>
+    <view class="info">
+	    <view class="in-title">地址：{{shuju.addr}}</view>
+	  </view>
+	  <view class="clear"></view>
+    <image class="tupian"  data-list="{{shuju.imagePath}}" mode='widthFix' src="{{shuju.imagePath}}"></image>
+</view>

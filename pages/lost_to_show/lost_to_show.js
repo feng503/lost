@@ -10,10 +10,8 @@ Page({
     lingColor: '#f9c828',
     zhaoColor: '#ffffff'
   },
-
   findLostByType: function () {
     var that = this;
-
     that.newsdata = [];
     app.globalData.newlist = [];
     wx.showToast({
@@ -42,14 +40,15 @@ Page({
         });
         app.globalData.newlist = that.data.newsdata;
       },
-
     })
   },
+  // 卡片
   getInput: function (e) {
     this.setData({
       detail: e.detail.value
     })
   },
+  // 获得输入框内容
   queryLosts: function () {
     var that = this;
     wx.request({
@@ -74,9 +73,9 @@ Page({
       },
     })
   },
+  // 寻找框
   yiwubaobao: function () {
     var that = this;
-
     that.newsdata = [];
     app.globalData.newlist = [];
     wx.showToast({
@@ -108,9 +107,9 @@ Page({
 
     })
   },
+  // 衣物包包
   shuji: function () {
     var that = this;
-
     that.newsdata = [];
     app.globalData.newlist = [];
     wx.showToast({
@@ -139,12 +138,11 @@ Page({
         });
         app.globalData.newlist = that.data.newsdata;
       },
-
     })
   },
+  // 书籍
   yaoshi: function () {
     var that = this;
-
     that.newsdata = [];
     app.globalData.newlist = [];
     wx.showToast({
@@ -173,12 +171,11 @@ Page({
         });
         app.globalData.newlist = that.data.newsdata;
       },
-
     })
   },
+  // 钥匙
   qita: function () {
     var that = this;
-
     that.newsdata = [];
     app.globalData.newlist = [];
     wx.showToast({
@@ -207,9 +204,9 @@ Page({
         });
         app.globalData.newlist = that.data.newsdata;
       },
-
     })
   },
+  // 其他
   onLoad: function (options) {
     wx.stopPullDownRefresh()
     var that = this;
@@ -229,14 +226,10 @@ Page({
       },
     })
   },
-
-  // 下拉刷新
   onPullDownRefresh: function () {
-
     this.onLoad();
   },
-
-  // 上拉事件
+  // 下拉刷新
   onReachBottom: function () {
     // console.log("用户拉到底部");
     var that = this;
@@ -375,6 +368,7 @@ Page({
       mask: true,
     })
   },
+  // 领-找切换
   onShareAppMessage: function (res) {
     return {
       title: '河工大失物招领平台',
@@ -387,10 +381,11 @@ Page({
       }
     }
   },
-
+  // 转发
   Biu: function (e) {
     wx.navigateTo({
-      url: '/pages/shiwuzhanshi/detail/detail?id=' + e.currentTarget.dataset.id
+      url: '/pages/lost_to_show/detail?id=' + e.currentTarget.dataset.id
     })
   }
+  // 进入详情页
 })

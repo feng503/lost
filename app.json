@@ -16,7 +16,9 @@
     "pages/personal_center/set/set",
     "pages/personal_center/add_function/game_one",
     "pages/personal_center/set/changeFaceImg/changeFaceImg",
-    "pages/personal_center/set/change_password/change_password"
+    "pages/personal_center/set/change_password/change_password",
+    "pages/lost_to_show/detail",
+    "pages/fishpond/fishpond_publish"
   ],
   "window": {
     "backgroundTextStyle": "light",

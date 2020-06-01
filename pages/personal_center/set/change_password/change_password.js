@@ -31,7 +31,6 @@ Page({
           testCode: data.testCode
         },
         success: (e) => {
-          console.log(e);
           if (e.statusCode === 201 || e.statusCode === 200) {
             // console.log('我被执行了');
             wx.showToast({
