@@ -23,7 +23,7 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: '河工大失物招领平台',
-      path: '/pages/gerenzhongxin/kaixinyike',
+      path: '/pages/personal_center/add_function/joke',
       success: function (res) {
         //转发成功
       },

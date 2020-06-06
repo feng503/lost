@@ -18,7 +18,8 @@
     "pages/personal_center/set/changeFaceImg/changeFaceImg",
     "pages/personal_center/set/change_password/change_password",
     "pages/lost_to_show/detail",
-    "pages/fishpond/fishpond_publish"
+    "pages/fishpond/fishpond_publish",
+    "pages/personal_center/scan_code/scan_code"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor": "#C81623",
+  "navigationBarTitleText": "使用失招柜",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#ffffff",
+  "enablePullDownRefresh": false
+}

@@ -113,17 +113,5 @@ Page({
       gameOfPlay: '',
       imageUserScr: '/images/geren/wenhao.png'
     });
-  },
-  onShareAppMessage: function (res) {
-    return {
-      title: '河工大失物招领平台',
-      path: '/pages/gerenzhongxin/game/gameone',
-      success: function (res) {
-        //转发成功
-      },
-      fail: function (res) {
-        //转发失败
-      }
-    }
   }
 })

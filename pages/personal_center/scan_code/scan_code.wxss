@@ -1,0 +1,13 @@
+.page{
+ margin-bottom: 30rpx;
+}
+.weui-btn{
+ height: 80rpx;
+ width: 50%;
+ font-size: 40rpx;
+ font-weight: 50rpx;
+ text-align: center;
+ line-height: 50rpx;
+ background-color: rgb(233, 227, 227);
+ color: rgb(10, 10, 10);
+}

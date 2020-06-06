@@ -16,7 +16,7 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: '河工大失物招领平台',
-      path: '/pages/shiwuzhanshi',
+      path: '/pages/fishpond/fishpond',
       success: function (res) {
         //转发成功
       },

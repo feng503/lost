@@ -47,6 +47,18 @@
 <!--寻找失物-->
 <view class="line"></view>
 <!-- 分割线 -->
+<view class="item" bindtap='scan_code'>
+  <view class="img">
+    <image src="/images/geren/saoma.png" style="width:35rpx;height:35rpx;"></image>
+  </view>
+  <view class="name" >使用失招柜</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!-- 扫码使用失招柜 -->
+<view class="line"></view>
+<!-- 分割线 -->
 <view class="item" bindtap='my_publish'>
   <view class="img">
     <image src="/images/geren/fabujilu.png" style="width:35rpx;height:35rpx;"></image>

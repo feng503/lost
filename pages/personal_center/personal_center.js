@@ -50,6 +50,11 @@ Page({
       url: '/pages/personal_center/my_publish/my_publish',
     })
   },
+  scan_code:function(){
+    wx.navigateTo({
+      url: '/pages/personal_center/scan_code/scan_code',
+    })
+  },
   joke:function(){
     wx.navigateTo({
       url: '/pages/personal_center/add_function/joke',
@@ -81,4 +86,16 @@ Page({
     })
   },
   // 跳转页的设置
+  onShareAppMessage: function (res) {
+    return {
+      title: '河工大失物招领平台',
+      path: '/pages/personal_center/personal_center',
+      success: function (res) {
+        //转发成功
+      },
+      fail: function (res) {
+        //转发失败
+      }
+    }
+  }
 })

@@ -29,16 +29,4 @@ Page({
   imgYu: function (event) {
     var imgList = event.imagePath;//获取data-list
   },
-  onShareAppMessage: function (res) {
-    return {
-      title: '河工大失物招领平台',
-      path: '/pages/shiwuzhanshi/detail',
-      success: function (res) {
-        //转发成功
-      },
-      fail: function (res) {
-        //转发失败
-      }
-    }
-  }
 })
