@@ -30,9 +30,9 @@
   position: absolute;
   /* left: 160rpx; */
   width: 100%;
-  top: 10rpx;
+  top: 14rpx;
   /* border: 1px solid lightgray; */
-  font-size:26rpx
+  font-size:25rpx
 }
 .search view{
   text-align:center;
@@ -48,17 +48,19 @@
   color:rgb(230, 41, 183);
 }
 .item{
-  margin-top:-40rpx;
+  margin-top:-60rpx;
   text-align:center;
+  padding: 10rpx;
   font-size:26rpx;
   width:20%;
   display:inline-block;
-  margin-bottom:40rpx;
+  margin-bottom:50rpx;
   background-color: #C81623;
 }
 .time{
   display: flex;
   flex-wrap: wrap;
+  padding-inline-start: 6rpx;
   font-size:26rpx;
   display: -webkit-box;
   overflow: hidden;
@@ -70,6 +72,8 @@
 }
 .time1{
   font-size:20rpx;
+  padding-right: 7rpx;
+  padding-bottom: 4rpx;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -83,7 +87,7 @@
 }
 .list {
   padding: 0rpx;
-  margin-top:-23rpx;
+  margin-top:-20rpx;
   display: flex;
   /* 均匀布局 */
   justify-content: space-evenly;
@@ -91,26 +95,28 @@
   align-items: flex-start;
   background-color: rgba(221, 218, 218, 0.658)
 }
- .list-half .card {
+.list-half .card {
   /* 背景底色和图片宽度 */
   background-color: rgb(249, 252, 249);
   width: 345rpx;
-  border: 1px solid rgb(249, 252, 249);
-  border-radius: 20rpx; 
-  margin-bottom: 12rpx;
+  border-radius: 12rpx; 
+  margin-bottom: 13rpx;
+  box-shadow: 0 0 10px 3px rgba(30, 30, 30, 0.1)
 }
 .img{
   width: 345rpx;
   border: 0px solid rgb(249, 252, 249);
-  border-radius: 20rpx;  
+  border-radius: 12rpx 12rpx 5rpx 5rpx;  
 }
 .com-widget-goTop { 
   display: flex; 
   position: fixed; 
   bottom: 50rpx; 
   right: 30rpx; 
+  margin-left: 2rpx;
   background: rgba(150, 149, 149, 0); 
-  /* border-radius: 50%;  */
+  border-radius: 50%; 
+  box-shadow: 0px 0px 10px 5px rgba(150, 150, 150, 0.3) inset; 
   overflow: hidden; 
   z-index: 500; 
 } 
@@ -136,9 +142,13 @@
   bottom: 95rpx; 
   right: 57rpx; 
   background: rgba(150, 149, 149, 0); 
-  overflow: hidden; 
+  overflow: hidden;
   z-index: 500;  
 }
 .it{
   padding-top:11rpx; 
+}
+.hovered{
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0px 0px 12px 8px rgba(100, 20, 20, 0.3) inset; 
 }

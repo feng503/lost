@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       student_name: app.globalData.user.nickname,
-      faceImage: app.globalData.user.faceImage,
+      faceImage: app.globalData.user.faceImageSmall,
       student_id: app.globalData.user.studentId,
     })
     // 获取用户信息

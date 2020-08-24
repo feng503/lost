@@ -1,5 +1,6 @@
 .topcontainer{
   display: flex;
+  padding: 8rpx 11rpx 5rpx 11rpx;
   justify-content: space-between
 }
 .centerContent{
@@ -28,6 +29,7 @@ opacity: 0.6
 .containsView{
   padding: 15rpx 15rpx 15rpx 15rpx;
   background-color:white;
+  border-radius: 2%;
 }
 /*头部整体样式*/
 .topContainsView{
@@ -44,6 +46,7 @@ opacity: 0.6
   width: 90rpx;
   height: 90rpx;
   border-radius: 45rpx;
+  box-shadow: 0 0 3px 1px rgba(221, 218, 218, 0.15);
 }
 
 /*头部显示名字和时间整体样式*/
@@ -105,15 +108,22 @@ opacity: 0.6
   font-size: 23.6rpx
 }
 .imageone{
-  width: 700rpx;
+  max-width: 700rpx;
+  height: 430rpx;
 }
 .imagetwo{
   width: 350rpx;
+  max-height: 430rpx;
+}
+.imagethree{
+  width: 230rpx;
+  max-height: 430rpx;
 }
 .imageall{
   display: flex;
   justify-content: space-evenly;
 }
-.imagethree{
-  width: 220rpx;
+.imageall image{
+  border-radius: 6rpx;
+  box-shadow: 0 0 4px 3px rgba(230, 230, 230, 0.3)
 }

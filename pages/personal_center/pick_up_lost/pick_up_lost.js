@@ -19,23 +19,7 @@ Page({
     index: null,
     picker: ['卡片', '衣物包包', '书籍', '钥匙', '其他'],
     imgList: [],
-    swiperList: [{
-      id: 0,
-      type: 'image',
-      url: ''
-    }, {
-      id: 1,
-      type: 'image',
-      url: '',
-    }, {
-      id: 2,
-      type: 'image',
-      url: ''
-    }, {
-      id: 3,
-      type: 'image',
-      url: ''
-    }],
+    swiperList: [],
     banners: [],
     cardCur: 0,//轮播图模块化需要
     describe:'',
@@ -121,7 +105,7 @@ Page({
       mask: true,
     })
     wx.uploadFile({
-      url: app.serverUrl+'submit',
+      url: app.serverUrl+'lost/submit',
       filePath: imagePath,
       formData: {
         studentId: that.data.userInfo.studentId,
@@ -131,7 +115,7 @@ Page({
         information: information,
         addr: addr,
       },
-      header: { "Context-Type": "multipart/form-data" },
+      header: { "Context-Type": "multipart/form-data", 'lost': app.globalData.user.token },
       name: 'image',
       success: () => {
         wx.hideToast();
@@ -140,6 +124,9 @@ Page({
           duration: 1000,
           icon: 'success',
           mask: true,
+        })
+        wx.navigateTo({
+          url: 'pages/personal_center/personal_center',
         })
       },
       fail: () => {
@@ -153,7 +140,6 @@ Page({
       }
     })
   },
-  // 提交弹窗等待
   onLoad: function (options) {
     var that = this;
     wx.getStorage({
@@ -165,29 +151,21 @@ Page({
       },
     })
     request({
-      url: app.serverUrl+'getimages'
+      url: app.serverUrl+'lost/getimages?service=0'
     }).then(res => {
       // 取出结果
       const banners = res.data;
+      let swiper = []
+      for(let i = 0; i < banners.length; i++){
+        swiper.push({
+          id: i,
+          type: 'image',
+          url: banners[i]
+        })
+      }
       this.setData({
         banners: banners,
-        swiperList: [{
-          id: 0,
-          type: 'image',
-          url: 'https://a1.qpic.cn/psc?/V10JXMix0CQf9J/UAKsoihnbkr0XNkArJGSugpRiCkIsEfB2JhbgGkC6Hok5yp0F32NfRqT6CmBpPjPiO.Px8hjWESHBxnzztoA4A!!/m&ek=1&kp=1&pt=0&bo=VQhABlUIQAYRECc!&t=5&tl=3&vuin=644960080&tm=1587715200&sce=60-4-3&rf=0-0'
-        }, {
-          id: 1,
-          type: 'image',
-          url: banners[0],
-        }, {
-          id: 2,
-          type: 'image',
-          url: banners[1]
-        }, {
-          id: 3,
-          type: 'image',
-          url: banners[2]
-        }],
+        swiperList: swiper
       })
     })
     this.towerSwiper('swiperList');
@@ -207,7 +185,6 @@ Page({
       cardCur: e.detail.current
     })
   },
-  // 轮播图
   get_des_value(e){
     this.setData({
       describe: e.detail.value
@@ -223,5 +200,4 @@ Page({
       phone: e.detail.value
     })
   }
-  // 将数值赋值给变量，联系、描述、捡到位置等
 })

@@ -19,12 +19,12 @@
               </view>
             </view>
       <!-- 动态文字 -->
-            <text style="font-size: 30rpx">{{item.talk}}</text>
+            <text style="font-size: 30rpx; margin-buttom: 10rpx;">{{item.talk}}</text>
         <!-- 图片资源 -->
         <view class="imageall">
                 <view wx:for="{{item.thumbImg}}" wx:for-item="news" >
                   <view   wx:if="{{item.thumbImg.length<2}}"  >
-                    <image class="imageone" src="{{news}}" data-idd="{{item.imagePath}}" data-id="{{news}}" bindtap="previewImg"  mode='left'/>        
+                    <image class="imageone" src="{{news}}" data-idd="{{item.imagePath}}" data-id="{{news}}" bindtap="previewImg"  mode='heightFix'/>        
                   </view>
                   <view wx:elif="{{item.thumbImg.length>2}}">
                   <image class="imagethree"   data-idd="{{item.imagePath}}" data-id="{{news}}"  bindtap="previewImg"  src="{{news}}" mode='widthFix'/>

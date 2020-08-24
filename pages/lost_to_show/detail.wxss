@@ -30,11 +30,10 @@
 }
 /*时间样式*/
 .in-title{
-  font-size: 32rpx;
+  font-size: 29rpx;
   font-family: "微软雅黑";
   color:#606060;
   line-height: 60rpx;
-  padding-left:20rpx;
   border-left: 10rpx solid #4ec4c8;
   border-bottom: 1rpx solid #eeeeee;
 }
@@ -45,10 +44,11 @@
   background: #eeeeee;
 }
 .tupian{
-  margin-top: 36rpx;
+  margin-top: 25rpx;
+  margin-left: 1%; 
   justify-content: center;
-  width: 100%;
-  border-radius: 20rpx;
-  box-shadow: 1px 1px 4px 4px rgba(85, 85, 85, 0.4);
+  width: 98%;
+  border-radius: 16rpx;
+  box-shadow: 0 0 4px 3px rgba(85, 85, 85, 0.2);
 }
 /* 图片样式 */

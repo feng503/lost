@@ -4,7 +4,7 @@
       <view class="logo">
         <view class="first">HEBUTER带我回家</view>
         <view class="search" bindtap="search">
-          <input type="text" class="searchfont" placeholder='搜索失物' bindinput="getInput" confirm-type='search'  placeholder-style='font-size:26rpx'></input>
+          <input type="text" class="searchfont" placeholder='搜索失物' bindinput="getInput" confirm-type='search'></input>
           <image  class="sousuo" bindtap="queryLosts" src="/images/diyiye/search.png" style="width:60rpx;height:54rpx;"></image>
         </view>
       </view>
@@ -12,35 +12,35 @@
   </view>
 <!--导航栏-->
   <view class="nav" style="margin-top:40rpx;">
-    <view class="item" bindtap="findLostByType">
+    <view class="item {{type==0?'hovered':''}}" bindtap="findLostByType">
       <view>
         <image src="/images/fenlei/gezhongkapian.png" style="width:60rpx;height:54rpx;"></image>
       </view>
         <view>卡片</view>
     </view>
 <!-- 卡片 -->
-    <view class="item" bindtap="yiwubaobao">
+    <view class="item {{type==1?'hovered':''}}" bindtap="yiwubaobao">
       <view>
         <image src="/images/fenlei/yiwubaobao.png" style="width:60rpx;height:54rpx;"></image>
     </view>
         <view>衣物包包</view>
     </view>
 <!-- 衣物包包 -->
-    <view class="item" bindtap="shuji">
+    <view class="item {{type==2?'hovered':''}}" bindtap="shuji">
       <view>
         <image src="/images/fenlei/shu.png" style="width:60rpx;height:54rpx;"></image>
       </view>
         <view>书籍</view>
     </view>
 <!-- 书籍 -->
-    <view class="item" bindtap="yaoshi">
+    <view class="item {{type==3?'hovered':''}}" bindtap="yaoshi">
       <view>
         <image src="/images/fenlei/key.png" style="width:60rpx;height:54rpx;"></image>
       </view>
         <view>钥匙</view>
     </view>
 <!-- 钥匙 -->
-    <view class="item" bindtap="qita">
+    <view class="item {{type==4?'hovered':''}}" bindtap="qita">
       <view>
         <image src="/images/fenlei/qita.png" style="width:60rpx;height:54rpx;"></image>
       </view>

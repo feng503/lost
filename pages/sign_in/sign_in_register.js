@@ -5,7 +5,7 @@ Page({
   data: {
     TopIndex: 0,
     put:'',  //切换登录和注册
-    phoneNum: "", //手机号保存
+    email: "", //邮箱保存
     time: '获取验证码', //倒计时 
     currentTime: 60,  //验证码时间
     btn: false,
@@ -32,7 +32,7 @@ Page({
   // 忘记密码转页面
   onLoad: function () {
     const userInfo = wx.getStorageSync('userInfo')
-    if (userInfo != '') {
+    if (userInfo != null && userInfo != '' && userInfo != {}) {
       app.globalData.user = userInfo;
       wx.switchTab({
         url: '/pages/lost_to_show/lost_to_show',
@@ -41,11 +41,13 @@ Page({
       this.login()
     }
   },
-  // 刷新加验证缓存
+  // 登录
   login: (e) => {
+    if (e.detail.value.studentId === '' || e.detail.value.password === '')
+      return;
     let that = this;
     wx.request({
-      url: app.serverUrl+'login',
+      url: app.serverUrl+'user/login',
       data: {
         studentId: e.detail.value.studentId,
         password: e.detail.value.password
@@ -57,43 +59,7 @@ Page({
           wx.switchTab({
             url: '/pages/lost_to_show/lost_to_show',
           })
-        }
-        if (e.statusCode === 500) {
-          wx.showToast({
-            title: e.data.message,
-            duration: 3000,
-            icon: 'none',
-          })
-        }
-      }
-    })
-  },
-  // 登录函数
-  GoRegister: function (e) {
-    var userInfo = e.detail.value;
-    wx.request({
-      url: app.serverUrl+'register',
-      data: {
-        studentId: userInfo.username,
-        phoneNum: userInfo.phone,
-        passwordFirst: userInfo.pwd1,
-        passwordSecond: userInfo.pwd2,
-        testCode: userInfo.code
-      },
-      success: (e) => {
-        console.log(e);
-        if (e.statusCode === 201) {
-          wx.showToast({
-            title: '注册成功',
-            duration: 3000,
-            icon: 'success',
-          })
-          wx.setStorage({
-            key: "userInfo",
-            data: e.data
-          })
-        }
-        if (e.statusCode === 500) {
+        } else {
           wx.showToast({
             title: e.data.message,
             duration: 3000,
@@ -104,18 +70,60 @@ Page({
     })
   },
   // 注册函数
-  setPhone: function (e) {
-    this.setData({
-      phoneNum: e.detail.value
+  GoRegister: function (e) {
+    var userInfo = e.detail.value;
+    let that = this;
+    wx.request({
+      url: app.serverUrl+'user/register',
+      data: {
+        studentId: userInfo.username,
+        email: userInfo.phone,
+        passwordFirst: userInfo.pwd1,
+        passwordSecond: userInfo.pwd2,
+        authCode: userInfo.code
+      },
+      success: (e) => {
+        if (e.statusCode === 200) {
+          wx.showToast({
+            title: '注册成功',
+            duration: 2000,
+            icon: 'success',
+          })
+          that.setData({
+            TopIndex: 0
+          })
+        }else {
+          wx.showToast({
+            title: e.data.message,
+            duration: 2000,
+            icon: 'none',
+          })
+        }
+      }
     })
   },
-  //保存手机号
+  setPhone: function (e) {
+    this.setData({
+      email: e.detail.value
+    })
+  },
+  //发送验证码
   getCode: function (e) {
-    this.dead_time();
-    var that = this;
-    if (that.data.phoneNum != "") {
+    if (this.data.email != "") {
+      var that = this;
       wx.request({
-        url: app.serverUrl+'code?phoneNum=' + that.data.phoneNum,
+        url: app.serverUrl+'user/code?email=' + that.data.email,
+        success: (e) => {
+          if (e.statusCode !== 200) {
+            wx.showToast({
+              title: e.data.message,
+              duration: 3000,
+              icon: 'none',
+            })
+          } else{
+            that.dead_time();
+          }
+        } 
       })
     }
   },
@@ -139,5 +147,4 @@ Page({
       }
     }, 1000)
   },
-  // 获取验证码
 })

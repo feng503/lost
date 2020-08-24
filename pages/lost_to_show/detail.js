@@ -12,7 +12,8 @@ Page({
         shuju: app.globalData.newlist[opetios.id]
       });
       wx.request({
-        url: app.serverUrl+'getuser?studentId=' + this.data.shuju.lostUserStudentId,
+        url: app.serverUrl +'user/getuser?studentId=' + this.data.shuju.lostUserStudentId,
+        header: { 'lost': app.globalData.user.token},
         success: (res) => {
           that.setData({
             tx: res.data

@@ -22,7 +22,8 @@ Page({
     let userInfo = wx.getStorageSync('userInfo')
     if (that.data.student_new_name !==''){
       wx.request({
-        url: app.serverUrl+'reSetNickname',
+        url: app.serverUrl+'user/reSetNickname',
+        header: { 'lost': app.globalData.user.token },
         data: {
           studentId: userInfo.studentId,
           newNickname: that.data.student_new_name
@@ -36,6 +37,9 @@ Page({
             })
             wx.setStorageSync('userInfo', e.data)
             app.globalData.user = e.data;
+            wx.navigateTo({
+              url: 'pages/personal_center/personal_center',
+            })
           }
           if (e.statusCode === 500) {
             wx.showToast({
@@ -53,14 +57,13 @@ Page({
       student_new_name: e.detail.value
     })
   },
-  // 修改用户名
   changePasswd: function () {
     wx.navigateTo({
       url: '/pages/personal_center/set/change_password/change_password',
     })
   },
   quit: function () {
-    wx.clearStorage('userInfo')
+    wx.clearStorageSync('userInfo')
     wx.reLaunch({
       url: '/pages/sign_in/sign_in_register',
     })

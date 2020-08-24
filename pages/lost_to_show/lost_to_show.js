@@ -5,7 +5,7 @@ Page({
     userInfo: null,
     detail: '',
     tp: 0,
-    page: 0,
+    page: 1,
     type: -1,
     lingColor: '#f9c828',
     zhaoColor: '#ffffff'
@@ -21,7 +21,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: app.serverUrl + 'findlostsbytype',
+      url: app.serverUrl + 'lost/findLostByType',
       data: {
         type: 0,
         service: this.data.tp
@@ -35,7 +35,7 @@ Page({
         })
         that.setData({
           newsdata: res.data,
-          page: 0,
+          page: 1,
           type: 0,
         });
         app.globalData.newlist = that.data.newsdata;
@@ -52,7 +52,8 @@ Page({
   queryLosts: function () {
     var that = this;
     wx.request({
-      url: app.serverUrl+'findlostsbydetail',
+      url: app.serverUrl +'lost/findLostByDetail',
+      header: { 'lost': app.globalData.user.token },
       data: {
         detail: that.data.detail,
         service: that.data.tp
@@ -66,7 +67,7 @@ Page({
         })
         that.setData({
           newsdata: res.data,
-          page: 0,
+          page: 1,
           type: -2
         });
         app.globalData.newlist = that.data.newsdata;
@@ -85,7 +86,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: app.serverUrl+'findlostsbytype',
+      url: app.serverUrl +'lost/findLostByType',
       data: {
         type: 1,
         service: that.data.tp
@@ -99,7 +100,7 @@ Page({
         })
         that.setData({
           newsdata: res.data,
-          page: 0,
+          page: 1,
           type: 1,
         });
         app.globalData.newlist = that.data.newsdata;
@@ -119,7 +120,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: app.serverUrl+'findlostsbytype',
+      url: app.serverUrl +'lost/findLostByType',
       data: {
         type: 2,
         service: that.data.tp
@@ -133,7 +134,7 @@ Page({
         })
         that.setData({
           newsdata: res.data,
-          page: 0,
+          page: 1,
           type: 2,
         });
         app.globalData.newlist = that.data.newsdata;
@@ -152,7 +153,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: app.serverUrl+'findlostsbytype',
+      url: app.serverUrl +'lost/findLostByType',
       data: {
         type: 3,
         service: that.data.tp
@@ -166,7 +167,7 @@ Page({
         })
         that.setData({
           newsdata: res.data,
-          page: 0,
+          page: 1,
           type: 3,
         });
         app.globalData.newlist = that.data.newsdata;
@@ -185,7 +186,7 @@ Page({
       mask: true,
     })
     wx.request({
-      url: app.serverUrl+'findlostsbytype',
+      url: app.serverUrl +'lost/findLostByType',
       data: {
         type: 4,
         service: that.data.tp
@@ -199,7 +200,7 @@ Page({
         })
         that.setData({
           newsdata: res.data,
-          page: 0,
+          page: 1,
           type: 4,
         });
         app.globalData.newlist = that.data.newsdata;
@@ -211,14 +212,14 @@ Page({
     wx.stopPullDownRefresh()
     var that = this;
     wx.request({
-      url: app.serverUrl+'findlostsall',
+      url: app.serverUrl +'lost/findLostAll',
       data: {
         service: that.data.tp
       },
       success: function (res) {
         that.setData({
           newsdata: res.data,
-          page: 0,
+          page: 1,
           type: -1,
           detail: ''
         });
@@ -238,7 +239,7 @@ Page({
     let page = this.data.page + 1;
     if (this.data.type >= 0) {
       wx.request({
-        url: app.serverUrl+'findlostsbytype', //此处要加page页 
+        url: app.serverUrl +'lost/findLostByType', //此处要加page页 
         data: {
           type: that.data.type,
           service: that.data.tp,
@@ -270,7 +271,8 @@ Page({
       })
     } else if (this.data.type === -2) {
       wx.request({
-        url: app.serverUrl+'findlostsbydetail',
+        url: app.serverUrl +'lost/findLostByDetail',
+        header: { 'lost': app.globalData.user.token },
         data: {
           detail: that.data.detail,
           service: that.data.tp,
@@ -302,7 +304,7 @@ Page({
       })
     } else {
       wx.request({
-        url: app.serverUrl+'findlostsall', //此处要加page页 
+        url: app.serverUrl +'lost/findLostAll', //此处要加page页 
         data: {
           service: that.data.tp,
           page: page

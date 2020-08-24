@@ -12,7 +12,6 @@ Page({
     })
     this.onShow()
   },
-  // 顶部页面切换
   deleteLost: function (e) {
     let id = e.currentTarget.dataset.id;
     let studentId = app.globalData.user.studentId;
@@ -23,7 +22,8 @@ Page({
       success(res) {
         if (res.confirm) {
           wx.request({
-            url: app.serverUrl+'deleteLost?studentId=' + studentId + '&lostId=' + id,
+            url: app.serverUrl +'lost/deleteLost?studentId=' + studentId + '&lostId=' + id,
+            header: { 'lost': app.globalData.user.token },
             success: (res) => {
               that.onShow();
               wx.showToast({
@@ -39,7 +39,6 @@ Page({
       }
     })
   },
-  // 删除失物
   deleteFish: function (e) {
     // console.log(e)
     let id = e.currentTarget.dataset.id;
@@ -51,7 +50,8 @@ Page({
       success(res) {
         if (res.confirm) {
           wx.request({
-            url: app.serverUrl+'deleteFish?studentId=' + studentId + '&fishId=' + id,
+            url: app.serverUrl+'fish/deleteFish?studentId=' + studentId + '&fishId=' + id,
+            header: { 'lost': app.globalData.user.token },
             success: (res) => {
               that.onShow();
               wx.showToast({
@@ -67,12 +67,12 @@ Page({
       }
     })
   },
-// 删除鱼塘
   onShow: function () {
     var that = this;
     if (this.data.TopIndex == 0) {
       wx.request({
-        url: app.serverUrl+'mySubmit?studentId=' + app.globalData.user.studentId,
+        url: app.serverUrl+'lost/mySubmit?studentId=' + app.globalData.user.studentId,
+        header: { 'lost': app.globalData.user.token },
         success: (res) => {
           that.setData({
             mySubmit: res.data
@@ -82,7 +82,8 @@ Page({
     }
     else {
       wx.request({
-        url: app.serverUrl+'queryMyFishes?studentId=' + app.globalData.user.studentId,
+        url: app.serverUrl+'fish/queryMyFishes?studentId=' + app.globalData.user.studentId,
+        header: { 'lost': app.globalData.user.token },
         success: (res) => {
           that.setData({
             queryAllFishes: res.data
@@ -92,5 +93,4 @@ Page({
       })
     }
   },
-//页面展示 
 })

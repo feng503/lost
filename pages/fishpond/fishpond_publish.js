@@ -87,13 +87,14 @@ Page({
     let that = this;
     let img_url = that.data.imgList;
     let img_url_ok = [];
+    var studentId = app.globalData.user.studentId;
+    var talk = that.data.talk;
     //由于图片只能一张一张地上传，所以用循环
     // console.log(img_url.length);
     if (img_url.length === 0) {
-      var studentId = app.globalData.user.studentId;
-      var talk = that.data.talk;
       wx.request({
-        url: app.serverUrl+'addFish',
+        url: app.serverUrl+'fish/addFish',
+        header: { 'lost': app.globalData.user.token },
         method: "GET",
         data: {
           studentId: studentId,
@@ -101,17 +102,23 @@ Page({
           talk: talk,
         },
         success: function (res) {
-          if (res.statusCode == 201) {
+          if (res.statusCode === 201) {
             wx.hideToast();
             wx.showModal({
               title: '发布成功',
               showCancel: false,
               success: function (res) {
                 if (res.confirm) {
-                  wx.navigateBack({
-                  })
+                  wx.navigateBack({})
                 }
               }
+            })
+          } else {
+            wx.hideToast();
+            wx.showToast({
+              title: res.data.message,
+              duration: 3000,
+              icon: 'none',
             })
           }
         }
@@ -119,12 +126,13 @@ Page({
     } else {
       for (let i = 0; i < img_url.length; i++) {
         wx.uploadFile({
-          url: app.serverUrl+'addFishImg',
+          url: app.serverUrl+'fish/addFishImg',
+          header: { 'lost': app.globalData.user.token },
           filePath: img_url[i],
           method: "POST",
           name: 'image',
           formData: {
-            studentId: that.data.id
+            studentId: studentId
           },
           success: function (res) {
             that.setData({
@@ -138,7 +146,8 @@ Page({
               var studentId = app.globalData.user.studentId;
               var talk = that.data.talk;
               wx.request({
-                url: app.serverUrl+'addFish',
+                url: app.serverUrl+'fish/addFish',
+                header: { 'lost': app.globalData.user.token },
                 method: "GET",
                 data: {
                   studentId: studentId,
@@ -153,10 +162,16 @@ Page({
                       showCancel: false,
                       success: function (res) {
                         if (res.confirm) {
-                          wx.navigateBack({
-                          })
-                        }
+                          wx.navigateBack({})
+                        } 
                       }
+                    })
+                  } else {
+                    wx.hideToast();
+                    wx.showToast({
+                      title: res.data.message,
+                      duration: 3000,
+                      icon: 'none',
                     })
                   }
                 }

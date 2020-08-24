@@ -112,7 +112,8 @@ Page({
       this.wecropper.getCropperImage((src) => {
         let id = app.globalData.user.studentId;
           wx.uploadFile({
-            url: app.serverUrl+'reSetImage',
+            url: app.serverUrl+'user/reSetImage',
+            header: { 'lost': app.globalData.user.token },
             filePath: src,
             name: 'faceImg',
             method: "POST",
@@ -125,11 +126,13 @@ Page({
               app.globalData.user = userInfo;
 
               wx.setStorageSync('userInfo', userInfo)
-              wx.navigateBack()
               wx.showToast({
                 title: '头像修改成功',
                 duration: 3000,
                 icon: 'success',
+              })
+              wx.navigateTo({
+                url: 'pages/personal_center/personal_center',
               })
             },
           })

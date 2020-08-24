@@ -34,7 +34,7 @@ Page({
     })
     var that = this;
     wx.request({
-      url: app.serverUrl+'queryFishes',
+      url: app.serverUrl+'fish/queryFishes',
       data: {
       },
       success: function (res) {
@@ -54,7 +54,7 @@ Page({
     })
     let page = this.data.page + 1;
     wx.request({
-      url: app.serverUrl+'queryFishes', //此处要加page页 
+      url: app.serverUrl+'fish/queryFishes', //此处要加page页 
       data: {
         page: page
       },

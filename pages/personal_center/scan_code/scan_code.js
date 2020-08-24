@@ -1,4 +1,4 @@
-import mqtt from '../../../utils/mqtt.js';
+import mqtt from '../../../utils/mqtt.min.js';
 
 //连接的服务器域名，注意格式！！！
 const host = 'wxs://ks6v47h.mqtt.iot.gz.baidubce.com/mqtt';

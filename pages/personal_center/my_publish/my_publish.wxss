@@ -33,29 +33,29 @@ page{
   margin-bottom: 20rpx;
 }
 .losts{
+  float: left;
   display: flex;
+  width: 83%;
   flex-direction: row;
-  width: 100%;
   height: 230rpx;
-  margin-left: 25prx; 
+  padding-left: 20rpx;
   border-bottom: 3rpx solid #c3c3c3;
 }
 .lostImg{
   display: row;
-  height: 200rpx;
   width: 200rpx;
-  margin-top: 15rpx;
+  max-height: 200rpx;
+  margin: auto;
+  border-radius: 5px;
 }
 .text{
   display: flex;
   flex-direction: column;
-  margin-left: 25rpx;
-  margin-right: 15rpx;
-  margin-top: 8rpx;
+  margin: auto 15rpx;
   width: 470rpx;
 }
 .text text{
-  margin: 20rpx;
+  margin: 7rpx 15rpx;
 }
 .title{
   display: flex;
@@ -73,8 +73,15 @@ page{
   font-size: 27rpx;
 }
 .lostButton{
-  margin-top: 20rpx;
-  height: 80%;
-  background-color: #90ee90;
-  padding-top: 35rpx
+  float: right;
+  width: 15%;
+  text-align:center;
+  line-height:20rpx;
+  margin-top: 80rpx;
+  margin-right: 5rpx;
+  font-size: 30rpx;
+  height: 80rpx;
+  background-color: #f56c6c;
+  padding-top: 35rpx;
+  border-radius: 6px;
 }

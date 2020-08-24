@@ -8,34 +8,29 @@
       <view class="submitall">
         <view wx:for="{{mySubmit}}" wx:key="index">
           <view class="losts">
-            <image class='lostImg'  src="{{item.imagePathSmall}}"></image>
+            <image class='lostImg' mode="widthFix" src="{{item.imagePathSmall}}"></image>
             <view class="text">
               <text class="title">{{item.detail}}</text>
               <text class="time">{{item.createTime}}</text>
             </view>
-            <button class="lostButton"  style="font-size:30rpx" style="width:38rpx"  data-id="{{item.id}}" bindtap="deleteLost">删除</button>
           </view>
+          <view class="lostButton" data-id="{{item.id}}" bindtap="deleteLost">删除</view>
         </view>
       </view>
     </view>
-    <view  wx:if="{{TopIndex == 1}}"> 
+    <view wx:if="{{TopIndex == 1}}"> 
       <view class="submitall">
         <view wx:for="{{queryAllFishes}}" wx:key="index">
           <view class="losts">
-           <view wx:for="{{item.thumbImg}}" wx:for-item="news" wx:if = "{{item.thumbImg.length == 1}}" >
-             <image class='lostImg' src="{{news}}"></image>
-            </view>
-            <view   wx:if = "{{item.thumbImg.length !== 1}}" >
-             <image class='lostImg' src="{{item.thumbImg[0]}}"></image>
-            </view>
+            <image class='lostImg' mode="widthFix" src="{{item.thumbImg[0]}}"></image>
             <view class="text">
               <text class="title">{{item.talk}}</text>
               <text class="time">{{item.createTime}}</text>
             </view>
-            <button class="lostButton"  style="font-size:30rpx" style="width:38rpx"  data-id="{{item.fishId}}" bindtap="deleteFish">删除</button>
           </view>
+          <view class="lostButton" data-id="{{item.fishId}}" bindtap="deleteFish">删除</view>
         </view>
       </view>
     </view>
   </view>
-</view>   
+</view>

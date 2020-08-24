@@ -11,15 +11,15 @@
     </view>
 	  <view class="clear"></view>
 	  <view class="info">
-	    <view class="in-title">详细描述：{{shuju.detail}}</view>
+	    <view class="in-title"><text decode="{{true}}">&nbsp;详细描述：{{shuju.detail}}</text></view>
 	  </view>
 	  <view class="clear"></view>
 	  <view class="info">
-	    <view class="in-title">联系方式：{{shuju.information}}</view>
+	    <view class="in-title"><text decode="{{true}}">&nbsp;联系方式：{{shuju.information}}</text></view>
 	  </view>
 	  <view class="clear"></view>
     <view class="info">
-	    <view class="in-title">地址：{{shuju.addr}}</view>
+	    <view class="in-title"><text decode="{{true}}">&nbsp;地址：{{shuju.addr}}</text></view>
 	  </view>
 	  <view class="clear"></view>
     <image class="tupian"  data-list="{{shuju.imagePath}}" mode='widthFix' src="{{shuju.imagePath}}"></image>
