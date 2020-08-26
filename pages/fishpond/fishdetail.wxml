@@ -1,34 +1,37 @@
+
+<!-- 整体fish样式 -->
 <view class="containsView">
-<view class="content">
-    <view class="topContainsView">
-    <!-- 用户头像 -->
-      <image class="profileImage" src="{{user.faceImageSmall}}" />
-      <view class="topRightView">
-      <!-- 用户姓名 -->
-        <text class="topRightName">{{user.nickname}}</text>
-        <!-- 上传日期 -->
-        <text class="topRightTime">{{shuju.createTime}}</text>
-      </view>
-      <image class="report" bindtap="reportLost" src="/images/denglu/shoujihao.png"></image>
+  <view class="topContainsView">
+  <!-- 用户头像 -->
+    <image class="profileImage" src="{{fish.publishFaceImg}}" />
+    <view class="topRightView">
+    <!-- 用户姓名 -->
+      <text class="topRightName">{{fish.publishNickName}}</text>
+      <!-- 上传日期 -->
+      <text class="topRightTime">{{fish.createTime}}</text>
     </view>
-	  <view class="clear"></view>
-	  <view class="info">
-	    <view class="in-title"><text decode="{{true}}">&nbsp;详细描述：{{shuju.detail}}</text></view>
-	  </view>
-	  <view class="clear"></view>
-	  <view class="info">
-	    <view class="in-title"><text decode="{{true}}">&nbsp;联系方式：{{shuju.information}}</text></view>
-	  </view>
-	  <view class="clear"></view>
-    <view class="info">
-	    <view class="in-title"><text decode="{{true}}">&nbsp;地址：{{shuju.addr}}</text></view>
-	  </view>
-	  <view class="clear"></view>
-    <view class="show-img" bindtap="showImgBtn">查看照片</view>
-    <image class="tupian" wx:if="{{showImg}}"  data-list="{{shuju.imagePathSmall}}" mode='widthFix' src="{{shuju.imagePathSmall}}"  bindtap="previewImg"></image>
-</view>
-<view class="comment-list">
-    <view class="comment-tab">评论:</view>
+    <image class="report" src="/images/denglu/shoujihao.png"></image>
+  </view>
+  <!-- 动态文字 -->
+  <text style="font-size: 30rpx;">{{fish.talk}}</text>
+  <!-- 图片资源 -->
+  <view class="imageall">
+    <view wx:for="{{fish.thumbImg}}" wx:for-item="thumbImg" wx:for-index="i">
+      <view   wx:if="{{fish.thumbImg.length<2}}">
+        <image class="imageone" src="{{thumbImg}}" data-i="{{i}}" bindtap="previewImg"  mode='heightFix'/>
+      </view>
+      <view wx:elif="{{fish.thumbImg.length>2}}">
+      <image class="imagethree" data-i="{{i}}" bindtap="previewImg"  src="{{thumbImg}}" mode='widthFix'/>
+      </view>
+      <view wx:else >
+        <image bindtap="previewImg" data-i="{{i}}" class="imagetwo" src="{{thumbImg}}" mode='widthFix'/> 
+      </view>
+    </view>
+  </view>
+  <view class="fish-footer">
+    <view class="comment-num">评论 ({{fish.commentNum}} 条) :</view>
+  </view>
+  <view class="comment-list">
     <view class="no-comment" wx:if="{{commentList.length === 0}}">
       快来添加你的评论吧~
     </view>
@@ -64,8 +67,8 @@
       </view>
     </view>
   </view>
+</view>
 <view class="add-comment">
   <input placeholder="{{inputHorder}}" focus="{{input}}" bindinput="input" value="{{newComment}}" maxlength='150' bindblur="inputBlur"></input>
   <view bindtap="addComment">发布</view>
-</view>
 </view>

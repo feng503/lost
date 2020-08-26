@@ -125,8 +125,8 @@ Page({
           icon: 'success',
           mask: true,
         })
-        wx.navigateTo({
-          url: 'pages/personal_center/personal_center',
+        wx.switchTab({
+          url: '/pages/personal_center/personal_center'
         })
       },
       fail: () => {

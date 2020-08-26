@@ -131,8 +131,8 @@ Page({
                 duration: 3000,
                 icon: 'success',
               })
-              wx.navigateTo({
-                url: 'pages/personal_center/personal_center',
+              wx.switchTab({
+                url: '/pages/personal_center/personal_center'
               })
             },
           })

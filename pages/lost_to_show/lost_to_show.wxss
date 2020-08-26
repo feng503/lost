@@ -3,7 +3,7 @@
 }
 .bg{
   width:100%;
-  height: 270rpx;
+  height: 245rpx;
   background-color:  #C81623;
 }
 .logo{
@@ -61,7 +61,8 @@
   display: flex;
   flex-wrap: wrap;
   padding-inline-start: 6rpx;
-  font-size:26rpx;
+  margin-left: 5rpx;
+  font-size:23rpx;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -71,8 +72,8 @@
   -webkit-box-orient: vertical;
 }
 .time1{
-  font-size:20rpx;
-  padding-right: 7rpx;
+  font-size:19rpx;
+  padding-right: 9rpx;
   padding-bottom: 4rpx;
   display: flex;
   flex-direction: row;

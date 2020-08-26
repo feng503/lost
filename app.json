@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/lost_to_show/lost_to_show",
     "pages/sign_in/sign_in_register",
     "pages/sign_in/lost_password",
-    "pages/lost_to_show/lost_to_show",
     "pages/fishpond/fishpond",
     "pages/personal_center/personal_center",
     "pages/personal_center/pick_up_lost/pick_up_lost",
@@ -19,7 +19,8 @@
     "pages/personal_center/set/change_password/change_password",
     "pages/lost_to_show/detail",
     "pages/fishpond/fishpond_publish",
-    "pages/personal_center/scan_code/scan_code"
+    "pages/personal_center/scan_code/scan_code",
+    "pages/fishpond/fishdetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

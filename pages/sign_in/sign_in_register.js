@@ -53,9 +53,9 @@ Page({
         password: e.detail.value.password
       },
       success: (e) => {
-        app.globalData.user = e.data;
         if (e.statusCode === 200) {
           wx.setStorageSync('userInfo', e.data)
+          app.globalData.user = e.data;
           wx.switchTab({
             url: '/pages/lost_to_show/lost_to_show',
           })

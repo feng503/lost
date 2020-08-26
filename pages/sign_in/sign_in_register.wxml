@@ -14,14 +14,14 @@
           <view>
             <view class="img">
               <image src="/images/denglu/user.png" style="width:60rpx;height:60rpx;"></image>
-              <input name="studentId" placeholder='学号'  style="height:60rpx;"></input>
+              <input name="studentId" placeholder='学号'  style="height:60rpx;" maxlength="6"></input>
             </view>
           </view>
           <!-- 学号处 -->
           <view class='password'>
             <view class="img">
               <image src="/images/denglu/mima.png" style="width:60rpx;height:60rpx;"></image>
-              <input  bindinput="mima"  style="height:60rpx;"  placeholder='密码' password='true' name="password"></input>
+              <input  bindinput="mima"  style="height:60rpx;"  placeholder='密码' password='true' name="password" maxlength="20"></input>
             </view>
           </view>
           <!-- 密码处 -->

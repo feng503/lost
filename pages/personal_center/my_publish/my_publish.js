@@ -39,6 +39,22 @@ Page({
       }
     })
   },
+  // 失物详情页
+  detailLost: function(e){
+    let that = this;
+    let index = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/lost_to_show/detail?lostDeteil=' + JSON.stringify(that.data.mySubmit[index])
+    })
+  },
+  // 失物详情页 pages/fishpond/fishdetail
+  detailFish: function(e){
+    let that = this;
+    let index = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: 'pages/fishpond/fishdetail?fishDeteil=' + JSON.stringify(that.data.queryAllFishes[index])
+    })
+  },
   deleteFish: function (e) {
     // console.log(e)
     let id = e.currentTarget.dataset.id;

@@ -14,6 +14,7 @@
               <text class="time">{{item.createTime}}</text>
             </view>
           </view>
+          <view class="detailButton" data-id="{{index}}" bindtap="detailLost">详情</view>
           <view class="lostButton" data-id="{{item.id}}" bindtap="deleteLost">删除</view>
         </view>
       </view>
@@ -28,6 +29,7 @@
               <text class="time">{{item.createTime}}</text>
             </view>
           </view>
+          <view class="detailButton" data-id="{{index}}" bindtap="detailFish">详情</view>
           <view class="lostButton" data-id="{{item.fishId}}" bindtap="deleteFish">删除</view>
         </view>
       </view>

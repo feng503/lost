@@ -1,78 +1,133 @@
+.centerContent{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 600rpx;
+}
+/*中间浮动文字样式*/
+.flexView{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 80rpx;
+position: absolute;
+z-index: 2;
+top: 700rpx;
+background: #000000;
+opacity: 0.6
+}
+/*浮动文字*/
+.flexText{
+  color: white;
+  font-size: 35rpx;
+}
 .containsView{
   padding: 15rpx 15rpx 80rpx 15rpx;
   background-color:white;
   border-radius: 2%;
 }
+/*头部整体样式*/
 .topContainsView{
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 18rpx;
-  margin-top: 20rpx;
-  margin-left: 20rpx;
+  margin-bottom: 4rpx;
 }
-/* 上部分整体 */
+
+/**
+ * 头像样式
+*/
 .profileImage{
   width: 90rpx;
   height: 90rpx;
   border-radius: 45rpx;
+  box-shadow: 0 0 3px 1px rgba(221, 218, 218, 0.15);
 }
-/* 头像 */
+
+/*头部显示名字和时间整体样式*/
 .topRightView{
   margin-left: 15rpx;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
-/*头部显示名字和时间整体样式*/
+/*用户名称样式*/
 .topRightName{
   font-size: 25rpx;
 }
-/*用户名称样式*/
+/*时间样式*/
 .topRightTime{
   font-size: 20rpx;
   color: #b8b2b2;
   margin-top: 10rpx;
 }
-/*时间样式*/
-.in-title{
-  font-size: 29rpx;
-  font-family: "微软雅黑";
-  color:#606060;
-  line-height: 60rpx;
-  border-left: 10rpx solid #4ec4c8;
-  border-bottom: 1rpx solid #eeeeee;
-}
-.clear{
+
+/*因为中间部分不一样不放在整体样式中*/
+
+/*底部view整体样式*/
+.bottomView{
   display: flex;
-  flex-direction: column;
-  height:12rpx;
-  background: rgba(238, 238, 238, 0.4);
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-/* 图片样式 */
-.tupian{
-  margin-top: 25rpx;
-  margin-left: 1.5%;
+/*每个Item样式*/
+.bottomItemView{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  width: 97%;
-  border-radius: 16rpx;
-  box-shadow: 0 0 4px 3px rgba(85, 85, 85, 0.2);
+  margin-top: 18rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
 }
-.show-img{
-  color: #409eff;
+/*Item样式中的图标样式 顶 踩 分享 评论*/
+.bottomItemImage{
+  width: 45rpx;
+  height: 45rpx;
+}
+/*Item中的文字样式  顶 踩 分享 评论*/
+.bottomItemText{
+  font-size: 15rpx;
+  color: #b8b2b2;
   margin-left: 10rpx;
-  font-size: 20rpx; 
+  margin-top: 8rpx;
+}
+.fish{
+  font-size: 23.6rpx
+}
+.imageone{
+  max-width: 700rpx;
+  height: 430rpx;
+}
+.imagetwo{
+  width: 350rpx;
+  max-height: 430rpx;
+}
+.imagethree{
+  width: 230rpx;
+  max-height: 430rpx;
+}
+.imageall{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 11rpx;
+}
+.imageall image{
+  border-radius: 6rpx;
+  box-shadow: 0 0 4px 3px rgba(230, 230, 230, 0.3)
+}
+.fish-footer{
+  display: flex;
+  width: 100%;
+  margin-top: 3rpx; 
+  padding: 2rpx 10rpx;
 }
 .no-comment{
   font-size: 32rpx;
   font-weight: 500;
   margin: 30rpx;
   color: rgba(13, 13, 13, 0.5);
-}
-.comment-tab{
-  font-size: 28rpx;
-  font-weight: 500;
-  margin: 5rpx 1rpx;
-  color: rgba(13, 13, 13, 0.8);
 }
 .comment-num{
   float: left;

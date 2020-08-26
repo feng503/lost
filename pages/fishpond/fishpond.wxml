@@ -1,39 +1,44 @@
 <view class="topcontainer">
-  <text class="fish">在鱼塘你可以发布二手交易，发布今日动态，点击右边+号发布吧！</text>
+  <text class="fish">在鱼塘你可以发布二手交易、今日动态，点击右边+号发布吧！</text>
   <image src="/images/yutang/jiahao.png"  style="width:40rpx;height:40rpx;" bindtap="liujiayu"></image>
 </view>
     <!-- 分割线 -->
 
-<view wx:for="{{newsdata}}" wx:for-item="item" wx:key="item" >
+<view wx:for="{{newsdata}}" wx:for-item="item" wx:for-index="index" >
   <view class="divLine"></view>   
     <!-- 整体item样式 -->
     <view class="containsView">
-            <view class="topContainsView">
-            <!-- 用户头像 -->
-              <image class="profileImage" src="{{item.publishFaceImg}}" />
-              <view class="topRightView">
-              <!-- 用户姓名 -->
-                <text class="topRightName">{{item.publishNickName}}</text>
-                <!-- 上传日期 -->
-                <text class="topRightTime">{{item.createTime}}</text>
-              </view>
-            </view>
-      <!-- 动态文字 -->
-            <text style="font-size: 30rpx; margin-buttom: 10rpx;">{{item.talk}}</text>
-        <!-- 图片资源 -->
-        <view class="imageall">
-                <view wx:for="{{item.thumbImg}}" wx:for-item="news" >
-                  <view   wx:if="{{item.thumbImg.length<2}}"  >
-                    <image class="imageone" src="{{news}}" data-idd="{{item.imagePath}}" data-id="{{news}}" bindtap="previewImg"  mode='heightFix'/>        
-                  </view>
-                  <view wx:elif="{{item.thumbImg.length>2}}">
-                  <image class="imagethree"   data-idd="{{item.imagePath}}" data-id="{{news}}"  bindtap="previewImg"  src="{{news}}" mode='widthFix'/>
-                  </view>
-                  <view wx:else >
-                    <image bindtap="previewImg"  data-idd="{{item.imagePath}}"  data-id="{{news}}"  class="imagetwo" src="{{news}}" mode='widthFix'/> 
-                  </view>
-                </view>
-              </view>
+      <view class="topContainsView">
+      <!-- 用户头像 -->
+        <image class="profileImage" src="{{item.publishFaceImg}}" />
+        <view class="topRightView">
+        <!-- 用户姓名 -->
+          <text class="topRightName">{{item.publishNickName}}</text>
+          <!-- 上传日期 -->
+          <text class="topRightTime">{{item.createTime}}</text>
+        </view>
+        <image class="report" data-fish="{{item}}" bindtap="reportFish" src="/images/denglu/shoujihao.png"></image>
       </view>
-    </view> 
+      <!-- 动态文字 -->
+      <text style="font-size: 30rpx;">{{item.talk}}</text>
+      <!-- 图片资源 -->
+      <view class="imageall">
+        <view wx:for="{{item.thumbImg}}" wx:for-item="thumbImg" wx:for-index="i">
+          <view   wx:if="{{item.thumbImg.length<2}}">
+            <image class="imageone" src="{{thumbImg}}" data-index="{{index}}" data-i="{{i}}" bindtap="previewImg"  mode='heightFix'/>
+          </view>
+          <view wx:elif="{{item.thumbImg.length>2}}">
+          <image class="imagethree" data-index="{{index}}" data-i="{{i}}" bindtap="previewImg"  src="{{thumbImg}}" mode='widthFix'/>
+          </view>
+          <view wx:else >
+            <image bindtap="previewImg" data-index="{{index}}" data-i="{{i}}" class="imagetwo" src="{{thumbImg}}" mode='widthFix'/> 
+          </view>
+        </view>
+      </view>
+      <view class="fish-footer">
+        <view class="comment-num">全部 {{item.commentNum}} 条评论</view>
+        <view class="show-detail" data-index="{{index}}" bindtap="showDetail">查看详情</view>
+      </view>
+  </view>
+</view> 
 

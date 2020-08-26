@@ -36,7 +36,7 @@ opacity: 0.6
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 18rpx;
+  margin-bottom: 4rpx;
 }
 
 /**
@@ -122,8 +122,36 @@ opacity: 0.6
 .imageall{
   display: flex;
   justify-content: space-evenly;
+  margin-top: 11rpx;
 }
 .imageall image{
   border-radius: 6rpx;
   box-shadow: 0 0 4px 3px rgba(230, 230, 230, 0.3)
+}
+.fish-footer{
+  display: flex;
+  width: 100%;
+  margin-top: 4rpx; 
+  padding: 2rpx 10rpx;
+}
+.comment-num{
+  float: left;
+  width: 50%;
+  font-size: 20rpx;
+  color: #595828;
+}
+.show-detail{
+  float: right;
+  width: 50%;
+  font-size: 24rpx;
+  text-align: right;
+  color: #409eff;
+}
+/* 举报 */
+.report{
+  margin-left: auto; 
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px rgba(221, 218, 218, 0.3);
 }

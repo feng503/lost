@@ -72,16 +72,27 @@ page{
 .time{
   font-size: 27rpx;
 }
+.detailButton{
+  float: right;
+  width: 15%;
+  text-align: center;
+  margin-right: 5rpx;
+  font-size: 28rpx;
+  height: 50rpx;
+  background-color: #67c23a;
+  margin-top: 60rpx;
+  padding-top: 7rpx;
+  border-radius: 6px;
+}
 .lostButton{
   float: right;
   width: 15%;
   text-align:center;
-  line-height:20rpx;
-  margin-top: 80rpx;
+  margin-top: 8rpx;
   margin-right: 5rpx;
-  font-size: 30rpx;
-  height: 80rpx;
+  font-size: 28rpx;
+  height: 50rpx;
   background-color: #f56c6c;
-  padding-top: 35rpx;
+  padding-top: 7rpx;
   border-radius: 6px;
 }

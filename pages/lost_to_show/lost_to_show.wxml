@@ -52,14 +52,14 @@
       <view class='list-half'>
         <view  bindtap="Biu" view data-id="{{index}}" wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 == 0}}" class='card'>
           <image class='img' mode='widthFix' src="{{item.imagePathSmall}}"> </image>
-          <text class="time"> 详情：{{item.detail}}</text>
+          <text class="time"> {{item.detail}}</text>
           <text class="time1">{{item.createTime}}</text>
         </view>
       </view>
     <view class='list-half'> 
       <view bindtap="Biu"  view data-id="{{index}}" wx:for="{{newsdata}}" wx:key="index" wx:if="{{index%2 != 0}}" class='card'>
         <image class='img' mode='widthFix' src="{{item.imagePathSmall}}"> </image>
-        <text class="time"> 详情：{{item.detail}}</text>
+        <text class="time"> {{item.detail}}</text>
         <text class="time1">{{item.createTime}}</text>
       </view>
     </view>

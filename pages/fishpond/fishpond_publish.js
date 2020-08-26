@@ -12,7 +12,7 @@ Page({
   onShow: function (options) {
     this.setData({
       nickname: app.globalData.user.nickname,
-      faceImage: app.globalData.user.faceImage,
+      faceImage: app.globalData.user.faceImageSmall,
       id: app.globalData.user.studentId
     })
     // console.log(app.globalData.user)
@@ -23,9 +23,7 @@ Page({
   input: function (e) {
     this.setData({
       talk: e.detail.value
-
     })
-    // console.log(e.detail.value)
   },
   ViewImage(e) {
     console.log(e)
@@ -84,108 +82,80 @@ Page({
   },
   //发布按钮事件
   img_upload: function () {
-    let that = this;
-    let img_url = that.data.imgList;
+    let img_url = this.data.imgList;
     let img_url_ok = [];
-    var studentId = app.globalData.user.studentId;
-    var talk = that.data.talk;
     //由于图片只能一张一张地上传，所以用循环
     // console.log(img_url.length);
     if (img_url.length === 0) {
-      wx.request({
-        url: app.serverUrl+'fish/addFish',
-        header: { 'lost': app.globalData.user.token },
-        method: "GET",
-        data: {
-          studentId: studentId,
-          // image: img_url_ok,
-          talk: talk,
-        },
-        success: function (res) {
-          if (res.statusCode === 201) {
-            wx.hideToast();
-            wx.showModal({
-              title: '发布成功',
-              showCancel: false,
-              success: function (res) {
-                if (res.confirm) {
-                  wx.navigateBack({})
-                }
-              }
-            })
-          } else {
-            wx.hideToast();
-            wx.showToast({
-              title: res.data.message,
-              duration: 3000,
-              icon: 'none',
-            })
-          }
-        }
-      })
+      this.uploadFish(this);
     } else {
-      for (let i = 0; i < img_url.length; i++) {
-        wx.uploadFile({
-          url: app.serverUrl+'fish/addFishImg',
-          header: { 'lost': app.globalData.user.token },
-          filePath: img_url[i],
-          method: "POST",
-          name: 'image',
-          formData: {
-            studentId: studentId
-          },
-          success: function (res) {
-            that.setData({
-              sucimgNum: that.data.sucimgNum + 1
-            })
-            //如果全部传完，则可以将图片路径保存到数据库
-            if (that.data.sucimgNum == img_url.length) {
-              that.setData({
-                sucimgNum: 0
-              })
-              var studentId = app.globalData.user.studentId;
-              var talk = that.data.talk;
-              wx.request({
-                url: app.serverUrl+'fish/addFish',
-                header: { 'lost': app.globalData.user.token },
-                method: "GET",
-                data: {
-                  studentId: studentId,
-                  // image: img_url_ok,
-                  talk: talk,
-                },
-                success: function (res) {
-                  if (res.statusCode == 201) {
-                    wx.hideToast();
-                    wx.showModal({
-                      title: '发布成功',
-                      showCancel: false,
-                      success: function (res) {
-                        if (res.confirm) {
-                          wx.navigateBack({})
-                        } 
-                      }
-                    })
-                  } else {
-                    wx.hideToast();
-                    wx.showToast({
-                      title: res.data.message,
-                      duration: 3000,
-                      icon: 'none',
-                    })
-                  }
-                }
-              })
-            }
-          },
-          fail: function (res) {
-            that.setData({
-              imgList: []
-            })
-          }
-        })
-      }
+      this.uploadFileList(img_url, 0, this)
     }
-  }
+  },
     //图片上传
+  uploadFileList: function(fileList, index, that){
+    var studentId = app.globalData.user.studentId;
+    wx.uploadFile({
+      url: app.serverUrl + 'fish/addFishImg',
+      header: { 'lost': app.globalData.user.token },
+      filePath: fileList[index],
+      method: "POST",
+      name: 'image',
+      formData: {
+        studentId: studentId
+      },
+      success: function (res) {
+        if(res.statusCode === 200){
+          if(index + 1 === fileList.length){
+            that.uploadFish(that)
+          } else {
+            that.uploadFileList(fileList, index + 1, that)
+          }
+        } else {
+          that.setData({
+            imgList: []
+          })
+          wx.showToast({
+            title: "上传失败，请重试！",
+            duration: 3000,
+            icon: 'none',
+          })
+        }
+      }
+    })
+  },
+  uploadFish: function(that){
+    var studentId = app.globalData.user.studentId;
+    var talk = that.data.talk;
+    wx.request({
+      url: app.serverUrl + 'fish/addFish',
+      header: { 'lost': app.globalData.user.token },
+      method: "GET",
+      data: {
+        studentId: studentId,
+        talk: talk,
+      },
+      success: function (res) {
+        if (res.statusCode == 201) {
+          wx.hideToast();
+          wx.showModal({
+            title: '发布成功',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                wx.navigateBack({})
+              }
+            }
+          })
+        } else {
+          wx.hideToast();
+          wx.showToast({
+            title: res.data.message,
+            duration: 3000,
+            icon: 'none',
+          })
+        }
+      }
+    })
+  }
 })

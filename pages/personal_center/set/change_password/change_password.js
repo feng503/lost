@@ -39,8 +39,8 @@ Page({
           })
           wx.setStorageSync('userInfo', e.data)
           app.globalData.user = e.data;
-          wx.navigateTo({
-            url: 'pages/personal_center/personal_center',
+          wx.switchTab({
+            url: '/pages/personal_center/personal_center'
           })
         } else {
           wx.showToast({

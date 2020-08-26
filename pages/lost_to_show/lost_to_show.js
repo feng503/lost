@@ -13,7 +13,6 @@ Page({
   findLostByType: function () {
     var that = this;
     that.newsdata = [];
-    app.globalData.newlist = [];
     wx.showToast({
       title: '加载中',
       duration: 13000,
@@ -38,17 +37,14 @@ Page({
           page: 1,
           type: 0,
         });
-        app.globalData.newlist = that.data.newsdata;
       },
     })
   },
-  // 卡片
   getInput: function (e) {
     this.setData({
       detail: e.detail.value
     })
   },
-  // 获得输入框内容
   queryLosts: function () {
     var that = this;
     wx.request({
@@ -70,15 +66,12 @@ Page({
           page: 1,
           type: -2
         });
-        app.globalData.newlist = that.data.newsdata;
       },
     })
   },
-  // 寻找框
   yiwubaobao: function () {
     var that = this;
     that.newsdata = [];
-    app.globalData.newlist = [];
     wx.showToast({
       title: '加载中',
       duration: 13000,
@@ -103,16 +96,14 @@ Page({
           page: 1,
           type: 1,
         });
-        app.globalData.newlist = that.data.newsdata;
       },
 
     })
   },
-  // 衣物包包
   shuji: function () {
     var that = this;
     that.newsdata = [];
-    app.globalData.newlist = [];
+    // app.globalData.newlist = [];
     wx.showToast({
       title: '加载中',
       duration: 13000,
@@ -137,15 +128,12 @@ Page({
           page: 1,
           type: 2,
         });
-        app.globalData.newlist = that.data.newsdata;
       },
     })
   },
-  // 书籍
   yaoshi: function () {
     var that = this;
     that.newsdata = [];
-    app.globalData.newlist = [];
     wx.showToast({
       title: '加载中',
       duration: 13000,
@@ -170,15 +158,14 @@ Page({
           page: 1,
           type: 3,
         });
-        app.globalData.newlist = that.data.newsdata;
+        // app.globalData.newlist = that.data.newsdata;
       },
     })
   },
-  // 钥匙
   qita: function () {
     var that = this;
     that.newsdata = [];
-    app.globalData.newlist = [];
+    // app.globalData.newlist = [];
     wx.showToast({
       title: '加载中',
       duration: 13000,
@@ -203,12 +190,19 @@ Page({
           page: 1,
           type: 4,
         });
-        app.globalData.newlist = that.data.newsdata;
+        // app.globalData.newlist = that.data.newsdata;
       },
     })
   },
-  // 其他
   onLoad: function (options) {
+    const userInfo = wx.getStorageSync('userInfo')
+    if (userInfo == null || userInfo == '' || userInfo == {}) {
+      wx.redirectTo({
+        url: '/pages/sign_in/sign_in_register',
+      })
+      return;
+    }
+    app.globalData.user = userInfo;
     wx.stopPullDownRefresh()
     var that = this;
     wx.request({
@@ -223,7 +217,6 @@ Page({
           type: -1,
           detail: ''
         });
-        app.globalData.newlist = that.data.newsdata;
       },
     })
   },
@@ -260,7 +253,6 @@ Page({
             newsdata: newsdata,
             page: page
           });
-          app.globalData.newlist = that.data.newsdata
         },
         fail: function (res) {
           that.setData({
@@ -293,7 +285,6 @@ Page({
             newsdata: newsdata,
             page: page
           });
-          app.globalData.newlist = that.data.newsdata
         },
         fail: function (res) {
           that.setData({
@@ -324,7 +315,6 @@ Page({
             newsdata: newsdata,
             page: page
           });
-          app.globalData.newlist = that.data.newsdata
         },
         fail: function (res) {
           that.setData({
@@ -384,8 +374,10 @@ Page({
   },
   // 转发
   Biu: function (e) {
+    let that = this;
+    let index = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/lost_to_show/detail?id=' + e.currentTarget.dataset.id
+      url: '/pages/lost_to_show/detail?lostDeteil=' + JSON.stringify(that.data.newsdata[index])
     })
   }
   // 进入详情页
