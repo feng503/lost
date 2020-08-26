@@ -4,6 +4,7 @@ Page({
     fish: {},
     commentList: {},
     newComment: '',
+    commentNum: 0,
     myid: '',
     inputHorder: '发布友善的评论',
     input: false,
@@ -15,7 +16,8 @@ Page({
     let fish = JSON.parse(opetios.fishDeteil);
     this.setData({
       fish: fish,
-      myid: app.globalData.user.studentId
+      myid: app.globalData.user.studentId,
+      commentNum: fish.commentNum
     });
   },
   onShow: function(){
@@ -59,7 +61,8 @@ Page({
         success: function (res) {
           if (res.statusCode == 200) {
             that.setData({
-              commentList: res.data
+              commentList: res.data,
+              commentNum: data.commentNum + 1
             });
           }
           that.setData({
@@ -82,7 +85,8 @@ Page({
         success: function (res) {
           if (res.statusCode == 200) {
             that.setData({
-              commentList: res.data
+              commentList: res.data,
+              commentNum: data.commentNum + 1
             });
           }
           that.setData({
@@ -106,6 +110,9 @@ Page({
             url: app.serverUrl + 'fish/deleteComment?studentId='+studentId+'&commentId='+commentId,
             header: { 'lost': app.globalData.user.token },
             success: (res) => {
+              that.setData({
+                commentNum: that.data.commentNum - 1
+              })
               that.onShow();
               wx.showToast({
                 title: '删除成功',

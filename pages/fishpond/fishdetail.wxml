@@ -29,7 +29,7 @@
     </view>
   </view>
   <view class="fish-footer">
-    <view class="comment-num">评论 ({{fish.commentNum}} 条) :</view>
+    <view class="comment-num">评论 ({{commentNum}} 条) :</view>
   </view>
   <view class="comment-list">
     <view class="no-comment" wx:if="{{commentList.length === 0}}">
