@@ -127,6 +127,38 @@ Page({
       }
     })
   },
+  // 举报鱼塘
+  reportFish: function (e) {
+    let fish = e.currentTarget.dataset.fish
+    let that = this;
+    let studentId = app.globalData.user.studentId
+    wx.showModal({
+      title: '提示',
+      content: '确认举报该动态？',
+      success(res) {
+        if (res.confirm) {
+          wx.request({
+            url: app.serverUrl + 'fish/report',
+            data: {
+              studentId: studentId,
+              fishId: fish.fishId,
+              detail: '不良信息'
+            },
+            header: { 'lost': app.globalData.user.token },
+            success: (res) => {
+              wx.showToast({
+                title: res.data,
+                duration: 2000,
+                icon: 'none',
+                mask: true,
+              })
+            }
+          })
+        } else if (res.cancel) {
+        }
+      }
+    })
+  },
   // 回复评论
   replayComment: function (e){
     let comment = e.currentTarget.dataset.comment
