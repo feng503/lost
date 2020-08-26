@@ -134,8 +134,10 @@ Page({
   previewImg: function (e) {
     let that = this;
     const i = e.currentTarget.dataset.i
+    let cur = that.data.fish.thumbImg[i]
+    cur = cur.split('_')[0] + '.png'
     wx.previewImage({
-      current: that.data.fish.thumbImg[i],
+      current: cur,
       urls: that.data.fish.imagePath
     })
   },

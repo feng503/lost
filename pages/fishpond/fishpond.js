@@ -145,8 +145,10 @@ Page({
     let that = this;
     const index = e.currentTarget.dataset.index
     const i = e.currentTarget.dataset.i
+    let cur = that.data.newsdata[index].thumbImg[i]
+    cur = cur.split('_')[0] + '.png'
     wx.previewImage({
-      current: that.data.newsdata[index].thumbImg[i],
+      current: cur,
       urls: that.data.newsdata[index].imagePath
     })
   },
