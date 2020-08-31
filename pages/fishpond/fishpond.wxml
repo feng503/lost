@@ -17,7 +17,7 @@
           <!-- 上传日期 -->
           <text class="topRightTime">{{item.createTime}}</text>
         </view>
-        <image class="report" data-fish="{{item}}" bindtap="reportFish" src="/images/denglu/shoujihao.png"></image>
+        <image class="report" data-fish="{{item}}" bindtap="reportFish" src="/images/jubao/jubao.png"></image>
       </view>
       <!-- 动态文字 -->
       <text style="font-size: 30rpx;">{{item.talk}}</text>

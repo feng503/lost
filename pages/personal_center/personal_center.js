@@ -23,7 +23,7 @@ Page({
       year: myDate.getFullYear(),
       num: myDate.getMonth()
     })
-    if (myDate.getMonth() <= 7) {
+    if (myDate.getMonth() <= 6) {
       this.setData({
         season: '春'
       })

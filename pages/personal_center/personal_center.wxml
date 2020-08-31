@@ -27,24 +27,12 @@
   <view class="img">
     <image src="/images/geren/shangchuanshiwu.png" style="width:40rpx;height:40rpx;"></image>
   </view>
-  <view class="name" >捡到失物</view>
+  <view class="name" >失物上传</view>
   <view class="detail">
     <text>></text>
   </view>
 </view>
 <!-- 上传失物 -->
-<view class="line"></view>
-<!-- 分割线 -->
-<view class="item" bindtap='look_for_lost'>
-  <view class="img">
-    <image src="/images/geren/chazhao.png" style="width:40rpx;height:40rpx;"></image>
-  </view>
-  <view class="name" >寻找失物</view>
-  <view class="detail">
-    <text>></text>
-  </view>
-</view>
-<!--寻找失物-->
 <view class="line"></view>
 <!-- 分割线 -->
 <view class="item" bindtap='scan_code'>
@@ -93,18 +81,6 @@
   </view>
 </view>
 <!-- 今日天气 -->
-<view class="line"></view>
-<!-- 分割线 -->
-<view class="item" bindtap='game'>
-  <view class="img">
-    <image src="/images/geren/youxi.png" style="width:40rpx;height:40rpx;"></image>
-  </view>
-  <view class="name" >石头剪子布</view>
-  <view class="detail">
-    <text>></text>
-  </view>
-</view>
-<!-- 石头剪子布 -->
 <view class="line"></view>
 <!-- 分割线 -->
 <view class="item" bindtap='seet'>

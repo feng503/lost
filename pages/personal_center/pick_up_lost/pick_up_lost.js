@@ -7,8 +7,6 @@ Page({
     numList: [{
       name: '开始'
     }, {
-      name: '继续'
-    }, {
       name: '加油'
     }, {
       name: '完成'
@@ -17,7 +15,9 @@ Page({
     scroll: 0,
     userInfo:null,
     index: null,
+    index_1:null,
     picker: ['卡片', '衣物包包', '书籍', '钥匙', '其他'],
+    choose:['捡到失物','寻找失物'],
     imgList: [],
     swiperList: [],
     banners: [],
@@ -36,7 +36,7 @@ Page({
   //模块更改(下一步)
   numSteps_front() {
     this.setData({
-      num: this.data.num == this.data.numList.length - 1 ? 2 : this.data.num - 1,
+      num: this.data.num == this.data.numList.length - 1 ? 1 : this.data.num - 1,
       scrollLeft: this.data.num * 60,
       TabCur: this.data.num - 1
     })
@@ -45,6 +45,12 @@ Page({
   PickerChange(e) {
     this.setData({
       index: e.detail.value
+    })
+  },
+  // 选择类别
+  Pickerchoose(e) {
+    this.setData({
+      index_1: e.detail.value
     })
   },
   // 选择类别
@@ -98,6 +104,7 @@ Page({
     var detail = this.data.describe;   
     var information = this.data.phone;  
     var addr = this.data.location;
+    var index_1 = this.data.index_1;
     wx.showToast({
       title: '上传中',
       duration: 53000,
@@ -110,7 +117,7 @@ Page({
       formData: {
         studentId: that.data.userInfo.studentId,
         type: type,
-        service: 0,
+        service: index_1,
         detail: detail,
         information: information,
         addr: addr,
