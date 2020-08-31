@@ -52,7 +52,7 @@ Page({
     let that = this;
     let index = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: 'pages/fishpond/fishdetail?fishDeteil=' + JSON.stringify(that.data.queryAllFishes[index])
+      url: '/pages/fishpond/fishdetail?fishDeteil=' + JSON.stringify(that.data.queryAllFishes[index])
     })
   },
   deleteFish: function (e) {
@@ -100,7 +100,10 @@ Page({
       wx.request({
         url: app.serverUrl+'fish/queryMyFishes?studentId=' + app.globalData.user.studentId,
         header: { 'lost': app.globalData.user.token },
+        data: {
+        },
         success: (res) => {
+          console.log(res.data)
           that.setData({
             queryAllFishes: res.data
           })

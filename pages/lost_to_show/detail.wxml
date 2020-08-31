@@ -9,7 +9,7 @@
         <!-- 上传日期 -->
         <text class="topRightTime">{{shuju.createTime}}</text>
       </view>
-      <image class="report" bindtap="reportLost" src="/images/denglu/shoujihao.png"></image>
+      <image class="report" bindtap="reportLost" src="/images/jubao/jubao.png"></image>
     </view>
 	  <view class="clear"></view>
 	  <view class="info">
