@@ -31,6 +31,7 @@ Page({
   },
   // 忘记密码转页面
   onLoad: function () {
+    wx.hideHomeButton()
     const userInfo = wx.getStorageSync('userInfo')
     if (userInfo != null && userInfo != '' && userInfo != {}) {
       app.globalData.user = userInfo;

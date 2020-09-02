@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/sign_in/sign_in_register",
     "pages/lost_to_show/lost_to_show",
+    "pages/sign_in/sign_in_register",
     "pages/sign_in/lost_password",
     "pages/fishpond/fishpond",
     "pages/personal_center/personal_center",

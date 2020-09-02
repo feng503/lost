@@ -72,6 +72,12 @@ Page({
             that.setData({
               commentList: res.data
             });
+          } else{
+            wx.showToast({
+              title: res.data.message,
+              icon: "none",
+              duration: 2000
+            })
           }
           that.setData({
             newComment: '',
@@ -95,6 +101,12 @@ Page({
             that.setData({
               commentList: res.data
             });
+          } else {
+            wx.showToast({
+              title: res.data.message,
+              icon: "none",
+              duration: 2000
+            })
           }
           that.setData({
             newComment: ''

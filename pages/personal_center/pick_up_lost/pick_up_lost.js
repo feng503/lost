@@ -5,11 +5,11 @@ Page({
     TabCur: 0,
     scrollLeft: 0,
     numList: [{
-      name: '开始'
+      name: '选择类别'
     }, {
-      name: '加油'
+      name: '完善信息'
     }, {
-      name: '完成'
+      name: '上传信息'
     },],
     num: 0,
     scroll: 0,
@@ -124,8 +124,19 @@ Page({
       },
       header: { "Context-Type": "multipart/form-data", 'lost': app.globalData.user.token },
       name: 'image',
-      success: () => {
+      success: res => {
         wx.hideToast();
+        if(res.data != ""){
+          let data = JSON.parse(res.data)
+          if (data.status !== 200) {
+            wx.showToast({
+              title: data.message,
+              icon: "none",
+              duration: 2000
+            })
+            return
+          }
+        }
         wx.showToast({
           title: '上传成功',
           duration: 1000,

@@ -150,6 +150,7 @@ opacity: 0.6
 /* 举报 */
 .report{
   margin-left: auto; 
+  padding: 5rpx;
   width: 36rpx;
   height: 36rpx;
   border-radius: 50%;

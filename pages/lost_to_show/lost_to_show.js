@@ -203,6 +203,11 @@ Page({
       return;
     }
     app.globalData.user = userInfo;
+    // 为该用户添加访客记录
+    wx.request({
+      url: app.serverUrl + 'user/visit?studentId=' + userInfo.studentId,
+      method: "POST"
+    })
     wx.stopPullDownRefresh()
     var that = this;
     wx.request({

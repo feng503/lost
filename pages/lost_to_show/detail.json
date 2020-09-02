@@ -4,5 +4,5 @@
   "navigationBarTitleText": "河工大失物招领平台",
   "navigationBarTextStyle": "black",
   "backgroundColor": "#ffffff",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

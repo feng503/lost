@@ -10,7 +10,7 @@
       <!-- 上传日期 -->
       <text class="topRightTime">{{fish.createTime}}</text>
     </view>
-    <image class="report" data-fish="{{fish}}" bindtap="reportFish" src="/images/denglu/shoujihao.png"></image>
+    <image class="report" data-fish="{{fish}}" bindtap="reportFish" src="/images/jubao/jubao.png"></image>
   </view>
   <!-- 动态文字 -->
   <text style="font-size: 30rpx;">{{fish.talk}}</text>

@@ -64,6 +64,12 @@ Page({
               commentList: res.data,
               commentNum: data.commentNum + 1
             });
+          } else {
+            wx.showToast({
+              title: res.data.message,
+              icon: "none",
+              duration: 2000
+            })
           }
           that.setData({
             newComment: '',
@@ -88,6 +94,12 @@ Page({
               commentList: res.data,
               commentNum: data.commentNum + 1
             });
+          } else {
+            wx.showToast({
+              title: res.data.message,
+              icon: "none",
+              duration: 2000
+            })
           }
           that.setData({
             newComment: ''
