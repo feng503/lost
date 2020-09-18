@@ -173,3 +173,8 @@
   border-radius: 50%;
   box-shadow: 0 0 2px 2px rgba(221, 218, 218, 0.3);
 }
+/* 图片靠右 */
+.icon{
+  margin-left: 100rpx; 
+  padding-top:6rpx;
+}

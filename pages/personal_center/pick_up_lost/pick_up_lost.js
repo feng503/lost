@@ -217,5 +217,21 @@ Page({
     this.setData({
       phone: e.detail.value
     })
+  },
+  check_service(){
+    if(this.data.index_1 !== null){
+      this.setData({
+        num: this.data.num == this.data.numList.length - 1 ? 1 : this.data.num + 1,
+        scrollLeft: this.data.num * 60,
+        TabCur: this.data.num + 1
+      }) 
+    }else{
+      wx.showToast({
+        title: '请选择服务类型',
+        duration: 500,
+        icon: 'none',
+        mask: true,
+      })
+    }
   }
 })

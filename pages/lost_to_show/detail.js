@@ -10,7 +10,8 @@ Page({
     inputHorder: '发布友善的留言',
     input: false,
     replay: false,
-    replayComment: null
+    replayComment: null,
+    service:false
   },
   onLoad:function (opetios) {
     var that = this;
@@ -209,5 +210,22 @@ Page({
     this.setData({
       showImg: !this.data.showImg
     })
+  },
+  lost_service:function(){
+    if(this.data.service === true){
+      wx.makePhoneCall({
+        phoneNumber: this.data.shuju.information,
+      })
+    }else{
+      var qqnumber = this.data.shuju.information;
+      wx.setClipboardData({
+        data: qqnumber,
+        success: function (res) {
+          wx.showToast({
+            title: '复制成功',
+          })
+        }
+      })
+    }
   },
 })

@@ -9,6 +9,11 @@
     <!-- 这里要做成动态的获取，获取头像和昵称 -->
     </view>
   </view>
+    <view class="header">
+  <!-- 代码 -->
+      <image class="bg_ware" src="https://moyv.top/wechat/images/bg_wave.gif"></image>
+    </view>
+<!-- 波浪纹 -->
 </view>
 <!-- 顶部头像样式 -->
 <view class="item" bindtap=''>

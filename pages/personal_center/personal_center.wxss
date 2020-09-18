@@ -46,3 +46,16 @@
   opacity:0.1;
 }
 /* 分割线 */
+.header {
+  position: relative;
+  height:0rpx;
+  background: linear-gradient(to bottom, #C81623, #C81623);
+}
+.bg_ware {
+  position: absolute;
+  left: 0;
+  bottom: -2rpx;
+  width: 100%;
+  mix-blend-mode: screen;
+  height: 120rpx;
+}
