@@ -107,6 +107,18 @@
 <!-- 客服 -->
 <view class="line"></view>
 <!-- 分割线 -->
+<view class="item" bindtap='showQrcode'>
+  <view class="img">
+    <image src="/images/geren/zan.png" style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view class="name" >赞赏支持</view>
+  <view class="detail">
+    <text>></text>
+  </view>
+</view>
+<!-- 赞赏支持 -->
+<view class="line"></view>
+<!-- 分割线 -->
 <view class="item" bindtap='about'>
   <view class="img">
     <image src="/images/geren/guanyu.png" style="width:40rpx;height:40rpx;"></image>

@@ -80,6 +80,12 @@ Page({
       url: '/pages/personal_center/set/set',
     })
   },
+  showQrcode() {
+    wx.previewImage({
+      urls: ['http://a1.qpic.cn/psc?/V10JXMix0CQf9J/bqQfVz5yrrGYSXMvKr.cqTE1hfQ*zLtZ.mBzPp.NRUj*8JTidz56ln97haseERCW*yOkhUuUUOEEhuUqBgmNdErLhsRUCRlKVYEsEjtKtvs!/b&ek=1&kp=1&pt=0&bo=dAJ0AnQCdAIDEDU!&tl=1&vuin=644960080&tm=1600401600&sce=60-1-1&rf=0-0'],
+      current: 'http://a1.qpic.cn/psc?/V10JXMix0CQf9J/bqQfVz5yrrGYSXMvKr.cqTE1hfQ*zLtZ.mBzPp.NRUj*8JTidz56ln97haseERCW*yOkhUuUUOEEhuUqBgmNdErLhsRUCRlKVYEsEjtKtvs!/b&ek=1&kp=1&pt=0&bo=dAJ0AnQCdAIDEDU!&tl=1&vuin=644960080&tm=1600401600&sce=60-1-1&rf=0-0' // 当前显示图片的http链接      
+    })
+  },
   about: function () {
     wx.navigateTo({
       url: '/pages/personal_center/add_function/about',
