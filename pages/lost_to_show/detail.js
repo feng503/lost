@@ -11,15 +11,30 @@ Page({
     input: false,
     replay: false,
     replayComment: null,
-    service:false
+    service:false,
+    phone_1:'',
+    phone:''
   },
   onLoad:function (opetios) {
     var that = this;
     let lost = JSON.parse(opetios.lostDeteil);
     this.setData({
+      phone_1:lost,
       shuju: lost,
       myid: app.globalData.user.studentId
     });
+    this.setData({
+      phone: this.data.phone_1.information.slice(1)
+    })
+    if (this.data.shuju.information.substr(0, 1) == '#'){
+      that.setData({
+        service: true
+      })
+    }else{
+      that.setData({
+        service: false
+      })
+    }
     wx.request({
       url: app.serverUrl + 'user/getuser?studentId=' + lost.lostUserStudentId,
       header: { 'lost': app.globalData.user.token},
@@ -214,10 +229,10 @@ Page({
   lost_service:function(){
     if(this.data.service === true){
       wx.makePhoneCall({
-        phoneNumber: this.data.shuju.information,
+        phoneNumber: this.data.phone,
       })
     }else{
-      var qqnumber = this.data.shuju.information;
+      var qqnumber = this.data.phone;
       wx.setClipboardData({
         data: qqnumber,
         success: function (res) {

@@ -24,7 +24,8 @@ Page({
     cardCur: 0,//轮播图模块化需要
     describe:'',
     location:'',
-    phone:''
+    phone:'',
+    total_phone:''
    },
   numSteps() {
     this.setData({
@@ -102,7 +103,7 @@ Page({
     var imagePath = this.data.imgList[0];
     var type = this.data.index;  
     var detail = this.data.describe;   
-    var information = this.data.phone;  
+    var information = this.data.total_phone + this.data.phone;  
     var addr = this.data.location;
     var index_1 = this.data.index_1;
     wx.showToast({
@@ -233,5 +234,26 @@ Page({
         mask: true,
       })
     }
+  },
+  check_information(){
+    if (this.data.index !== null && this.data.describe !== '' && this.data.phone !== '' && this.data.location !== '' && this.data.imgList.length !== 0 && this.data.total_phone !== ''){
+        this.setData({
+          num: this.data.num == this.data.numList.length - 1 ? 1 : this.data.num + 1,
+          scrollLeft: this.data.num * 60,
+          TabCur: this.data.num + 1
+        }) 
+    }else{
+      wx.showToast({
+        title: '请完善失物信息',
+        duration: 500,
+        icon: 'none',
+        mask: true,
+      })
+    }
+  },
+  SetBorderSize(e) {
+    this.data.total_phone = e.detail.value 
   }
+  // 联系方式选择
 })
+

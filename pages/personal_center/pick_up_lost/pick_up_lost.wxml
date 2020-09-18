@@ -15,7 +15,7 @@
     <button  wx:if="{{num == 2}}" class="cu-btn teacher_btns bg-green shadow" bindtap="numSteps_front">上一步</button>
 <!-- 上一步操作 -->
     <button  wx:if="{{num == 0}}" class="cu-btn teacher_btn bg-green shadow" bindtap="check_service">下一步</button>
-    <button  wx:if="{{num == 1}}" class="cu-btn teacher_btn bg-green shadow" bindtap="numSteps">下一步</button>
+    <button  wx:if="{{num == 1}}" class="cu-btn teacher_btn bg-green shadow" bindtap="check_information">下一步</button>
     <button  wx:if="{{num == 2}}" class="cu-btn teacher_btn bg-green shadow" bindtap="submit">提交</button>
   </view>
 </view>
@@ -56,16 +56,28 @@
   </view>
 <!-- 选择失物类别 -->
 <view class="cu-form-group margin-top">
-    <view class="title">详细描述</view>
-    <input placeholder="" bindinput='get_des_value'></input>
+    <view class="title">详细描述:</view>
+    <input maxlength="60"  value="{{describe}}" bindinput='get_des_value'></input>
   </view>
   <view class="cu-form-group">
-    <view class="title">联系方式</view>
-    <input placeholder=""  type="number" bindinput='get_pho_value'></input>
+    <view class="title">联系方式:</view>
+    <input maxlength="20"  value="{{phone}}" type="number" bindinput='get_pho_value'></input>
+      <view class="action">
+        <radio-group bindchange="SetBorderSize">
+          <label class="margin-left-sm">
+            <radio class="blue sm radio" value="*" ></radio>
+            <text>QQ</text>
+          </label>
+          <label class="margin-left-sm">
+            <radio class="blue sm radio" value="#"></radio>
+            <text>手机</text>
+          </label>
+        </radio-group>
+      </view>
   </view>
   <view class="cu-form-group">
-    <view class="title">捡到位置</view>
-    <input placeholder="" bindinput='get_loc_value'></input>
+    <view class="title">捡到位置:</view>
+    <input maxlength="40"  value="{{location}}"bindinput='get_loc_value'></input>
   </view>
 <!-- 完善信息 -->
   <view class="cu-bar bg-white margin-top">

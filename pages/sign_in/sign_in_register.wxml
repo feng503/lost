@@ -21,7 +21,7 @@
           <view class='password'>
               <view class="img">
                 <image src="/images/denglu/mima.png" style="width:60rpx;height:60rpx;"></image>
-                <input  bindinput="mima"  style="width:530rpx;height:60rpx;"  placeholder='密码' password='true' name="password" maxlength="20"></input>
+                <input  bindinput="mima"  style="width:530rpx;height:60rpx;"  placeholder='密码' password='true' name="password"  maxlength="20"></input>
               </view>
           </view>
           <!-- 密码处 -->

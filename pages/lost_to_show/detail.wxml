@@ -17,7 +17,7 @@
 	  </view>
 	  <view class="clear"></view>
 	  <view class="info">
-	    <view class="in-title"><text  selectable="true"  decode="{{true}}">&nbsp;联系方式：{{shuju.information}}</text>
+	    <view class="in-title"><text  selectable="true"  decode="{{true}}">&nbsp;联系方式：{{phone}}</text>
        <image class="icon" bindtap="lost_service" src="{{service?'/images/diyiye/boda.png':'/images/diyiye/QQ.png'}}" style="width:60rpx;height:54rpx;"></image>
        </view>
 	  </view>
