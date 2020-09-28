@@ -7,7 +7,7 @@ Page({
     id: '',
     ig: 0,
     sucimgNum: 0,
-    imgList: []
+    imgList: [],
   },
   onShow: function (options) {
     this.setData({
@@ -18,7 +18,17 @@ Page({
     // console.log(app.globalData.user)
   },
   onLoad: function (options) {
-
+    var that = this
+    wx.request({
+      url: app.tokenUrl,
+      method: "GET",
+      header: { 
+        'lost': app.globalData.user.token
+      },
+      success: function (res) {
+        app.globalData.access_token = res.data;
+      }
+    })
   },
   input: function (e) {
     this.setData({
@@ -26,7 +36,6 @@ Page({
     })
   },
   ViewImage(e) {
-    console.log(e)
     wx.previewImage({
       urls: this.data.imgList,
       current: e.currentTarget.dataset.url
@@ -96,27 +105,45 @@ Page({
   uploadFileList: function(fileList, index, that){
     var studentId = app.globalData.user.studentId;
     wx.uploadFile({
-      url: app.serverUrl + 'fish/addFishImg',
-      header: { 'lost': app.globalData.user.token },
+      url: app.imgUrl + app.globalData.access_token,
+      method: 'POST',
       filePath: fileList[index],
-      method: "POST",
-      name: 'image',
-      formData: {
-        studentId: studentId
-      },
+      name: "media",
+      formData: {},
       success: function (res) {
-        if(res.statusCode === 200){
-          if(index + 1 === fileList.length){
-            that.uploadFish(that)
-          } else {
-            that.uploadFileList(fileList, index + 1, that)
-          }
-        } else {
-          that.setData({
-            imgList: []
+        if (res.data.slice(11, 16) !== "87014") {
+          wx.uploadFile({
+            url: app.serverUrl + 'fish/addFishImg',
+            header: { 'lost': app.globalData.user.token },
+            filePath: fileList[index],
+            method: "POST",
+            name: 'image',
+            formData: {
+              studentId: studentId
+            },
+            success: function (res) {
+              if (res.statusCode === 200) {
+                if (index + 1 === fileList.length) {
+                  that.uploadFish(that)
+                } else {
+                  that.uploadFileList(fileList, index + 1, that)
+                }
+              } else {
+                that.setData({
+                  imgList: []
+                })
+                wx.showToast({
+                  title: "上传失败，请重试！",
+                  duration: 3000,
+                  icon: 'none',
+                })
+              }
+            }
           })
+        } else {
+          wx.hideToast();
           wx.showToast({
-            title: "上传失败，请重试！",
+            title: '内容不合法',
             duration: 3000,
             icon: 'none',
           })
@@ -128,34 +155,53 @@ Page({
     var studentId = app.globalData.user.studentId;
     var talk = that.data.talk;
     wx.request({
-      url: app.serverUrl + 'fish/addFish',
-      header: { 'lost': app.globalData.user.token },
-      method: "GET",
+      url: app.textUrl + app.globalData.access_token,
+      method: 'POST',
       data: {
-        studentId: studentId,
-        talk: talk,
+        content: talk
       },
       success: function (res) {
-        if (res.statusCode == 201) {
-          wx.hideToast();
-          wx.showModal({
-            title: '发布成功',
-            showCancel: false,
+        //当content内含有敏感信息，则返回87014
+        if (res.data.errcode !== 87014) {
+          wx.request({
+            url: app.serverUrl + 'fish/addFish',
+            header: { 'lost': app.globalData.user.token },
+            method: "GET",
+            data: {
+              studentId: studentId,
+              talk: talk,
+            },
             success: function (res) {
-              if (res.confirm) {
-                wx.navigateBack({})
+              if (res.statusCode == 201) {
+                wx.hideToast();
+                wx.showModal({
+                  title: '发布成功',
+                  showCancel: false,
+                  success: function (res) {
+                    if (res.confirm) {
+                      wx.navigateBack({})
+                    }
+                  }
+                })
+              } else {
+                wx.hideToast();
+                wx.showToast({
+                  title: res.data.message,
+                  duration: 3000,
+                  icon: 'none',
+                })
               }
             }
           })
         } else {
           wx.hideToast();
           wx.showToast({
-            title: res.data.message,
+            title: '内容不合法',
             duration: 3000,
             icon: 'none',
           })
         }
-      }
+      } 
     })
   }
 })

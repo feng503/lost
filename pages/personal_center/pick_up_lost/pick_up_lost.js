@@ -106,58 +106,97 @@ Page({
     var information = this.data.total_phone + this.data.phone;  
     var addr = this.data.location;
     var index_1 = this.data.index_1;
-    wx.showToast({
-      title: '上传中',
-      duration: 53000,
-      image: '/images/geren/trundle.png',
-      mask: true,
-    })
-    wx.uploadFile({
-      url: app.serverUrl+'lost/submit',
-      filePath: imagePath,
-      formData: {
-        studentId: that.data.userInfo.studentId,
-        type: type,
-        service: index_1,
-        detail: detail,
-        information: information,
-        addr: addr,
+    var all_text = detail + information + addr;
+    wx.request({
+      url: app.textUrl + app.globalData.access_token,
+      method: 'POST',
+      data: {
+        content: all_text
       },
-      header: { "Context-Type": "multipart/form-data", 'lost': app.globalData.user.token },
-      name: 'image',
-      success: res => {
-        wx.hideToast();
-        if(res.data != ""){
-          let data = JSON.parse(res.data)
-          if (data.status !== 200) {
-            wx.showToast({
-              title: data.message,
-              icon: "none",
-              duration: 2000
-            })
-            return
-          }
+      success: function (res) {
+        //当content内含有敏感信息，则返回87014
+        if (res.data.errcode !== 87014) {
+          wx.uploadFile({
+            url: app.imgUrl + app.globalData.access_token,
+            method: 'POST',
+            filePath: imagePath,
+            name: "media",
+            formData: {},
+            success: function (res) {
+              if (res.data.slice(11, 16) !== "87014") {
+                wx.showToast({
+                  title: '上传中',
+                  duration: 53000,
+                  image: '/images/geren/trundle.png',
+                  mask: true,
+                })
+                wx.uploadFile({
+                  url: app.serverUrl + 'lost/submit',
+                  filePath: imagePath,
+                  formData: {
+                    studentId: that.data.userInfo.studentId,
+                    type: type,
+                    service: index_1,
+                    detail: detail,
+                    information: information,
+                    addr: addr,
+                  },
+                  header: { "Context-Type": "multipart/form-data", 'lost': app.globalData.user.token },
+                  name: 'image',
+                  success: res => {
+                    wx.hideToast();
+                    if (res.data != "") {
+                      let data = JSON.parse(res.data)
+                      if (data.status !== 200) {
+                        wx.showToast({
+                          title: data.message,
+                          icon: "none",
+                          duration: 2000
+                        })
+                        return
+                      }
+                    }
+                    wx.showToast({
+                      title: '上传成功',
+                      duration: 1000,
+                      icon: 'success',
+                      mask: true,
+                    })
+                    wx.switchTab({
+                      url: '/pages/personal_center/personal_center'
+                    })
+                  },
+                  fail: () => {
+                    wx.hideToast();
+                    wx.showToast({
+                      title: '上传失败',
+                      duration: 1000,
+                      icon: 'none',
+                      mask: true,
+                    })
+                  }
+                })
+              }else{
+                wx.hideToast();
+                wx.showToast({
+                  title: '内容不合法',
+                  duration: 3000,
+                  icon: 'none',
+                })
+              }
+            }
+          })
+        }else{
+          wx.hideToast();
+          wx.showToast({
+            title: '内容不合法',
+            duration: 3000,
+            icon: 'none',
+          })
         }
-        wx.showToast({
-          title: '上传成功',
-          duration: 1000,
-          icon: 'success',
-          mask: true,
-        })
-        wx.switchTab({
-          url: '/pages/personal_center/personal_center'
-        })
-      },
-      fail: () => {
-        wx.hideToast();
-        wx.showToast({
-          title: '上传失败',
-          duration: 1000,
-          icon: 'none',
-          mask: true,
-        })
       }
     })
+
   },
   onLoad: function (options) {
     var that = this;
@@ -188,6 +227,16 @@ Page({
       })
     })
     this.towerSwiper('swiperList');
+    wx.request({
+      url: app.tokenUrl,
+      method: "GET",
+      header: {
+        'lost': app.globalData.user.token
+      },
+      success: function (res) {
+        app.globalData.access_token = res.data;
+      }
+    })
   },
   towerSwiper(name) {
     let list = this.data[name];
@@ -256,4 +305,3 @@ Page({
   }
   // 联系方式选择
 })
-

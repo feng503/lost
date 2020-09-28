@@ -44,6 +44,16 @@ Page({
         })
       }
     })
+    wx.request({
+      url: app.tokenUrl,
+      method: "GET",
+      header: {
+        'lost': app.globalData.user.token
+      },
+      success: function (res) {
+        app.globalData.access_token = res.data;
+      }
+    })
   },
   onShow: function(){
     let that = this;
@@ -71,68 +81,86 @@ Page({
     if (data.newComment == '') {
       return;
     }
-    const replay = data.replay;
-    if (replay) {
-      if (data.replayComment.parentId != 0)
-        data.replayComment.commentId = data.replayComment.parentId
-      wx.request({
-        url: app.serverUrl + 'lost/addLostComment',
-        header: { 'lost': app.globalData.user.token },
-        method: "GET",
-        data: {
-          lostId: data.shuju.id,
-          studentId: app.globalData.user.studentId,
-          toUserId: data.replayComment.commentatorId,
-          parentId: data.replayComment.commentId,
-          commentDetail: data.newComment
-        },
-        success: function (res) {
-          if (res.statusCode == 200) {
-            that.setData({
-              commentList: res.data
-            });
-          } else{
-            wx.showToast({
-              title: res.data.message,
-              icon: "none",
-              duration: 2000
+    wx.request({
+      url: app.textUrl + app.globalData.access_token,
+      method: 'POST',
+      data: {
+        content: data.newComment
+      },
+      success: function (res) {
+        if (res.data.errcode !== 87014) {
+          const replay = data.replay;
+          if (replay) {
+            if (data.replayComment.parentId != 0)
+              data.replayComment.commentId = data.replayComment.parentId
+            wx.request({
+              url: app.serverUrl + 'lost/addLostComment',
+              header: { 'lost': app.globalData.user.token },
+              method: "GET",
+              data: {
+                lostId: data.shuju.id,
+                studentId: app.globalData.user.studentId,
+                toUserId: data.replayComment.commentatorId,
+                parentId: data.replayComment.commentId,
+                commentDetail: data.newComment
+              },
+              success: function (res) {
+                if (res.statusCode == 200) {
+                  that.setData({
+                    commentList: res.data
+                  });
+                } else {
+                  wx.showToast({
+                    title: res.data.message,
+                    icon: "none",
+                    duration: 2000
+                  })
+                }
+                that.setData({
+                  newComment: '',
+                  replay: false,
+                  replayComment: null
+                });
+              }
             })
-          }
-          that.setData({
-            newComment: '',
-            replay: false,
-            replayComment: null
-          });
-        }
-      })
-    } else {
-      wx.request({
-        url: app.serverUrl + 'lost/addLostComment',
-        header: { 'lost': app.globalData.user.token },
-        method: "GET",
-        data: {
-          lostId: data.shuju.id,
-          studentId: app.globalData.user.studentId,
-          commentDetail: data.newComment
-        },
-        success: function (res) {
-          if (res.statusCode == 200) {
-            that.setData({
-              commentList: res.data
-            });
           } else {
-            wx.showToast({
-              title: res.data.message,
-              icon: "none",
-              duration: 2000
+            wx.request({
+              url: app.serverUrl + 'lost/addLostComment',
+              header: { 'lost': app.globalData.user.token },
+              method: "GET",
+              data: {
+                lostId: data.shuju.id,
+                studentId: app.globalData.user.studentId,
+                commentDetail: data.newComment
+              },
+              success: function (res) {
+                if (res.statusCode == 200) {
+                  that.setData({
+                    commentList: res.data
+                  });
+                } else {
+                  wx.showToast({
+                    title: res.data.message,
+                    icon: "none",
+                    duration: 2000
+                  })
+                }
+                that.setData({
+                  newComment: ''
+                });
+              }
             })
           }
-          that.setData({
-            newComment: ''
-          });
+        }else{
+          wx.hideToast();
+          wx.showToast({
+            title: '内容不合法',
+            duration: 3000,
+            icon: 'none',
+          })
         }
-      })
-    }
+      }
+     })
   },
   // 删除评论
   deleteComment: function (e) {
