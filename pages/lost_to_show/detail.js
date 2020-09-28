@@ -68,6 +68,9 @@ Page({
   addComment: function () {
     let that = this;
     let data = this.data;
+    if (data.newComment == '') {
+      return;
+    }
     const replay = data.replay;
     if (replay) {
       if (data.replayComment.parentId != 0)
