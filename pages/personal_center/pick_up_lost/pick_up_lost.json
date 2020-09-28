@@ -4,5 +4,5 @@
     "navigationBarTitleText": "失物上传",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#ffffff",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
 }

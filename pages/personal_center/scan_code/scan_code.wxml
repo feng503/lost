@@ -1,4 +1,6 @@
-<view class="page">
-    <button class="weui-btn"    style="margin-top:50px;"  bindtap='onClick_connect'>连接服务器</button>
-     <button class="weui-btn" bindtap="getQRCode">扫一扫</button>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>正在努力开发中,敬请期待！！！</view>
+  <view class='text-content'>
+    <image  class='margin-top-sm' src="/images/geren/run.gif" mode="widthFix" ></image>
+  </view>
 </view>

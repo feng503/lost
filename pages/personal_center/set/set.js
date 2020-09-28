@@ -63,9 +63,18 @@ Page({
     })
   },
   quit: function () {
-    wx.clearStorageSync('userInfo')
-    wx.reLaunch({
-      url: '/pages/sign_in/sign_in_register',
+    wx.showModal({
+      title: '提示',
+      content: '确定退出？',
+      success(res) {
+        if (res.confirm) {
+          wx.clearStorageSync('userInfo')
+          wx.reLaunch({
+            url: '/pages/sign_in/sign_in_register',
+          })
+        } else if (res.cancel) {
+        }
+      }
     })
   }
 })

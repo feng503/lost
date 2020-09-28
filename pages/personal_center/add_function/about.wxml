@@ -1,4 +1,12 @@
-<view style="margin:26rpx">
-<text style="font-size:30rpx;">本小程序开发人员为几个经常丢东西的小朋友。本小程序为工大全体学生，老师，相关工作人员服务，适用于发布河北工业大学失物招领，寻物启事及二手交易等信息，发布者不得发布违反校规和国家法律法规的相关信息！</text>
-<view style="font-size:30rpx" >祝大家2020年学业顺心，工作顺利，阖家欢乐！</view>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于河工大失物招领平台</view>
+  <view class='text-content'>
+    <view>Hi！同学~欢迎使用河工大失物招领平台（河工失招）！</view>
+    <view class='margin-top-sm'>本小程序为工大全体学生，老师，相关工作人员服务，适用于发布河北工业大学失物招领，寻物启事及二手交易等信息，发布者不得发布违反校规和国家法律法规的相关信息！</view>
+    <view class='margin-top-sm'>希望这款小程序能够真正帮助到同学们，提高大家失物招领的效率，也希望在学校中形成一个互帮互助的氛围。如果这款小程序给您带来了帮助，麻烦您帮忙宣传转发。因为只有更多的人知道这个平台，才能将失物与拾物建立一个有效的联系。另外，如果这个小程序有帮到您，或者您觉得很赞，可以在个人中心扫描赞赏码支持一下！</view>
+    <view class='margin-top-sm'>更多功能敬请期待！同时，如果您对这款小程序有更好的建议，欢迎给我们提供反馈。</view>
+    <view class='margin-top-sm'>祝大家2020年学业顺心，工作顺利，阖家欢乐！</view>
+    <view class='margin-top-sm'>开发者：几位大三师兄</view>
+    <view class='margin-top-sm'>声明：小程序中部分组件来自文晓港前辈的ColorUI组件库</view>
+  </view>
 </view>

@@ -156,3 +156,18 @@ opacity: 0.6
   border-radius: 50%;
   box-shadow: 0 0 2px 2px rgba(221, 218, 218, 0.3);
 }
+/* 文字省略 */
+.time{
+  display: flex;
+  flex-wrap: wrap;
+  padding-inline-start: 6rpx;
+  margin-left: 5rpx;
+  font-size:23rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

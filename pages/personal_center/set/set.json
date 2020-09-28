@@ -4,5 +4,5 @@
   "navigationBarTitleText": "设置",
   "navigationBarTextStyle": "black",
   "backgroundColor": "#ffffff",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }
