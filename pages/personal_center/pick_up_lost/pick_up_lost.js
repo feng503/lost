@@ -236,7 +236,7 @@ Page({
     }
   },
   check_information(){
-    if (this.data.index !== null && this.data.describe !== '' && this.data.phone !== '' && this.data.location !== '' && this.data.imgList.length !== 0 && this.data.total_phone !== ''){
+    if (this.data.index !== null && this.data.describe !== '' && this.data.phone !== '' && this.data.location !== '' && this.data.total_phone !== ''){
         this.setData({
           num: this.data.num == this.data.numList.length - 1 ? 1 : this.data.num + 1,
           scrollLeft: this.data.num * 60,

@@ -61,7 +61,7 @@
   </view>
   <view class="cu-form-group">
     <view class="title">联系方式:</view>
-    <input maxlength="20"  value="{{phone}}" type="number" bindinput='get_pho_value'></input>
+    <input maxlength="15"  value="{{phone}}" type="number" bindinput='get_pho_value'></input>
       <view class="action">
         <radio-group bindchange="SetBorderSize">
           <label class="margin-left-sm">
