@@ -18,8 +18,8 @@
 	  <view class="clear"></view>
 	  <view class="info">
 	    <view class="in-title"><text  selectable="true"  decode="{{true}}">&nbsp;联系方式：{{phone}}</text>
-       <button wx:if="{{service == false}}" style="width:130rpx;margin-left:100rpx" class="cu-btn teacher_btn bg-green shadow" bindtap="lost_service">复制</button>
-       <button  wx:if="{{service == true}}" style="width:130rpx;margin-left:100rpx" class="cu-btn teacher_btn bg-green shadow" bindtap="lost_service">拨号</button>
+       <button wx:if="{{service == false}}" style="width:130rpx;display:inline;float: right;" class="button cu-btn teacher_btn bg-green shadow" bindtap="lost_service">复制</button>
+       <button  wx:if="{{service == true}}" style="width:130rpx;display:inline;float: right;" class="button cu-btn teacher_btn bg-green shadow" bindtap="lost_service">拨号</button>
        </view>
 	  </view>
 	  <view class="clear"></view>

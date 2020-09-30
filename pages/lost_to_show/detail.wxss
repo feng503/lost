@@ -178,3 +178,11 @@
   margin-left: 100rpx; 
   padding-top:6rpx;
 }
+.button{
+    height: 65rpx;
+    line-height: 65rpx;
+    width: 300rpx;
+    background-color: #409eff;
+    text-align: center;
+    vertical-align:middle;
+}
