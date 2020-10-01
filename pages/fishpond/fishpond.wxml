@@ -28,10 +28,10 @@
             <image class="imageone" src="{{thumbImg}}" data-index="{{index}}" data-i="{{i}}" bindtap="previewImg"  mode='heightFix'/>
           </view>
           <view wx:elif="{{item.thumbImg.length>2}}">
-          <image class="imagethree" data-index="{{index}}" data-i="{{i}}" bindtap="previewImg"  src="{{thumbImg}}" mode='widthFix'/>
+          <image class="imagethree" data-index="{{index}}" data-i="{{i}}" bindtap="previewImg"  src="{{thumbImg}}" mode='aspectFill'/>
           </view>
           <view wx:else >
-            <image bindtap="previewImg" data-index="{{index}}" data-i="{{i}}" class="imagetwo" src="{{thumbImg}}" mode='widthFix'/> 
+            <image bindtap="previewImg" data-index="{{index}}" data-i="{{i}}" class="imagetwo" src="{{thumbImg}}" mode='aspectFill'/> 
           </view>
         </view>
       </view>

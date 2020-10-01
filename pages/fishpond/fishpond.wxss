@@ -113,11 +113,11 @@ opacity: 0.6
 }
 .imagetwo{
   width: 350rpx;
-  max-height: 430rpx;
+  max-height: 380rpx;
 }
 .imagethree{
   width: 230rpx;
-  max-height: 430rpx;
+  max-height: 250rpx;
 }
 .imageall{
   display: flex;

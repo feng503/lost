@@ -32,10 +32,10 @@ Page({
       current: e.currentTarget.dataset.url
     });
   },
-  //图片查看
   ChooseImage() {
+    let count = 3 - this.data.imgList.length
     wx.chooseImage({
-      count: 1, //默认9
+      count: count, //默认9
       sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], //从相册选择
       success: (res) => {
@@ -51,7 +51,6 @@ Page({
       }
     });
   },
-  //选择图片
   DelImg(e) {
     wx.showModal({
       title: '客官',
