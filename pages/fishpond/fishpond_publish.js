@@ -70,6 +70,14 @@ Page({
   send: function () {
     var that = this;
     var user_id = that.data.id
+    if (that.data.talk === ''){
+      wx.showToast({
+        title: "鱼塘发言不能为空！",
+        duration: 2000,
+        icon: 'none',
+      })
+      return;
+    }
     wx.showToast({
       title: '正在上传',
       duration: 33000,
