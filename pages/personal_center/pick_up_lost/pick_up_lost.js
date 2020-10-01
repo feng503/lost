@@ -112,52 +112,103 @@ Page({
       image: '/images/geren/trundle.png',
       mask: true,
     })
-    wx.uploadFile({
-      url: app.serverUrl+'lost/submit',
-      filePath: imagePath,
-      formData: {
-        studentId: that.data.userInfo.studentId,
-        type: type,
-        service: index_1,
-        detail: detail,
-        information: information,
-        addr: addr,
-      },
-      header: { "Context-Type": "multipart/form-data", 'lost': app.globalData.user.token },
-      name: 'image',
-      success: res => {
-        wx.hideToast();
-        if(res.data != ""){
-          let data = JSON.parse(res.data)
-          if (data.status !== 200) {
-            wx.showToast({
-              title: data.message,
-              icon: "none",
-              duration: 2000
-            })
-            return
+    if (imagePath == null) {
+      wx.request({
+        url: app.serverUrl + 'lost/submit2',
+        method: "POST",
+        data: {
+          studentId: that.data.userInfo.studentId,
+          type: type,
+          service: index_1,
+          detail: detail,
+          information: information,
+          addr: addr
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'lost': app.globalData.user.token
+        },
+        success: res => {
+          wx.hideToast();
+          if (res.data != "") {
+            let data = JSON.parse(res.data)
+            if (data.status !== 200) {
+              wx.showToast({
+                title: data.message,
+                icon: "none",
+                duration: 2000
+              })
+              return
+            }
           }
+          wx.showToast({
+            title: '上传成功',
+            duration: 1000,
+            icon: 'success',
+            mask: true,
+          })
+          wx.switchTab({
+            url: '/pages/personal_center/personal_center'
+          })
+        },
+        fail: () => {
+          wx.hideToast();
+          wx.showToast({
+            title: '上传失败',
+            duration: 1000,
+            icon: 'none',
+            mask: true,
+          })
         }
-        wx.showToast({
-          title: '上传成功',
-          duration: 1000,
-          icon: 'success',
-          mask: true,
-        })
-        wx.switchTab({
-          url: '/pages/personal_center/personal_center'
-        })
-      },
-      fail: () => {
-        wx.hideToast();
-        wx.showToast({
-          title: '上传失败',
-          duration: 1000,
-          icon: 'none',
-          mask: true,
-        })
-      }
-    })
+      })
+    } else {
+      wx.uploadFile({
+        url: app.serverUrl + 'lost/submit',
+        filePath: imagePath,
+        formData: {
+          studentId: that.data.userInfo.studentId,
+          type: type,
+          service: index_1,
+          detail: detail,
+          information: information,
+          addr: addr,
+        },
+        header: { "Context-Type": "multipart/form-data", 'lost': app.globalData.user.token },
+        name: 'image',
+        success: res => {
+          wx.hideToast();
+          if (res.data != "") {
+            let data = JSON.parse(res.data)
+            if (data.status !== 200) {
+              wx.showToast({
+                title: data.message,
+                icon: "none",
+                duration: 2000
+              })
+              return
+            }
+          }
+          wx.showToast({
+            title: '上传成功',
+            duration: 1000,
+            icon: 'success',
+            mask: true,
+          })
+          wx.switchTab({
+            url: '/pages/personal_center/personal_center'
+          })
+        },
+        fail: () => {
+          wx.hideToast();
+          wx.showToast({
+            title: '上传失败',
+            duration: 1000,
+            icon: 'none',
+            mask: true,
+          })
+        }
+      })
+    }
   },
   onLoad: function (options) {
     var that = this;
@@ -251,9 +302,9 @@ Page({
       })
     }
   },
+  // 联系方式选择
   SetBorderSize(e) {
     this.data.total_phone = e.detail.value 
   }
-  // 联系方式选择
 })
 

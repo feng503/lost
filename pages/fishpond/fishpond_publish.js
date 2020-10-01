@@ -68,7 +68,6 @@ Page({
       }
     })
   },
-  //删除图片
   send: function () {
     var that = this;
     var user_id = that.data.id
