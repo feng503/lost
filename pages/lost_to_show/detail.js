@@ -175,8 +175,7 @@ Page({
   // 举报失物信息
   reportLost: function () {
     let lost = this.data.shuju
-    let that = this;
-    let studentId = app.globalData.user.studentId
+    let that = this
     wx.showModal({
       title: '提示',
       content: '确认举报该动态？',
@@ -185,7 +184,7 @@ Page({
           wx.request({
             url: app.serverUrl + 'lost/report',
             data: {
-              studentId: studentId,
+              studentId: lost.lostUserStudentId,
               lostId: lost.id,
               detail: '不良信息'
             },

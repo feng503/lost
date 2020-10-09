@@ -56,7 +56,7 @@ Page({
   reportFish: function(e){
     let fish = e.currentTarget.dataset.fish
     let that = this;
-    let studentId = app.globalData.user.studentId
+    let studentId = fish.publisherId
     wx.showModal({
       title: '提示',
       content: '确认举报该动态？',
@@ -79,7 +79,6 @@ Page({
               })
             }
           })
-        } else if (res.cancel) {
         }
       }
     })
