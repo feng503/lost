@@ -80,6 +80,12 @@ Page({
       url: '/pages/personal_center/set/set',
     })
   },
+  new_login:function(){
+    wx.clearStorageSync('userInfo')
+    wx.reLaunch({
+      url: '/pages/sign_in/sign_in_register',
+    })
+  },
   showQrcode() {
     wx.previewImage({
       urls: ['http://a1.qpic.cn/psc?/V10JXMix0CQf9J/bqQfVz5yrrGYSXMvKr.cqTE1hfQ*zLtZ.mBzPp.NRUj*8JTidz56ln97haseERCW*yOkhUuUUOEEhuUqBgmNdErLhsRUCRlKVYEsEjtKtvs!/b&ek=1&kp=1&pt=0&bo=dAJ0AnQCdAIDEDU!&tl=1&vuin=644960080&tm=1600401600&sce=60-1-1&rf=0-0'],

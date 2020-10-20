@@ -6,6 +6,9 @@
     <view class="login">
       <view>{{student_name}}</view>
       <view>学号:{{student_id}}</view>
+      <view class="login_1" >
+        <text bindtap='new_login'>登录/注册</text>
+      </view>
     <!-- 这里要做成动态的获取，获取头像和昵称 -->
     </view>
   </view>

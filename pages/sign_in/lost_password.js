@@ -26,7 +26,7 @@ Page({
         url: app.serverUrl + 'reSetPassword',
         data: {
           studentId: data.studentId,
-          phoneNumber: data.phoneNum,
+          email: data.phoneNum,
           newPasswordFirst: data.passwd1,
           newPasswordSecond: data.passwd2,
           testCode: data.testCode
@@ -58,7 +58,7 @@ Page({
     var that = this;
     if (that.data.phoneNum != "") {
       wx.request({
-        url: app.serverUrl + 'code?phoneNum=' + that.data.phoneNum,
+        url: app.serverUrl + 'code?email=' + that.data.phoneNum,
       })
     }
   },

@@ -12,7 +12,7 @@
   font-weight:600;
   position:absolute;
   left:240rpx;
-  margin-top:60rpx;/**账号形式**/
+  margin-top:45rpx;/**账号形式**/
 }
 /* 最上部的个人信息 */
 .img{
@@ -58,4 +58,7 @@
   width: 100%;
   mix-blend-mode: screen;
   height: 120rpx;
+}
+.login_1 {
+  color: white;
 }

@@ -76,7 +76,7 @@
       </view>
   </view>
   <view class="cu-form-group">
-    <view class="title">捡到位置:</view>
+    <view class="title">失物位置:</view>
     <input maxlength="40"  value="{{location}}"bindinput='get_loc_value'></input>
   </view>
 <!-- 完善信息 -->

@@ -13,15 +13,17 @@ Page({
     replayComment: null,
     service:false,
     phone_1:'',
-    phone:''
+    phone:'',
+    share: ''
   },
   onLoad:function (opetios) {
     var that = this;
-    let lost = JSON.parse(opetios.lostDeteil);
+    let lost = JSON.parse(decodeURIComponent(opetios.lostDeteil));
     this.setData({
       phone_1:lost,
       shuju: lost,
-      myid: app.globalData.user.studentId
+      myid: app.globalData.user.studentId,
+      share: opetios.lostDeteil
     });
     this.setData({
       phone: this.data.phone_1.information.slice(1)
@@ -254,4 +256,20 @@ Page({
       })
     }
   },
+  onShareAppMessage: function (res) {
+    let detail = this.data.share
+    let url = '/pages/lost_to_show/detail?lostDeteil=' + detail
+    console.log(url)
+    return {
+      title: '河工大失物招领平台',
+      path: url,
+      success: function (res) {
+        //转发成功
+      },
+      fail: function (res) {
+        //转发失败
+      }
+    }
+  },
+  // 转发
 })

@@ -26,7 +26,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.12.2",
+	"libVersion": "2.13.1",
 	"appid": "wxee852c85e7d21a6c",
 	"projectname": "%E6%B2%B3%E5%B7%A5%E5%A4%B1%E6%8B%9BV2.0",
 	"debugOptions": {
@@ -98,6 +98,20 @@
 					"id": -1,
 					"name": "pages/fishpond/fishpond_publish",
 					"pathName": "pages/fishpond/fishpond_publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sign_in/lost_password",
+					"pathName": "pages/sign_in/lost_password",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/personal_center/personal_center",
+					"pathName": "pages/personal_center/personal_center",
 					"scene": null
 				}
 			]

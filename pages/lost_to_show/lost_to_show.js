@@ -369,7 +369,6 @@ Page({
       mask: true,
     })
   },
-  // 领-找切换
   onShareAppMessage: function (res) {
     return {
       title: '河工大失物招领平台',
@@ -382,13 +381,11 @@ Page({
       }
     }
   },
-  // 转发
   Biu: function (e) {
     let that = this;
     let index = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/lost_to_show/detail?lostDeteil=' + JSON.stringify(that.data.newsdata[index])
+      url: '/pages/lost_to_show/detail?lostDeteil=' + encodeURIComponent(JSON.stringify(that.data.newsdata[index]))
     })
   }
-  // 进入详情页
 })

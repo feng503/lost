@@ -41,7 +41,7 @@
             </view>
             <view class='ig'>
               <view class="img">
-                <image src="/images/denglu/shoujihao.png" style="width:60rpx;height:60rpx"></image>
+                <image src="/images/denglu/emial.png" style="width:60rpx;height:60rpx"></image>
                 <input placeholder='邮箱' bindblur="setPhone" name="phone" style="width:500rpx;height:60rpx;"  value='{{phoneNum}}' maxlength="30" ></input>
               </view>
             </view>
@@ -59,7 +59,7 @@
             </view>
              <view class='ig'>
                <view class="img">
-                  <image src="/images/denglu/yanzhengma.png" style="width:62rpx;height:60rpx;"></image>
+                  <image src="/images/denglu/yanzhengma.png" style="width:56rpx;height:56rpx;padding-top:8rpx;"></image>
                   <input name="code" maxlength="6" placeholder='请输入验证码' style="width:380rpx;height:60rpx;" 
 ></input>
                   <button class="anniu" size='mini' bindtap="getCode" disabled="{{btn}}" style="font-size:23rpx"><view>{{time}}</view></button>
