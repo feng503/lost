@@ -197,17 +197,22 @@ Page({
   onLoad: function (options) {
     const userInfo = wx.getStorageSync('userInfo')
     if (userInfo == null || userInfo == '' || userInfo == {}) {
-      wx.redirectTo({
-        url: '/pages/sign_in/sign_in_register',
+      // 未登录，本地不存在用户信息
+      app.globalData.user = {
+        "studentId": "000000",
+        "nickname": "游客",
+        "faceImage": "https://www.vergessen.top/imgGo/lost/defaulthead.png",
+        "faceImageSmall": "https://www.vergessen.top/imgGo/lost/defaulthead.png",
+        "token": "未登录"
+      }
+    } else {
+      app.globalData.user = userInfo;
+      // 为该用户添加访客记录
+      wx.request({
+        url: app.serverUrl + 'user/visit?studentId=' + userInfo.studentId,
+        method: "POST"
       })
-      return;
     }
-    app.globalData.user = userInfo;
-    // 为该用户添加访客记录
-    wx.request({
-      url: app.serverUrl + 'user/visit?studentId=' + userInfo.studentId,
-      method: "POST"
-    })
     wx.stopPullDownRefresh()
     var that = this;
     wx.request({

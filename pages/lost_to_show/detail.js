@@ -39,6 +39,7 @@ Page({
       url: app.serverUrl + 'user/getuser?studentId=' + lost.lostUserStudentId,
       header: { 'lost': app.globalData.user.token},
       success: (res) => {
+        console.log(res)
         that.setData({
           user: res.data
         })
@@ -190,12 +191,20 @@ Page({
             },
             header: { 'lost': app.globalData.user.token },
             success: (res) => {
-              wx.showToast({
-                title: res.data,
-                duration: 2000,
-                icon: 'none',
-                mask: true,
-              })
+              if (res.statusCode == 200) {
+                wx.showToast({
+                  title: res.data,
+                  duration: 2000,
+                  icon: 'none',
+                  mask: true,
+                })
+              } else {
+                wx.showToast({
+                  title: res.data.message,
+                  icon: "none",
+                  duration: 2000
+                })
+              }
             }
           })
         } else if (res.cancel) {

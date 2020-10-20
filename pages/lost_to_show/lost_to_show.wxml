@@ -72,7 +72,7 @@
       <view style="display: flex;margin:auto;">
         <view style="color:{{lingColor}};">领</view>
         --
-        <view style="color:{{zhaoColor}};">找</view>
+        <view style="color:{{zhaoColor}};">还</view>
       </view>
   </view>
 </view>

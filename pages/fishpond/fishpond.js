@@ -71,12 +71,20 @@ Page({
             },
             header: { 'lost': app.globalData.user.token },
             success: (res) => {
-              wx.showToast({
-                title: res.data,
-                duration: 2000,
-                icon: 'none',
-                mask: true,
-              })
+              if (res.statusCode == 200) {
+                wx.showToast({
+                  title: res.data,
+                  duration: 2000,
+                  icon: 'none',
+                  mask: true,
+                })
+              } else {
+                wx.showToast({
+                  title: res.data.message,
+                  icon: "none",
+                  duration: 2000
+                })
+              }
             }
           })
         }
