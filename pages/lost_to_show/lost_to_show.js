@@ -224,7 +224,6 @@ Page({
         method: "get",
         success: function (res) {
           let userVo = res.data
-          console.log(userVo)
           // token过期
           if (userVo.studentId === userInfo.studentId) {
             wx.setStorageSync('userInfo', userVo)

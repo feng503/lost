@@ -119,6 +119,13 @@
 					"id": -1,
 					"name": "pages/fishpond/fishdetail",
 					"pathName": "pages/fishpond/fishdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sign_in/sign_in_register",
+					"pathName": "pages/sign_in/sign_in_register",
 					"scene": null
 				}
 			]

@@ -6,7 +6,8 @@ Page({
     student_name:'',
     student_id:'',
     year:'',
-    num:''
+    num:'',
+    id: true
   },
   onShow:function(){
     this.onLoad()
@@ -18,6 +19,12 @@ Page({
       student_id: app.globalData.user.studentId,
     })
     // 获取用户信息
+    if (this.data.student_id == '000000')
+    {
+      this.setData({
+        id: false
+      })
+    }
     var myDate = new Date();
     this.setData({
       year: myDate.getFullYear(),
@@ -36,7 +43,7 @@ Page({
     // 对学期动态说明
   },
   pick_up_lost:function(){
-    if (this.data.student_id == '000000'){
+    if (this.data.id == false){
       wx.showToast({
         title: "请登录后操作!",
         icon: "none",
@@ -55,7 +62,7 @@ Page({
     })
   },
   my_publish:function(){
-    if (this.data.student_id == '000000') {
+    if (this.data.id == false) {
       wx.showToast({
         title: "请登录后操作!",
         icon: "none",
@@ -89,21 +96,12 @@ Page({
     })
   },
   service: function () {
-    if (this.data.student_id == '000000') {
-      wx.showToast({
-        title: "请登录后操作!",
-        icon: "none",
-        duration: 1000
-      })
-    }
-    else{
       wx.navigateTo({
         url: '/pages/personal_center/add_function/service',
       })
-    }
   },
   seet: function () {
-    if (this.data.student_id == '000000') {
+    if (this.data.id == false) {
       wx.showToast({
         title: "请登录后操作!",
         icon: "none",

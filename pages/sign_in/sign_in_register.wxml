@@ -1,5 +1,5 @@
 <view class="test-bg">
-  <image src="https://phototj.photo.store.qq.com/psc?/V10JXMix0CQf9J/UAKsoihnbkr0XNkArJGSumj6vB5DxM24rwUu3JHt2LwF5pfbBmAWpwOA1A3Y7C8sKrmf7yTUEvWYDaKD93*GwA!!/b&bo=ZQT6BmUE.gYDUHU!&rf=mood_app" class="bg-image" mode="scaleToFill"></image>
+  <image src="http://a1.qpic.cn/psc?/V10JXMix0CQf9J/bqQfVz5yrrGYSXMvKr.cqfbB1H.ywi1mAjNGLfgH3nJub3TCZw*lv*9IK1d7JRHgZvGhpqmJen*L7AlvlD4*AvsjFmfldf60Lvvgr0JBKIA!/b&ek=1&kp=1&pt=0&bo=ZQT6BmUE.gYDEDU!&tl=1&vuin=644960080&tm=1603551600&sce=60-1-1&rf=0-0" class="bg-image" mode="scaleToFill"></image>
 <!-- 页面背景 -->
   <view class="one">
     <view class="top-line">    

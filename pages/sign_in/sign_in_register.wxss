@@ -20,7 +20,7 @@ page{
 } 
 .top-line-button {  
   font-size: 24rpx;     
-  color: #777;  
+  color: rgb(184, 181, 181);  
   margin: 150rpx; 
   margin-top:40rpx; 
   padding-top:0rpx;
@@ -60,7 +60,7 @@ page{
   margin-left: 69rpx;
   margin-right: 50rpx;
   border-radius:20rpx;
-  background-color: rgb(170, 34, 34);
+  background-color: #d31919;
   color:white;
 } 
 .youke_denglu{
@@ -68,7 +68,7 @@ page{
   margin-left: 69rpx;
   margin-right: 50rpx;
   border-radius:20rpx;
-  background-color: rgb(170, 34, 34);
+  background-color: #d31919;
   color:white;
 }
 /* 登陆处样式 */
@@ -80,7 +80,7 @@ page{
   margin-left: 68rpx;
   margin-right: 50rpx;
   border-radius:20rpx;
-  background-color: rgb(170, 34, 34);
+  background-color: #d31919;
   color:white;
 }
 /* 注册处样式 */
@@ -104,7 +104,7 @@ button{
   flex-direction:row;
   margin-top: 0rpx;
   margin-right: 0rpx;
-  background-color: rgb(170, 34, 34);
+  background-color: #d31919;
   color:white;
 }
 .anniu view{
@@ -116,7 +116,7 @@ button{
   margin-left: 68rpx;
   margin-right: 50rpx;
   border-radius:20rpx;
-  background-color: rgb(170, 34, 34);
+  background-color: #d31919;
   color:white;
 }
 /* 注册 */

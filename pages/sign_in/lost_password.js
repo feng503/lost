@@ -39,6 +39,9 @@ Page({
               icon: 'success',
               mask: true,
             })
+            wx.navigateTo({
+              url: '/pages/sign_in/sign_in_register',
+            })
           }
           if (e.statusCode == 500) {
             wx.showToast({
