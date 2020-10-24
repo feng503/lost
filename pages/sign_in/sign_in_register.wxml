@@ -26,6 +26,7 @@
           </view>
           <!-- 密码处 -->
           <button class="denglu"  style="font-size:29rpx" form-type="submit">登陆</button>
+          <button class="youke_denglu"  style="font-size:29rpx" bindtap="passerby_login">游客登录</button>
           <!-- 提交按钮处 -->
        </form>
          <view class="lostpasswd" bindtap="lostPasswd">忘记密码?</view> 

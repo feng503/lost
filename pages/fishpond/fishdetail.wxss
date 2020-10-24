@@ -221,10 +221,10 @@ opacity: 0.6
 }
 /* 举报 */
 .report{
-  margin-left: auto; 
   padding: 5rpx;
-  width: 36rpx;
-  height: 36rpx;
-  border-radius: 50%;
-  box-shadow: 0 0 2px 2px rgba(221, 218, 218, 0.3);
+  width: 45rpx;
+  height: 45rpx;
+  box-shadow: 0 0 10rpx 10rpx rgba(221, 218, 218, 0.3);
+  border-radius: 60rpx;
+  margin-top: 15rpx;
 }

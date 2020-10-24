@@ -36,9 +36,18 @@ Page({
     // 对学期动态说明
   },
   pick_up_lost:function(){
-    wx.navigateTo({
-      url: '/pages/personal_center/pick_up_lost/pick_up_lost',
-    })
+    if (this.data.student_id == '000000'){
+      wx.showToast({
+        title: "请登录后操作!",
+        icon: "none",
+        duration: 1000
+      })
+    }
+    else{
+      wx.navigateTo({
+        url: '/pages/personal_center/pick_up_lost/pick_up_lost',
+      })
+    }
   },
   look_for_lost:function(){
     wx.navigateTo({
@@ -46,9 +55,18 @@ Page({
     })
   },
   my_publish:function(){
-    wx.navigateTo({
-      url: '/pages/personal_center/my_publish/my_publish',
-    })
+    if (this.data.student_id == '000000') {
+      wx.showToast({
+        title: "请登录后操作!",
+        icon: "none",
+        duration: 1000
+      })
+    }
+    else{
+      wx.navigateTo({
+        url: '/pages/personal_center/my_publish/my_publish',
+      })
+    }
   },
   scan_code:function(){
     wx.navigateTo({
@@ -71,14 +89,32 @@ Page({
     })
   },
   service: function () {
-    wx.navigateTo({
-      url: '/pages/personal_center/add_function/service',
-    })
+    if (this.data.student_id == '000000') {
+      wx.showToast({
+        title: "请登录后操作!",
+        icon: "none",
+        duration: 1000
+      })
+    }
+    else{
+      wx.navigateTo({
+        url: '/pages/personal_center/add_function/service',
+      })
+    }
   },
   seet: function () {
-    wx.navigateTo({
-      url: '/pages/personal_center/set/set',
-    })
+    if (this.data.student_id == '000000') {
+      wx.showToast({
+        title: "请登录后操作!",
+        icon: "none",
+        duration: 1000
+      })
+    }else
+    {
+      wx.navigateTo({
+        url: '/pages/personal_center/set/set',
+      })
+    }
   },
   new_login:function(){
     wx.clearStorageSync('userInfo')

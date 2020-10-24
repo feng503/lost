@@ -6,7 +6,7 @@
     <view class="login">
       <view>{{student_name}}</view>
       <view>学号:{{student_id}}</view>
-      <view class="login_1" >
+      <view class="login_1" wx:if="{{student_id == 000000}}">
         <text bindtap='new_login'>登录/注册</text>
       </view>
     <!-- 这里要做成动态的获取，获取头像和昵称 -->
@@ -35,7 +35,7 @@
   <view class="img">
     <image src="/images/geren/shangchuanshiwu.png" style="width:40rpx;height:40rpx;"></image>
   </view>
-  <view class="name" >失物上传</view>
+  <view class="name">失物上传</view>
   <view class="detail">
     <text>></text>
   </view>

@@ -128,6 +128,11 @@ Page({
       })
     }
   },
+  passerby_login:function(){
+    wx.switchTab({
+      url: '/pages/lost_to_show/lost_to_show',
+    })
+  },
   dead_time: function (options) {
     var that = this;
     var currentTime = that.data.currentTime

@@ -205,8 +205,40 @@ Page({
         "faceImageSmall": "https://www.vergessen.top/imgGo/lost/defaulthead.png",
         "token": "未登录"
       }
+      // 生成7位随机数为该设备编号，统计模糊访客数
+      let facilityId = wx.getStorageSync('facilityId')
+      if (facilityId == null || facilityId == '') {
+        facilityId = Math.floor(Math.random() * 10000000);
+        wx.setStorageSync('facilityId', facilityId)
+      }
+      // 为该用户添加访客记录
+      wx.request({
+        url: app.serverUrl + 'user/visit?studentId=' + facilityId,
+        method: "POST"
+      })
     } else {
       app.globalData.user = userInfo;
+      //刷新token
+      wx.request({
+        url: app.serverUrl + 'user/checkToken?studentId=' + userInfo.studentId + '&token=' + userInfo.token,
+        method: "get",
+        success: function (res) {
+          let userVo = res.data
+          console.log(userVo)
+          // token过期
+          if (userVo.studentId === userInfo.studentId) {
+            wx.setStorageSync('userInfo', userVo)
+            app.globalData.user = userVo;
+          } else if (userVo.studentId == '000000') {
+            app.globalData.user = userVo;
+            wx.showToast({
+              title: '登录已过期，请重新登录',
+              duration: 3000,
+              icon: 'none'
+            })
+          }
+        }
+      })
       // 为该用户添加访客记录
       wx.request({
         url: app.serverUrl + 'user/visit?studentId=' + userInfo.studentId,
@@ -216,7 +248,7 @@ Page({
     wx.stopPullDownRefresh()
     var that = this;
     wx.request({
-      url: app.serverUrl +'lost/findLostAll',
+      url: app.serverUrl + 'lost/findLostAll',
       data: {
         service: that.data.tp
       },
@@ -229,9 +261,6 @@ Page({
         });
       },
     })
-  },
-  onPullDownRefresh: function () {
-    this.onLoad();
   },
   // 下拉刷新
   onReachBottom: function () {

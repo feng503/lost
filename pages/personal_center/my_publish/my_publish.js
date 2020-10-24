@@ -103,7 +103,6 @@ Page({
         data: {
         },
         success: (res) => {
-          console.log(res.data)
           that.setData({
             queryAllFishes: res.data
           })
