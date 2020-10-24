@@ -23,7 +23,7 @@ Page({
       return
     if (data.passwd1 === data.passwd2) {
       wx.request({
-        url: app.serverUrl + 'reSetPassword',
+        url: app.serverUrl + 'user/reSetPassword',
         data: {
           studentId: data.studentId,
           email: data.phoneNum,
@@ -58,7 +58,7 @@ Page({
     var that = this;
     if (that.data.phoneNum != "") {
       wx.request({
-        url: app.serverUrl + 'code?email=' + that.data.phoneNum,
+        url: app.serverUrl + 'user/code?email=' + that.data.phoneNum,
       })
     }
   },

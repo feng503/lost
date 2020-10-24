@@ -3,6 +3,9 @@
   flex-direction: row;
   height:266rpx
 }
+.bg-red{
+  background-color: #ff1d1d;
+}
 .headlcon{
   margin:20rpx;
 }
@@ -49,7 +52,7 @@
 .header {
   position: relative;
   height:0rpx;
-  background: linear-gradient(to bottom, #C81623, #C81623);
+  background: linear-gradient(to bottom, #ff1d1d, #ff1d1d);
 }
 .bg_ware {
   position: absolute;

@@ -145,7 +145,7 @@ opacity: 0.6
   width: 50%;
   font-size: 24rpx;
   text-align: right;
-  color: #409eff;
+  color: #ff5d5d;
 }
 /* 举报 */
 .report{

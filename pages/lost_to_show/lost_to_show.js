@@ -231,6 +231,7 @@ Page({
             app.globalData.user = userVo;
           } else if (userVo.studentId == '000000') {
             app.globalData.user = userVo;
+            wx.clearStorageSync('userInfo')
             wx.showToast({
               title: '登录已过期，请重新登录',
               duration: 3000,
@@ -409,6 +410,9 @@ Page({
         //转发失败
       }
     }
+  },
+  onPullDownRefresh: function () {
+    this.onLoad();
   },
   Biu: function (e) {
     let that = this;

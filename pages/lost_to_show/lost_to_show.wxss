@@ -4,7 +4,7 @@
 .bg{
   width:100%;
   height: 245rpx;
-  background-color:  #C81623;
+  background-color:  #ff1d1d;
 }
 .logo{
   padding-top:40rpx;
@@ -55,7 +55,7 @@
   width:20%;
   display:inline-block;
   margin-bottom:50rpx;
-  background-color: #C81623;
+  background-color: #ff1d1d;
 }
 .time{
   display: flex;
