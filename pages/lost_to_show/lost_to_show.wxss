@@ -14,6 +14,8 @@
 .first{
   font-size:46rpx;
   font-weight:bolder;
+  text-shadow:6rpx 2rpx 7rpx #707070;
+
 }
 .search{
   height:66rpx;

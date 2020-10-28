@@ -126,6 +126,13 @@
 					"id": -1,
 					"name": "pages/sign_in/sign_in_register",
 					"pathName": "pages/sign_in/sign_in_register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/lost_to_show/lost_to_show",
+					"pathName": "pages/lost_to_show/lost_to_show",
 					"scene": null
 				}
 			]

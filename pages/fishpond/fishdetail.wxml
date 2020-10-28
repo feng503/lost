@@ -13,7 +13,7 @@
     <image class="report" data-fish="{{fish}}" bindtap="reportFish" src="/images/jubao/jubao.png"></image>
   </view>
   <!-- 动态文字 -->
-  <text style="font-size: 30rpx;">{{fish.talk}}</text>
+  <text style="font-size: 30rpx;" selectable='true'>{{fish.talk}}</text>
   <!-- 图片资源 -->
   <view class="imageall">
     <view wx:for="{{fish.thumbImg}}" wx:for-item="thumbImg" wx:for-index="i">

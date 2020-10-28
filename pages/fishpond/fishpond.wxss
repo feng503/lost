@@ -168,6 +168,6 @@ opacity: 0.6
   text-overflow: ellipsis;
   word-wrap: break-word;
   white-space: normal !important;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
