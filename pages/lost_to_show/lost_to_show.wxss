@@ -9,12 +9,12 @@
 .logo{
   padding-top:40rpx;
   text-align: center;
-  color:rgb(190, 184, 185);
+  color:#f8f6f6;
 }
 .first{
   font-size:46rpx;
   font-weight:bolder;
-  text-shadow:6rpx 2rpx 7rpx #707070;
+  text-shadow:6rpx 2rpx 7rpx #292828;
 
 }
 .search{
@@ -34,7 +34,8 @@
   width: 100%;
   top: 14rpx;
   /* border: 1px solid lightgray; */
-  font-size:25rpx
+  font-size:25rpx;
+  color:#141414;
 }
 .search view{
   text-align:center;

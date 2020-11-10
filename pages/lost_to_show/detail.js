@@ -41,7 +41,6 @@ Page({
       url: app.serverUrl + 'user/getuser?studentId=' + lost.lostUserStudentId,
       header: { 'lost': app.globalData.user.token},
       success: (res) => {
-        console.log(res)
         that.setData({
           user: res.data
         })
@@ -259,7 +258,6 @@ Page({
   onShareAppMessage: function (res) {
     let detail = this.data.share
     let url = '/pages/lost_to_show/detail?lostDeteil=' + detail
-    console.log(url)
     return {
       title: '河工大失物招领平台',
       path: url,
